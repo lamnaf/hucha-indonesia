@@ -1,0 +1,473 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/infrastructure/database/generated"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id               Int            @id @default(autoincrement())
+  name             String
+  email            String         @unique
+  emailVerified    Boolean        @default(false) @map("email_verified")
+  image            String?
+  passwordHash     String?        @map("password_hash")
+  isActive         Boolean        @default(true) @map("is_active")
+  lastLoginAt      DateTime?      @map("last_login_at")
+  createdAt        DateTime       @default(now()) @map("created_at")
+  updatedAt        DateTime       @updatedAt @map("updated_at")
+  isAdmin          Boolean        @default(false) @map("is_admin")
+  accounts         Account[]
+  authoredArticles Article[]
+  auditLogs        AuditLog[]
+  assignedLeads    Lead[]
+  uploadedMedia    Media[]
+  notifications    Notification[]
+  sessions         Session[]
+
+  @@map("users")
+}
+
+model Session {
+  id        Int      @id @default(autoincrement())
+  expiresAt DateTime @map("expires_at")
+  token     String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  ipAddress String?  @map("ip_address")
+  userAgent String?  @map("user_agent")
+  userId    Int      @map("user_id")
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model Account {
+  id                    Int       @id @default(autoincrement())
+  accountId             String    @map("account_id")
+  providerId            String    @map("provider_id")
+  userId                Int       @map("user_id")
+  accessToken           String?   @map("access_token")
+  refreshToken          String?   @map("refresh_token")
+  idToken               String?   @map("id_token")
+  accessTokenExpiresAt  DateTime? @map("access_token_expires_at")
+  refreshTokenExpiresAt DateTime? @map("refresh_token_expires_at")
+  scope                 String?
+  password              String?
+  createdAt             DateTime  @default(now()) @map("created_at")
+  updatedAt             DateTime  @updatedAt @map("updated_at")
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([providerId, accountId])
+  @@map("accounts")
+}
+
+model Verification {
+  id         Int       @id @default(autoincrement())
+  identifier String
+  value      String
+  expiresAt  DateTime  @map("expires_at")
+  createdAt  DateTime? @map("created_at")
+  updatedAt  DateTime? @map("updated_at")
+
+  @@map("verifications")
+}
+
+model Category {
+  id                  Int          @id @default(autoincrement())
+  name                String
+  slug                String       @unique
+  type                CategoryType
+  parentId            Int?         @map("parent_id")
+  parent              Category?    @relation("CategoryTree", fields: [parentId], references: [id])
+  children            Category[]   @relation("CategoryTree")
+  products            Product[]    @relation("ProductCategory")
+  subCategoryProducts Product[]    @relation("ProductSubCategory")
+
+  @@map("categories")
+}
+
+model Product {
+  id               Int            @id @default(autoincrement())
+  name             String
+  slug             String         @unique
+  categoryId       Int            @map("category_id")
+  subCategoryId    Int?           @map("sub_category_id")
+  shortDescription String?        @map("short_description")
+  description      String?
+  tokopediaUrl     String?        @map("tokopedia_url")
+  shopeeUrl        String?        @map("shopee_url")
+  tiktokshopUrl    String?        @map("tiktokshop_url")
+  isFeatured       Boolean        @default(false) @map("is_featured")
+  status           ProductStatus  @default(draft)
+  deletedAt        DateTime?      @map("deleted_at")
+  brandId          Int?           @map("brand_id")
+  images           ProductImage[]
+  brand            Brand?         @relation(fields: [brandId], references: [id])
+  category         Category       @relation("ProductCategory", fields: [categoryId], references: [id])
+  subCategory      Category?      @relation("ProductSubCategory", fields: [subCategoryId], references: [id])
+
+  @@index([categoryId])
+  @@index([brandId])
+  @@map("products")
+}
+
+model ProductImage {
+  id        Int     @id @default(autoincrement())
+  productId Int     @map("product_id")
+  mediaId   Int     @map("media_id")
+  sortOrder Int     @default(0) @map("sort_order")
+  media     Media   @relation(fields: [mediaId], references: [id])
+  product   Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@map("product_images")
+}
+
+model Brand {
+  id          Int          @id @default(autoincrement())
+  name        String
+  slug        String       @unique
+  tagline     String?      @map("tagline")
+  description String?
+  category    CategoryType
+  logoMediaId Int?         @map("logo_media_id")
+  highlights  Json?
+  sortOrder   Int          @default(0) @map("sort_order")
+  isPublished Boolean      @default(false) @map("is_published")
+  deletedAt   DateTime?    @map("deleted_at")
+  createdAt   DateTime     @default(now()) @map("created_at")
+  updatedAt   DateTime     @updatedAt @map("updated_at")
+  logo        Media?       @relation("BrandLogo", fields: [logoMediaId], references: [id])
+  products    Product[]
+
+  @@index([category])
+  @@map("brands")
+}
+
+model BlogCategory {
+  id       Int       @id @default(autoincrement())
+  name     String
+  slug     String    @unique
+  articles Article[]
+
+  @@map("blog_categories")
+}
+
+model Tag {
+  id       Int          @id @default(autoincrement())
+  name     String
+  slug     String       @unique
+  articles ArticleTag[]
+
+  @@map("tags")
+}
+
+model Article {
+  id              Int           @id @default(autoincrement())
+  title           String
+  slug            String        @unique
+  blogCategoryId  Int           @map("blog_category_id")
+  featuredMediaId Int?          @map("featured_media_id")
+  excerpt         String?
+  body            String?
+  status          ArticleStatus @default(draft)
+  publishedAt     DateTime?     @map("published_at")
+  authorId        Int           @map("author_id")
+  deletedAt       DateTime?     @map("deleted_at")
+  isFeatured      Boolean       @default(false) @map("is_featured")
+  createdAt       DateTime      @default(now()) @map("created_at")
+  tags            ArticleTag[]
+  author          User          @relation(fields: [authorId], references: [id])
+  blogCategory    BlogCategory  @relation(fields: [blogCategoryId], references: [id])
+  featuredMedia   Media?        @relation("ArticleFeaturedMedia", fields: [featuredMediaId], references: [id])
+
+  @@map("articles")
+}
+
+model ArticleTag {
+  articleId Int     @map("article_id")
+  tagId     Int     @map("tag_id")
+  article   Article @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  tag       Tag     @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, tagId])
+  @@map("article_tags")
+}
+
+model SeoMeta {
+  id              Int           @id @default(autoincrement())
+  entityType      SeoEntityType @map("entity_type")
+  entityId        Int           @map("entity_id")
+  metaTitle       String?       @map("meta_title")
+  metaDescription String?       @map("meta_description")
+  slugOverride    String?       @map("slug_override")
+  ogImageMediaId  Int?          @map("og_image_media_id")
+  canonicalUrl    String?       @map("canonical_url")
+  keywords        String?       @map("keywords")
+  ogDescription   String?       @map("og_description")
+  ogTitle         String?       @map("og_title")
+  robots          String?       @map("robots")
+  twitterCard     String?       @map("twitter_card")
+  ogImage         Media?        @relation("SeoOgImage", fields: [ogImageMediaId], references: [id])
+
+  @@index([entityType, entityId])
+  @@map("seo_meta")
+}
+
+model Media {
+  id              Int            @id @default(autoincrement())
+  fileName        String         @map("file_name")
+  filePath        String         @map("file_path")
+  mimeType        String         @map("mime_type")
+  sizeBytes       Int            @map("size_bytes")
+  altText         String?        @map("alt_text")
+  width           Int?
+  height          Int?
+  uploadedById    Int?           @map("uploaded_by")
+  createdAt       DateTime       @default(now()) @map("created_at")
+  folder          String?        @map("folder")
+  cvApplications  Application[]
+  articleFeatured Article[]      @relation("ArticleFeaturedMedia")
+  brandLogos      Brand[]        @relation("BrandLogo")
+  uploadedBy      User?          @relation(fields: [uploadedById], references: [id])
+  productImages   ProductImage[]
+  seoOgImages     SeoMeta[]      @relation("SeoOgImage")
+  partnerLogos    Testimonial[]
+
+  @@map("media")
+}
+
+model Job {
+  id             Int           @id @default(autoincrement())
+  title          String
+  slug           String        @unique
+  department     String?
+  location       String?
+  employmentType String?       @map("employment_type")
+  description    String?
+  requirements   String?
+  status         JobStatus     @default(open)
+  deletedAt      DateTime?     @map("deleted_at")
+  applications   Application[]
+
+  @@map("jobs")
+}
+
+model Application {
+  id        Int               @id @default(autoincrement())
+  jobId     Int               @map("job_id")
+  fullName  String            @map("full_name")
+  email     String
+  phone     String?
+  cvMediaId Int?              @map("cv_media_id")
+  coverNote String?           @map("cover_note")
+  status    ApplicationStatus @default(new)
+  createdAt DateTime          @default(now()) @map("created_at")
+  cvMedia   Media?            @relation(fields: [cvMediaId], references: [id])
+  job       Job               @relation(fields: [jobId], references: [id])
+
+  @@map("applications")
+}
+
+model Lead {
+  id                 Int        @id @default(autoincrement())
+  type               LeadType
+  fullName           String     @map("full_name")
+  companyName        String?    @map("company_name")
+  region             String?
+  whatsapp           String?
+  email              String?
+  message            String?
+  categoryOfInterest String?    @map("category_of_interest")
+  status             LeadStatus @default(new)
+  assignedToId       Int?       @map("assigned_to")
+  sourcePage         String?    @map("source_page")
+  createdAt          DateTime   @default(now()) @map("created_at")
+  archived           Boolean    @default(false)
+  isRead             Boolean    @default(false) @map("is_read")
+  notes              String?
+  assignedToUser     User?      @relation(fields: [assignedToId], references: [id])
+
+  @@index([type])
+  @@index([status])
+  @@index([createdAt])
+  @@map("leads")
+}
+
+model Testimonial {
+  id                 Int       @id @default(autoincrement())
+  partnerName        String    @map("partner_name")
+  partnerBusiness    String?   @map("partner_business")
+  quote              String
+  partnerLogoMediaId Int?      @map("partner_logo_media_id")
+  rating             Int?
+  isPublished        Boolean   @default(false) @map("is_published")
+  deletedAt          DateTime? @map("deleted_at")
+  partnerRegion      String?   @map("partner_region")
+  partnerLogo        Media?    @relation(fields: [partnerLogoMediaId], references: [id])
+
+  @@map("testimonials")
+}
+
+model FaqCategory {
+  id   Int    @id @default(autoincrement())
+  name String
+  slug String @unique
+  faqs Faq[]
+
+  @@map("faq_categories")
+}
+
+model Faq {
+  id            Int         @id @default(autoincrement())
+  faqCategoryId Int         @map("faq_category_id")
+  question      String
+  answer        String
+  sortOrder     Int         @default(0) @map("sort_order")
+  isPublished   Boolean     @default(false) @map("is_published")
+  faqCategory   FaqCategory @relation(fields: [faqCategoryId], references: [id])
+
+  @@map("faqs")
+}
+
+model Notification {
+  id        Int              @id @default(autoincrement())
+  userId    Int              @map("user_id")
+  type      NotificationType @default(system)
+  title     String
+  body      String?
+  isRead    Boolean          @default(false) @map("is_read")
+  createdAt DateTime         @default(now()) @map("created_at")
+  user      User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, isRead])
+  @@map("notifications")
+}
+
+model AuditLog {
+  id         Int         @id @default(autoincrement())
+  userId     Int?        @map("user_id")
+  action     AuditAction
+  entityType String      @map("entity_type")
+  entityId   String?     @map("entity_id")
+  meta       Json?
+  createdAt  DateTime    @default(now()) @map("created_at")
+  user       User?       @relation(fields: [userId], references: [id])
+
+  @@map("audit_logs")
+}
+
+model NewsletterSubscriber {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique
+  name         String?
+  isSubscribed Boolean  @default(true) @map("is_subscribed")
+  source       String?
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  @@index([isSubscribed])
+  @@map("newsletter_subscribers")
+}
+
+model AnalyticsSnapshot {
+  id             Int      @id @default(autoincrement())
+  date           DateTime @unique
+  uniqueVisitors Int      @default(0) @map("unique_visitors")
+  pageViews      Int      @default(0) @map("page_views")
+  topArticles    Json?
+  newLeadsCount  Int      @default(0) @map("new_leads_count")
+
+  @@map("analytics_snapshots")
+}
+
+model PageView {
+  id        Int      @id @default(autoincrement())
+  path      String
+  visitorId String?  @map("visitor_id")
+  ipAddress String?  @map("ip_address")
+  isBot     Boolean  @default(false) @map("is_bot")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([createdAt])
+  @@index([path])
+  @@index([visitorId])
+  @@map("page_views")
+}
+
+model Setting {
+  key   String @id
+  value Json
+
+  @@map("settings")
+}
+
+enum CategoryType {
+  spareparts
+  fluids
+  autocare
+}
+
+enum ProductStatus {
+  draft
+  published
+}
+
+enum ArticleStatus {
+  draft
+  scheduled
+  published
+}
+
+enum LeadType {
+  distributor
+  oem
+  contact
+  career_note
+}
+
+enum LeadStatus {
+  new
+  contacted
+  converted
+  rejected
+}
+
+enum ApplicationStatus {
+  new
+  reviewed
+  rejected
+  hired
+}
+
+enum JobStatus {
+  open
+  closed
+}
+
+enum SeoEntityType {
+  product
+  article
+}
+
+enum AuditAction {
+  create
+  update
+  delete
+  publish
+  login
+}
+
+enum NotificationType {
+  lead
+  application
+  system
+}
+
+enum RoleName {
+  super_admin
+  content_editor
+  sales_manager
+}

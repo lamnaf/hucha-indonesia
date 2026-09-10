@@ -1,0 +1,91 @@
+name: hucha-indonesia
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      # Build stage needs the host-published Postgres (start `docker compose
+      # up -d db` first) to run static generation. No hardcoded connection.
+      network: host
+      args:
+        DATABASE_URL: postgresql://${POSTGRES_USER:-hucha}:${POSTGRES_PASSWORD:-hucha}@localhost:5432/${POSTGRES_DB:-hucha}?schema=public
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    environment:
+      APP_ENV: development
+      APP_URL: http://localhost:3000
+      DATABASE_URL: postgresql://${POSTGRES_USER:-hucha}:${POSTGRES_PASSWORD:-hucha}@db:5432/${POSTGRES_DB:-hucha}?schema=public
+      STORAGE_ENDPOINT: http://object-storage:9000
+      STORAGE_BUCKET: ${STORAGE_BUCKET:-hucha-media}
+      STORAGE_KEY: ${MINIO_ROOT_USER:-minio}
+      STORAGE_SECRET: ${MINIO_ROOT_PASSWORD:-minio-secret}
+      SMTP_HOST: mailhog
+      SMTP_PORT: 1025
+      SMTP_FROM: ${SMTP_FROM:-noreply@hucha.id}
+      SMTP_USER: ${SMTP_USER:-}
+      SMTP_PASS: ${SMTP_PASS:-}
+      JWT_SECRET: ${JWT_SECRET:-dev-only-secret}
+      SESSION_SECRET: ${SESSION_SECRET:-dev-only-session-secret}
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET:-dev-only-better-auth-secret}
+      BETTER_AUTH_URL: ${BETTER_AUTH_URL:-http://localhost:3000}
+      WHATSAPP_ADMIN_NUMBER: ${WHATSAPP_ADMIN_NUMBER:-+6280000000000}
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    depends_on:
+      db:
+        condition: service_healthy
+      object-storage:
+        condition: service_healthy
+      mailhog:
+        condition: service_started
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-hucha}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-hucha}
+      POSTGRES_DB: ${POSTGRES_DB:-hucha}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -U ${POSTGRES_USER:-hucha} -d ${POSTGRES_DB:-hucha}",
+        ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  object-storage:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minio}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minio-secret}
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - miniodata:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+
+volumes:
+  pgdata:
+  miniodata:
