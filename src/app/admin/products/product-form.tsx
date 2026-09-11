@@ -61,6 +61,9 @@ export function ProductForm({ categories, brands, initial }: ProductFormProps) {
   const [subcategory, setSubcategory] = React.useState(
     initial?.subCategoryId ? String(initial.subCategoryId) : ""
   );
+  const [selectedBrand, setSelectedBrand] = React.useState(
+    initial?.brandId ?? 0
+  );
   const [keptImages, setKeptImages] = React.useState(initial?.images ?? []);
   const [newFiles, setNewFiles] = React.useState<
     { file: File; url: string }[]
@@ -181,7 +184,6 @@ export function ProductForm({ categories, brands, initial }: ProductFormProps) {
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Kategori" htmlFor="product-category" required>
                 <Select.Root
-                  name="categoryId"
                   value={selectedCategory === 0 ? "" : String(selectedCategory)}
                   onValueChange={(value) => {
                     setSelectedCategory(Number(value));
@@ -203,7 +205,6 @@ export function ProductForm({ categories, brands, initial }: ProductFormProps) {
             </Field>
             <Field label="Sub-kategori" htmlFor="product-subcategory">
               <Select.Root
-                  name="subCategoryId"
                   value={subcategory}
                   onValueChange={setSubcategory}
                 >
@@ -222,11 +223,11 @@ export function ProductForm({ categories, brands, initial }: ProductFormProps) {
             </Field>
           </div>
           <Field label="Merek" htmlFor="product-brand">
+            <input type="hidden" name="brandId" value={selectedBrand || ""} />
             <Select.Root
-              name="brandId"
-              defaultValue={initial?.brandId ? String(initial.brandId) : ""}
+              value={selectedBrand === 0 ? "" : String(selectedBrand)}
+              onValueChange={(value) => setSelectedBrand(Number(value))}
             >
-              <input type="hidden" name="brandId" value={initial?.brandId ?? ""} />
               <SelectTrigger id="product-brand" className="w-full">
                 <SelectValue placeholder="Tanpa merek" />
               </SelectTrigger>
