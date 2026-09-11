@@ -1,3 +1,5 @@
+import { ProductRepository } from "@/domain/products/product.repository";
+import { CategoryRepository } from "@/domain/products/category.repository";
 import { normalizeImageUrl } from "@/lib/utils";
 import type { CategoryType, MockCategory, MockProduct } from "@/lib/mock/products";
 
