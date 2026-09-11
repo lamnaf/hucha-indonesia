@@ -51,20 +51,23 @@ export function getStorageConfig(): StorageConfig {
       );
     }
     const publicUrl = process.env.STORAGE_PUBLIC_URL;
-    if (publicUrl) {
-      let parsed: URL;
-      try {
-        parsed = new URL(publicUrl);
-      } catch {
-        throw new Error(
-          `Invalid STORAGE_PUBLIC_URL: "${publicUrl}" is not a valid absolute URL.`
-        );
-      }
-      if (parsed.protocol !== "https:" && parsed.protocol !== "http:") {
-        throw new Error(
-          `Invalid STORAGE_PUBLIC_URL: protocol must be http(s), got "${parsed.protocol}".`
-        );
-      }
+    if (!publicUrl) {
+      throw new Error(
+        "STORAGE_DRIVER=s3 requires STORAGE_PUBLIC_URL to be set."
+      );
+    }
+    let parsed: URL;
+    try {
+      parsed = new URL(publicUrl);
+    } catch {
+      throw new Error(
+        `Invalid STORAGE_PUBLIC_URL: "${publicUrl}" is not a valid absolute URL.`
+      );
+    }
+    if (parsed.protocol !== "https:" && parsed.protocol !== "http:") {
+      throw new Error(
+        `Invalid STORAGE_PUBLIC_URL: protocol must be http(s), got "${parsed.protocol}".`
+      );
     }
     return {
       driver,
@@ -73,9 +76,7 @@ export function getStorageConfig(): StorageConfig {
       bucket,
       accessKeyId: process.env.STORAGE_KEY || undefined,
       secretAccessKey: process.env.STORAGE_SECRET || undefined,
-      publicUrl:
-        publicUrl ??
-        (endpoint ? `${endpoint.replace(/\/+$/, "")}/${bucket}` : undefined),
+      publicUrl,
       forcePathStyle: boolFromEnv("STORAGE_FORCE_PATH_STYLE", true),
     };
   }
