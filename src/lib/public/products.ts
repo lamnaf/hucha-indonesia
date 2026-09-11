@@ -1,5 +1,4 @@
-import { ProductRepository } from "@/domain/products/product.repository";
-import { CategoryRepository } from "@/domain/products/category.repository";
+import { normalizeImageUrl } from "@/lib/utils";
 import type { CategoryType, MockCategory, MockProduct } from "@/lib/mock/products";
 
 const CATEGORY_TYPE_ORDER: Record<CategoryType, number> = {
@@ -13,13 +12,6 @@ type PublicProduct = Awaited<
 >["items"][number];
 
 function toMockProduct(product: PublicProduct): MockProduct {
-  let imageUrl = product.images[0]?.media.filePath;
-  
-  // If it's a relative path (legacy local), ensure it starts with /
-  if (imageUrl && !imageUrl.startsWith("http") && !imageUrl.startsWith("/")) {
-    imageUrl = `/${imageUrl}`;
-  }
-
   return {
     name: product.name,
     slug: product.slug,
@@ -32,7 +24,7 @@ function toMockProduct(product: PublicProduct): MockProduct {
     tiktokshopUrl: product.tiktokshopUrl ?? undefined,
     isFeatured: product.isFeatured,
     // Images are ordered by `sortOrder` — the first one is the primary image.
-    image: imageUrl,
+    image: normalizeImageUrl(product.images[0]?.media.filePath),
   };
 }
 
