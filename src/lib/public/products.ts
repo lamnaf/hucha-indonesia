@@ -13,6 +13,13 @@ type PublicProduct = Awaited<
 >["items"][number];
 
 function toMockProduct(product: PublicProduct): MockProduct {
+  let imageUrl = product.images[0]?.media.filePath;
+  
+  // If it's a relative path (legacy local), ensure it starts with /
+  if (imageUrl && !imageUrl.startsWith("http") && !imageUrl.startsWith("/")) {
+    imageUrl = `/${imageUrl}`;
+  }
+
   return {
     name: product.name,
     slug: product.slug,
@@ -25,7 +32,7 @@ function toMockProduct(product: PublicProduct): MockProduct {
     tiktokshopUrl: product.tiktokshopUrl ?? undefined,
     isFeatured: product.isFeatured,
     // Images are ordered by `sortOrder` — the first one is the primary image.
-    image: product.images[0]?.media.filePath,
+    image: imageUrl,
   };
 }
 
