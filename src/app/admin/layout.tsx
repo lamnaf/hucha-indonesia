@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 import { getCurrentUser } from "@/domain/auth/session";
 import { NotificationRepository } from "@/domain/users/notification.repository";
@@ -27,9 +28,7 @@ export default async function AdminLayout({
 
   const unreadCount = await new NotificationRepository().unreadCount(user.id);
 
-import Image from "next/image";
-
-const brand = (
+  const brand = (
     <Link href="/admin" className="flex items-center gap-2.5">
       <Image src="/logo.png" alt="HuCha Logo" width={100} height={28} className="h-7 w-auto object-contain" />
       <span className="text-sm leading-tight font-semibold">
@@ -39,7 +38,7 @@ const brand = (
         </span>
       </span>
     </Link>
-);
+  );
 
   const sidebarFooter = (
     <div className="flex items-center gap-3">
