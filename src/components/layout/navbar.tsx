@@ -48,7 +48,7 @@ function Navbar({ brand, links = [], actions, className }: NavbarProps) {
     <header
       data-slot="navbar"
       className={cn(
-        "sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60",
+        "sticky top-0 z-40 w-full border-b bg-navy-dark/95 backdrop-blur supports-[backdrop-filter]:bg-navy-dark/80",
         className
       )}
     >
@@ -116,8 +116,8 @@ function Navbar({ brand, links = [], actions, className }: NavbarProps) {
                     className={cn(
                       "rounded-md px-3 py-2 text-sm font-medium transition-colors",
                       link.active
-                        ? "text-foreground"
-                        : "text-muted-foreground hover:text-foreground"
+                        ? "text-white"
+                        : "text-white/70 hover:text-white"
                     )}
                   >
                     {link.label}
@@ -156,12 +156,12 @@ function DropdownNavLink({ link }: { link: NavbarLink }) {
         href={link.href}
         data-active={link.active ?? false}
         aria-haspopup="menu"
-        className={cn(
-          "flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors",
-          link.active
-            ? "text-foreground"
-            : "text-muted-foreground hover:text-foreground"
-        )}
+                    className={cn(
+                      "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                      link.active
+                        ? "text-white"
+                        : "text-white/70 hover:text-white"
+                    )}
       >
         {link.label}
         <ChevronDownIcon className="size-3.5 opacity-60" aria-hidden="true" />

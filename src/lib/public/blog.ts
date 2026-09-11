@@ -61,7 +61,10 @@ export async function getArticlesNewestFirst(): Promise<MockArticle[]> {
   const { items } = await new ArticleRepository().listPublished({
     pageSize: 100,
   });
-  return items.map(toMockArticle);
+  const uniqueItems = Array.from(
+    new Map(items.map((article) => [article.slug, article])).values()
+  );
+  return uniqueItems.map(toMockArticle);
 }
 
 export async function getArticleBySlug(

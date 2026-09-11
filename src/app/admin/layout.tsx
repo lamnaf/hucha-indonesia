@@ -27,11 +27,11 @@ export default async function AdminLayout({
 
   const unreadCount = await new NotificationRepository().unreadCount(user.id);
 
-  const brand = (
+import Image from "next/image";
+
+const brand = (
     <Link href="/admin" className="flex items-center gap-2.5">
-      <span className="bg-primary text-primary-foreground flex size-8 items-center justify-center rounded-md text-base font-bold">
-        H
-      </span>
+      <Image src="/logo.png" alt="HuCha Logo" width={100} height={28} className="h-7 w-auto object-contain" />
       <span className="text-sm leading-tight font-semibold">
         HuCha Admin
         <span className="text-muted-foreground block text-xs font-normal">
@@ -39,7 +39,7 @@ export default async function AdminLayout({
         </span>
       </span>
     </Link>
-  );
+);
 
   const sidebarFooter = (
     <div className="flex items-center gap-3">
