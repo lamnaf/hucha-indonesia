@@ -1,18 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Anton, Montserrat } from "next/font/google";
 import "./globals.css";
 
 import { Toaster } from "@/components/toaster";
 import { siteConfig } from "@/lib/mock/site";
 import { DEFAULT_OG_IMAGE, siteUrl } from "@/lib/seo";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fontAnton = Anton({
+  weight: "400",
+  variable: "--font-anton",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const fontMontserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
 
@@ -23,6 +24,11 @@ export const metadata: Metadata = {
     template: "%s | HuCha Indonesia",
   },
   description: siteConfig.description,
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     siteName: siteConfig.name,
     locale: "id_ID",
@@ -39,7 +45,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#2c0478",
 };
 
 export default function RootLayout({
@@ -50,9 +56,9 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${fontAnton.variable} ${fontMontserrat.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col font-sans">
         {children}
         <Toaster />
       </body>

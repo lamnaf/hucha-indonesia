@@ -180,17 +180,18 @@ export function ProductForm({ categories, brands, initial }: ProductFormProps) {
           </Field>
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Kategori" htmlFor="product-category" required>
-              <Select.Root
-                name="categoryId"
-                value={selectedCategory === 0 ? "" : String(selectedCategory)}
-                onValueChange={(value) => {
-                  setSelectedCategory(Number(value));
-                  setSubcategory("");
-                }}
-              >
-                <SelectTrigger id="product-category" className="w-full">
-                  <SelectValue placeholder="Pilih kategori" />
-                </SelectTrigger>
+                <Select.Root
+                  name="categoryId"
+                  value={selectedCategory === 0 ? "" : String(selectedCategory)}
+                  onValueChange={(value) => {
+                    setSelectedCategory(Number(value));
+                    setSubcategory("");
+                  }}
+                >
+                  <input type="hidden" name="categoryId" value={selectedCategory || ""} />
+                  <SelectTrigger id="product-category" className="w-full">
+                    <SelectValue placeholder="Pilih kategori" />
+                  </SelectTrigger>
                 <SelectContent>
                   {categories.map((category) => (
                     <SelectItem key={category.id} value={String(category.id)}>
@@ -202,13 +203,14 @@ export function ProductForm({ categories, brands, initial }: ProductFormProps) {
             </Field>
             <Field label="Sub-kategori" htmlFor="product-subcategory">
               <Select.Root
-                name="subCategoryId"
-                value={subcategory}
-                onValueChange={setSubcategory}
-              >
-                <SelectTrigger id="product-subcategory" className="w-full">
-                  <SelectValue placeholder="Tanpa sub-kategori" />
-                </SelectTrigger>
+                  name="subCategoryId"
+                  value={subcategory}
+                  onValueChange={setSubcategory}
+                >
+                  <input type="hidden" name="subCategoryId" value={subcategory || ""} />
+                  <SelectTrigger id="product-subcategory" className="w-full">
+                    <SelectValue placeholder="Tanpa sub-kategori" />
+                  </SelectTrigger>
                 <SelectContent>
                   {subcategories.map((sub) => (
                     <SelectItem key={sub.id} value={String(sub.id)}>
@@ -224,6 +226,7 @@ export function ProductForm({ categories, brands, initial }: ProductFormProps) {
               name="brandId"
               defaultValue={initial?.brandId ? String(initial.brandId) : ""}
             >
+              <input type="hidden" name="brandId" value={initial?.brandId ?? ""} />
               <SelectTrigger id="product-brand" className="w-full">
                 <SelectValue placeholder="Tanpa merek" />
               </SelectTrigger>
