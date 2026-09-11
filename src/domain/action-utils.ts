@@ -29,7 +29,7 @@ export function toNumberArray(value: FormDataEntryValue | null): number[] {
 }
 
 export function toNullableString(value: FormDataEntryValue | null): string | null {
-  if (value === null) return "";
+  if (value === null || value === undefined) return null;
   const s = String(value).trim();
   return s === "" ? null : s;
 }

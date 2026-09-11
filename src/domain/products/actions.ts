@@ -29,12 +29,21 @@ const MAX_PRODUCT_IMAGES = 5;
 type ParsedProduct = ProductOutput;
 
 function parseProductForm(formData: FormData): ParsedProduct {
+  const categoryIdRaw = toOptionalString(formData.get("categoryId"));
+  const categoryId = categoryIdRaw ? Number(categoryIdRaw) : undefined;
+
+  const subCategoryIdRaw = toOptionalString(formData.get("subCategoryId"));
+  const subCategoryId = subCategoryIdRaw ? Number(subCategoryIdRaw) : null;
+
+  const brandIdRaw = toOptionalString(formData.get("brandId"));
+  const brandId = brandIdRaw ? Number(brandIdRaw) : null;
+
   return {
     name: String(formData.get("name") ?? ""),
     slug: toOptionalString(formData.get("slug")) ?? undefined,
-    categoryId: Number(formData.get("categoryId")),
-    subCategoryId: toOptionalNumber(formData.get("subCategoryId")),
-    brandId: toOptionalNumber(formData.get("brandId")),
+    categoryId: categoryId as number,
+    subCategoryId,
+    brandId,
     shortDescription: toNullableString(formData.get("shortDescription")),
     description: toNullableString(formData.get("description")),
     tokopediaUrl: toNullableString(formData.get("tokopediaUrl")),

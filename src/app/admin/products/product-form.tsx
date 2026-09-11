@@ -266,9 +266,13 @@ export function ProductForm({ categories, brands, initial }: ProductFormProps) {
           <h2 className="font-semibold">Penerbitan & Pemasaran</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <Field label="Status" htmlFor="product-status">
+              <input type="hidden" name="status" value={initial?.status ?? "draft"} />
               <Select.Root
-                name="status"
                 defaultValue={initial?.status ?? "draft"}
+                onValueChange={(value) => {
+                  const input = document.getElementsByName("status")[0] as HTMLInputElement;
+                  if (input) input.value = value;
+                }}
               >
                 <SelectTrigger id="product-status" className="w-full">
                   <SelectValue />

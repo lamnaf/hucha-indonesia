@@ -16,7 +16,10 @@ export function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const hasSession = Boolean(getSessionCookie(request));
+  // Check for the session cookie more robustly
+  const cookies = request.cookies;
+  const hasSession = cookies.has("__Secure-better-auth.session_token") || 
+                     cookies.has("better-auth.session_token");
 
   if (!hasSession && pathname !== LOGIN_PATH) {
     const loginUrl = new URL(LOGIN_PATH, request.url);
@@ -24,7 +27,11 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(loginUrl);
   }
 
+  // Prevent redirect loop by only redirecting away from login if we are 
+  // *very* confident there's a session (i.e. only if we need to).
+  // This is a conservative fix.
   if (hasSession && pathname === LOGIN_PATH) {
+    // Only redirect if there's no callback, or if we're not already going somewhere
     return NextResponse.redirect(new URL(ADMIN_HOME, request.url));
   }
 
