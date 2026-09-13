@@ -63,9 +63,8 @@ const valueProps = [
 ];
 
 export default async function Home() {
-  const [siteConfig, categories, featured, brands, testimonials, articles] =
+  const [categories, featured, brands, testimonials, articles] =
     await Promise.all([
-      getSiteConfig(),
       getPublicCategories(),
       getFeaturedProducts(),
       getPublicBrands(),
@@ -77,8 +76,8 @@ export default async function Home() {
     <>
       <Hero
         badge="Distributor Resmi Spareparts & Autocare Motor"
-        title="Perawatan Motor Berkualitas untuk Jalanan Indonesia"
-        description={`${siteConfig.description} Belanja langsung dari toko marketplace resmi atau jadilah mitra distributor kami.`}
+        title="Solusi perawatan lengkap motor Anda"
+        description="Produk dan layanan terbaik untuk menjaga performa & keamanan motor Anda dengan konsultasi ahli dari HuCha Indonesia"
         actions={
           <>
             <Button asChild size="lg">
@@ -98,31 +97,31 @@ export default async function Home() {
         }
       />
 
-      <section className="border-t bg-muted/40 py-16 sm:py-20">
+      <section className="border-t bg-navy-dark py-16 sm:py-20 text-white">
         <div className="container">
           <SectionHeading
             eyebrow="Kategori"
-            title="Lini Produk Kami"
-            description="Tiga kategori utama produk otomotif untuk memenuhi kebutuhan motor Anda."
+            title={<span className="text-white">Lini Produk Kami</span>}
+            description={<span className="text-white/80">Tiga kategori utama produk otomotif untuk memenuhi kebutuhan motor Anda.</span>}
             align="center"
           />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((category) => (
-              <Card key={category.slug} className="group overflow-hidden gap-0">
+              <Card key={category.slug} className="group overflow-hidden gap-0 flex flex-col h-full">
                 <Link href={`/produk?kategori=${category.type}`}>
                   <MediaPlaceholder
                     label={category.name}
-                    className="transition-transform duration-300 group-hover:scale-[1.02]"
+                    className="h-32 w-full transition-transform duration-300 group-hover:scale-[1.02] bg-primary/10 border-primary/20 rounded-lg flex items-center justify-center"
                   />
                 </Link>
-                <CardContent className="flex flex-col gap-4">
-                  <p className="text-muted-foreground text-sm">
+                <CardContent className="flex flex-col flex-1 gap-4 p-4">
+                  <p className="text-muted-foreground text-sm line-clamp-2">
                     {category.subcategories.join(" · ")}
                   </p>
-                  <Button asChild variant="outline" className="w-fit">
+                  <Button asChild variant="outline" className="w-full">
                     <Link href={`/produk?kategori=${category.type}`}>
                       Jelajahi {category.name}
-                      <ArrowRightIcon className="size-4" aria-hidden="true" />
+                      <ArrowRightIcon className="size-4 ml-2" aria-hidden="true" />
                     </Link>
                   </Button>
                 </CardContent>
@@ -148,7 +147,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="border-t bg-muted/40 py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <div className="container">
           <SectionHeading
             eyebrow="Mengapa HuCha"
@@ -157,17 +156,15 @@ export default async function Home() {
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {valueProps.map(({ icon: Icon, title, description }) => (
-              <Card key={title} className="gap-4">
-                <CardHeader>
-                  <div className="bg-primary/10 text-primary flex size-10 items-center justify-center rounded-lg">
-                    <Icon className="size-5" aria-hidden="true" />
-                  </div>
-                  <CardTitle className="text-base">{title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-sm">{description}</p>
-                </CardContent>
-              </Card>
+              <div key={title} className="flex flex-col items-center text-center">
+                <div className="bg-primary/10 text-primary flex size-16 items-center justify-center rounded-full mb-4">
+                  <Icon className="size-8" aria-hidden="true" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
+                  {description}
+                </p>
+              </div>
             ))}
           </div>
         </div>
@@ -181,13 +178,13 @@ export default async function Home() {
             description="Lini produk kami hadir untuk setiap kebutuhan — dari performa hingga perawatan harian."
             link={{ label: "Lihat merek kami", href: "/merek-kami" }}
           />
-          <div className="grid gap-6 sm:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {brands.map((brand) => (
-              <Card key={brand.name} className="gap-4">
+              <Card key={brand.name} className="flex h-full flex-col gap-4">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <div className="bg-muted text-muted-foreground flex size-11 items-center justify-center rounded-lg">
-                      <WrenchIcon className="size-5" aria-hidden="true" />
+                    <div className="bg-primary/10 text-primary flex size-12 items-center justify-center rounded-xl">
+                      <WrenchIcon className="size-6" aria-hidden="true" />
                     </div>
                     <div>
                       <CardTitle className="text-lg">{brand.name}</CardTitle>
@@ -198,7 +195,7 @@ export default async function Home() {
                   </div>
                 </CardHeader>
                 <CardContent className="flex flex-1 flex-col gap-4">
-                  <p className="text-muted-foreground text-sm line-clamp-3">
+                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
                     {brand.description}
                   </p>
                   <Link
@@ -217,16 +214,24 @@ export default async function Home() {
 
       <section className="border-y bg-primary text-primary-foreground py-16 sm:py-20">
         <div className="container flex flex-col items-center gap-6 text-center">
+          <p className="rounded-md border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider">
+            Strategi Terbaik
+          </p>
           <h2 className="text-balance max-w-2xl text-3xl font-bold tracking-tight">
-            Ingin Menjadi Distributor atau Mitra Bengkel?
+            Ingin Menjadi Distributor Resmi?
           </h2>
           <p className="text-primary-foreground/80 max-w-2xl">
             Bergabunglah dengan jaringan distributor HuCha Indonesia dan
             dapatkan dukungan penuh untuk mengembangkan usaha Anda.
           </p>
-          <Button asChild size="lg" variant="default">
-            <Link href="/kemitraan">Daftar Jadi Distributor</Link>
-          </Button>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
+              <Link href="/kemitraan">Jadi Distributor</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white">
+              <Link href="/kontak">Konsultasi Gratis</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -266,12 +271,12 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="border-t bg-muted/40 py-16 sm:py-20">
+      <section className="border-t bg-navy-dark py-16 sm:py-20 text-white">
         <div className="container">
           <SectionHeading
             eyebrow="Blog"
-            title="Tips & Berita Terbaru"
-            description="Artikel seputar perawatan motor dan informasi terbaru dari HuCha Indonesia."
+            title={<span className="text-white">Tips & Berita Terbaru</span>}
+            description={<span className="text-white/80">Artikel seputar perawatan motor dan informasi terbaru dari HuCha Indonesia.</span>}
             link={{ label: "Kunjungi blog", href: "/blog" }}
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
