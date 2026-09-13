@@ -16,7 +16,7 @@ export const siteConfig = {
     whatsapp: "https://wa.me/6282221918775",
   },
   mapEmbedUrl:
-    "https://maps.google.com/maps?q=Jl.+Soekarno+Hatta+No.153A,+Mayangan,+Kota+Pasuruan,+Jawa+Timur+67135&t=&z=15&ie=UTF8&iwloc=&output=embed",
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5312389146054!2d112.90664657476315!3d-7.644565792379374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7c11f7c35f999%3A0x89793108c4e4211e!2sJl.+Soekarno+Hatta+No.153A%2C+Mayangan%2C+Kec.+Panggungrejo%2C+Kota+Pasuruan%2C+Jawa+Timur+67135!5e0!3m2!1sid!2sid!4v1726315366367!5m2!1sid!2sid",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

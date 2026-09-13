@@ -38,7 +38,7 @@ const contentSecurityPolicy = [
   `connect-src 'self' ${analyticsDomains.join(" ")}`,
   "media-src 'self'",
   "object-src 'none'",
-  "frame-src 'self'",
+  "frame-src 'self' https://www.google.com https://maps.google.com",
   "frame-ancestors 'self'",
   "form-action 'self'",
   "base-uri 'self'",
