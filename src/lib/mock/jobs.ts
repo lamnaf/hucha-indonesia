@@ -25,7 +25,7 @@ export const jobs: MockJob[] = [
     title: "Sales Executive Distribusi",
     slug: "sales-executive-distribusi",
     department: "Sales",
-    location: "Cikarang, Jawa Barat",
+    location: "Pasuruan, Jawa Timur",
     employmentType: "full_time",
     description:
       "Bergabunglah dengan tim sales HuCha Indonesia untuk memperluas jaringan distributor, toko onderdil, dan bengkel di seluruh Indonesia. Anda akan menjadi ujung tombak pertumbuhan kemitraan perusahaan.",
@@ -37,12 +37,12 @@ export const jobs: MockJob[] = [
       "Memahami pasar sparepart atau otomotif (nilai tambah)",
     ],
   },
-  {
+    {
     id: 2,
     title: "Content & SEO Specialist",
     slug: "content-seo-specialist",
     department: "Marketing",
-    location: "Cikarang, Jawa Barat",
+    location: "Pasuruan, Jawa Timur",
     employmentType: "full_time",
     description:
       "Kelola konten blog, katalog produk, dan strategi SEO HuCha Indonesia. Anda akan membuat artikel edukatif seputar perawatan motor dan mengoptimalkan konten agar mudah ditemukan di mesin pencari.",
@@ -59,7 +59,7 @@ export const jobs: MockJob[] = [
     title: "Quality Control Staff",
     slug: "quality-control-staff",
     department: "Operasional",
-    location: "Cikarang, Jawa Barat",
+    location: "Pasuruan, Jawa Timur",
     employmentType: "full_time",
     description:
       "Pastikan setiap produk spareparts, cairan, dan perawatan yang keluar dari gudang memenuhi standar kualitas HuCha Indonesia sebelum dikirim ke distributor.",
@@ -75,7 +75,7 @@ export const jobs: MockJob[] = [
     title: "Admin Gudang",
     slug: "admin-gudang",
     department: "Operasional",
-    location: "Cikarang, Jawa Barat",
+    location: "Pasuruan, Jawa Timur",
     employmentType: "contract",
     description:
       "Mengelola administrasi stok, pencatatan barang masuk dan keluar, serta membantu kelancaran operasional gudang HuCha Indonesia.",
@@ -83,7 +83,7 @@ export const jobs: MockJob[] = [
       "Minimal SMA/SMK semua jurusan",
       "Menguasai Microsoft Excel / Google Sheets",
       "Jujur dan bertanggung jawab",
-      "Bersedia ditempatkan di Cikarang",
+      "Bersedia ditempatkan di Pasuruan",
     ],
   },
 ];

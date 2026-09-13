@@ -16,7 +16,7 @@ export const siteConfig = {
     whatsapp: "https://wa.me/6282221918775",
   },
   mapEmbedUrl:
-    "https://www.google.com/maps?q=Jl.+Soekarno+Hatta+No.153A,+Mayangan,+Panggungrejo,+Kota+Pasuruan,+Jawa+Timur+67135&output=embed",
+    "https://maps.google.com/maps?q=Jl.+Soekarno+Hatta+No.153A,+Mayangan,+Kota+Pasuruan,+Jawa+Timur+67135&t=&z=15&ie=UTF8&iwloc=&output=embed",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

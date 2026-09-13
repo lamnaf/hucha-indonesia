@@ -39,7 +39,7 @@ export default async function Contact() {
       icon: MapPinIcon,
       title: "Alamat",
       lines: [siteConfig.address],
-      href: "https://maps.google.com/?q=Cikarang,+Jawa+Barat",
+      href: "https://maps.app.goo.gl/q7YuQGn786AQxDTQA?g_st=ac",
       cta: "Buka di Maps",
     },
     {
@@ -127,7 +127,7 @@ export default async function Contact() {
             <SectionHeading
               eyebrow="Lokasi"
               title="Temukan Kami"
-              description="Kunjungi kantor kami di Cikarang, Jawa Barat."
+              description="Kunjungi kantor kami di Kota Pasuruan, Jawa Timur."
             />
             <div className="overflow-hidden rounded-xl border">
               <iframe

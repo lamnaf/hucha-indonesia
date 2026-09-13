@@ -324,4 +324,4 @@ A license has not been specified for this repository.
 
 ## Credits / Organization
 
-HuCha Indonesia is operated by **CV Usaha Bintang Mulia**, a distributor of motorcycle spare parts, automotive fluids, and vehicle-care products in Indonesia, based in Cikarang, West Java.
+HuCha Indonesia is operated by **CV Usaha Bintang Mulia**, a distributor of motorcycle spare parts, automotive fluids, and vehicle-care products in Indonesia, based in Pasuruan, East Java.

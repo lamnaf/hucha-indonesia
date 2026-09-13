@@ -32,7 +32,7 @@ const milestones = [
     year: "2015",
     title: "Berdirinya Usaha",
     description:
-      "CV Usaha Bintang Mulia didirikan di Cikarang dengan fokus pada distribusi suku cadang motor berkualitas.",
+      "CV Usaha Bintang Mulia didirikan di Pasuruan dengan fokus pada distribusi suku cadang motor berkualitas.",
   },
   {
     year: "2018",

@@ -124,7 +124,7 @@ const jobs = [
   {
     title: "Admin Gudang",
     department: "Operasional",
-    location: "Cikarang",
+    location: "Pasuruan, Jawa Timur",
     employmentType: "full_time",
     description:
       "Mengelola pencatatan stok masuk dan keluar, memastikan keakuratan data gudang, dan berkoordinasi dengan tim pengiriman.",
