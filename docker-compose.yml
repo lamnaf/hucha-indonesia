@@ -30,7 +30,7 @@ services:
       SESSION_SECRET: ${SESSION_SECRET:-dev-only-session-secret}
       BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET:-dev-only-better-auth-secret}
       BETTER_AUTH_URL: ${BETTER_AUTH_URL:-http://localhost:3000}
-      WHATSAPP_ADMIN_NUMBER: ${WHATSAPP_ADMIN_NUMBER:-+6280000000000}
+      WHATSAPP_ADMIN_NUMBER: ${WHATSAPP_ADMIN_NUMBER:-+6282221918775}
     volumes:
       - .:/app
       - /app/node_modules

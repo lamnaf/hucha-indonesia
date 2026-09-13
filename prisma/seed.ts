@@ -221,18 +221,18 @@ const settings = [
     value: {
       name: "HuCha Indonesia",
       legalName: "CV Usaha Bintang Mulia",
-      address: "Jl. Raya Industri No. 45, Cikarang, Jawa Barat",
-      phone: "+6280000000000",
-      email: "halo@hucha.id",
-      whatsapp: "+6280000000000",
+      address: "HUCHA INDONESIA, Jl. Soekarno Hatta No.153A, Mayangan, Kec. Panggungrejo, Kota Pasuruan, Jawa Timur 67135",
+      phone: "+6282221918775",
+      email: "huchaindonesia@gmail.com",
+      whatsapp: "+6282221918775",
     },
   },
   {
     key: "social",
     value: {
-      instagram: "https://instagram.com/hucha.indonesia",
-      tiktok: "https://tiktok.com/@hucha.indonesia",
-      whatsapp: "https://wa.me/6280000000000",
+      instagram: "https://www.instagram.com/huchaindonesia",
+      tiktok: "https://www.tiktok.com/@hucha.indonesia",
+      whatsapp: "https://wa.me/6282221918775",
     },
   },
   {

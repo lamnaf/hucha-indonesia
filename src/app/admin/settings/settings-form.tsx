@@ -42,25 +42,25 @@ const COMPANY_FIELDS: TextFieldDef[] = [
   {
     name: "address",
     label: "Alamat",
-    placeholder: "Jl. Raya Industri No. 45, Cikarang",
+    placeholder: "HUCHA INDONESIA, Jl. Soekarno Hatta No.153A, Mayangan, Kec. Panggungrejo, Kota Pasuruan, Jawa Timur 67135",
   },
   {
     name: "phone",
     label: "Telepon",
     kind: "tel",
-    placeholder: "+6280000000000",
+    placeholder: "+6282221918775",
   },
   {
     name: "email",
     label: "Email",
     kind: "email",
-    placeholder: "halo@hucha.id",
+    placeholder: "huchaindonesia@gmail.com",
   },
   {
     name: "whatsapp",
     label: "WhatsApp",
     kind: "tel",
-    placeholder: "+6280000000000",
+    placeholder: "+6282221918775",
   },
 ];
 
@@ -68,17 +68,17 @@ const SOCIAL_FIELDS: TextFieldDef[] = [
   {
     name: "instagram",
     label: "Instagram",
-    placeholder: "https://instagram.com/hucha.indonesia",
+    placeholder: "https://www.instagram.com/huchaindonesia",
   },
   {
     name: "tiktok",
     label: "TikTok",
-    placeholder: "https://tiktok.com/@hucha.indonesia",
+    placeholder: "https://www.tiktok.com/@hucha.indonesia",
   },
   {
     name: "whatsapp",
     label: "WhatsApp (link)",
-    placeholder: "https://wa.me/6280000000000",
+    placeholder: "https://wa.me/6282221918775",
   },
 ];
 

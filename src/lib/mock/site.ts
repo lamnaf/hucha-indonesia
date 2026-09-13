@@ -4,19 +4,19 @@ export const siteConfig = {
   tagline: "Spareparts, Cairan & Autocare Motor",
   description:
     "Distributor spareparts, cairan otomotif, dan produk perawatan kendaraan berkualitas untuk motor Anda.",
-  address: "Jl. Raya Industri No. 45, Cikarang, Jawa Barat",
-  phone: "+6280000000000",
-  email: "halo@hucha.id",
-  whatsapp: "+6280000000000",
-  whatsappDisplay: "6280000000000",
+  address: "HUCHA INDONESIA, Jl. Soekarno Hatta No.153A, Mayangan, Kec. Panggungrejo, Kota Pasuruan, Jawa Timur 67135",
+  phone: "+6282221918775",
+  email: "huchaindonesia@gmail.com",
+  whatsapp: "+6282221918775",
+  whatsappDisplay: "6282221918775",
   hours: "Senin–Sabtu, 08.00–17.00 WIB",
   social: {
-    instagram: "https://instagram.com/hucha.indonesia",
-    tiktok: "https://tiktok.com/@hucha.indonesia",
-    whatsapp: "https://wa.me/6280000000000",
+    instagram: "https://www.instagram.com/huchaindonesia",
+    tiktok: "https://www.tiktok.com/@hucha.indonesia",
+    whatsapp: "https://wa.me/6282221918775",
   },
   mapEmbedUrl:
-    "https://www.google.com/maps?q=Cikarang,+Jawa+Barat&output=embed",
+    "https://www.google.com/maps?q=Jl.+Soekarno+Hatta+No.153A,+Mayangan,+Panggungrejo,+Kota+Pasuruan,+Jawa+Timur+67135&output=embed",
 } as const;
 
 export type SiteConfig = typeof siteConfig;
