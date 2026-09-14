@@ -197,10 +197,13 @@ async function main() {
       categoryId: 1,
       status: "published" as const,
       images: [7],
-      tokopediaUrl: "https://tokopedia.com/hucha/kampas",
+      tiktokshopUrl: "https://tiktok.com/@hucha.indonesia/shop/kampas",
     };
     assert.ok(productSchema.safeParse(base).success);
-    const noLink = productSchema.safeParse({ ...base, tokopediaUrl: undefined });
+    const noLink = productSchema.safeParse({
+      ...base,
+      tiktokshopUrl: undefined,
+    });
     assert.equal(noLink.success, false);
     const noImages = productSchema.safeParse({ ...base, images: [] });
     assert.equal(noImages.success, false);

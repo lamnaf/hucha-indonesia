@@ -82,7 +82,5 @@ export const footerColumns: {
 ];
 
 export const marketplaces = [
-  { name: "Tokopedia", href: "https://www.tokopedia.com" },
-  { name: "Shopee", href: "https://shopee.co.id" },
   { name: "TikTok Shop", href: "https://www.tiktok.com" },
 ] as const;

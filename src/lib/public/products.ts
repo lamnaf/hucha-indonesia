@@ -21,8 +21,6 @@ function toMockProduct(product: PublicProduct): MockProduct {
     subcategory: product.subCategory?.name ?? "",
     shortDescription: product.shortDescription ?? "",
     description: product.description ?? "",
-    tokopediaUrl: product.tokopediaUrl ?? undefined,
-    shopeeUrl: product.shopeeUrl ?? undefined,
     tiktokshopUrl: product.tiktokshopUrl ?? undefined,
     isFeatured: product.isFeatured,
     // Images are ordered by `sortOrder` — the first one is the primary image.

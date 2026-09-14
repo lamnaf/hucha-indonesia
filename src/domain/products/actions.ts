@@ -46,8 +46,6 @@ function parseProductForm(formData: FormData): ParsedProduct {
     brandId,
     shortDescription: toNullableString(formData.get("shortDescription")),
     description: toNullableString(formData.get("description")),
-    tokopediaUrl: toNullableString(formData.get("tokopediaUrl")),
-    shopeeUrl: toNullableString(formData.get("shopeeUrl")),
     tiktokshopUrl: toNullableString(formData.get("tiktokshopUrl")),
     isFeatured: toBoolean(formData.get("isFeatured")),
     status: String(formData.get("status") ?? "draft") as

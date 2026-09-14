@@ -2,8 +2,6 @@ import { z } from "zod";
 import { idSchema, slugSchema, urlSchema } from "@/shared/validation/common";
 
 export const marketplaceLinksSchema = z.object({
-  tokopediaUrl: urlSchema.optional().nullable(),
-  shopeeUrl: urlSchema.optional().nullable(),
   tiktokshopUrl: urlSchema.optional().nullable(),
 });
 
@@ -25,8 +23,6 @@ export const productSchema = z
     brandId: idSchema.nullable().optional(),
     shortDescription: z.string().trim().max(300).optional().nullable(),
     description: z.string().optional().nullable(),
-    tokopediaUrl: urlSchema.optional().nullable(),
-    shopeeUrl: urlSchema.optional().nullable(),
     tiktokshopUrl: urlSchema.optional().nullable(),
     isFeatured: z.boolean().optional().default(false),
     status: z.enum(["draft", "published"]).default("draft"),
@@ -39,14 +35,14 @@ export const productSchema = z
   .superRefine((value, ctx) => {
     if (value.status === "published") {
       const hasMarketplaceLink = Boolean(
-        value.tokopediaUrl || value.shopeeUrl || value.tiktokshopUrl
+        value.tiktokshopUrl
       );
       if (!hasMarketplaceLink) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message:
             "Produk yang dipublikasikan wajib memiliki minimal 1 link marketplace",
-          path: ["tokopediaUrl"],
+          path: ["tiktokshopUrl"],
         });
       }
       if (value.images.length === 0) {

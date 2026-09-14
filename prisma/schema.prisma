@@ -97,8 +97,6 @@ model Product {
   subCategoryId    Int?           @map("sub_category_id")
   shortDescription String?        @map("short_description")
   description      String?
-  tokopediaUrl     String?        @map("tokopedia_url")
-  shopeeUrl        String?        @map("shopee_url")
   tiktokshopUrl    String?        @map("tiktokshop_url")
   isFeatured       Boolean        @default(false) @map("is_featured")
   status           ProductStatus  @default(draft)

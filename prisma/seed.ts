@@ -264,8 +264,6 @@ const products = [
       "Kampas rem depan tipe racing dengan daya cengkeram tinggi.",
     description:
       "Kampas rem depan HuCha Racing dibuat dari material non-asbestos berkualitas tinggi dengan ketahanan panas optimal untuk penggunaan harian maupun balap.",
-    tokopediaUrl: "https://tokopedia.com/hucha-id/kampas-rem-depan",
-    shopeeUrl: "https://shopee.co.id/hucha-official/kampas-rem-depan",
     tiktokshopUrl: "https://tiktok.com/@hucha.indonesia/shop/kampas-rem-depan",
     isFeatured: true,
   },
@@ -277,8 +275,6 @@ const products = [
     shortDescription: "Busi iridium dengan pembakaran lebih stabil.",
     description:
       "Busi Iridium HuCha Pro memberikan pembakaran optimal, akselerasi responsif, dan umur pakai lebih lama dibanding busi standar.",
-    tokopediaUrl: "https://tokopedia.com/hucha-id/busi-iridium-pro",
-    shopeeUrl: "https://shopee.co.id/hucha-official/busi-iridium-pro",
     tiktokshopUrl: "https://tiktok.com/@hucha.indonesia/shop/busi-iridium-pro",
     isFeatured: false,
   },
@@ -291,8 +287,6 @@ const products = [
       "Oli mesin khusus motor matic dengan perlindungan maksimal.",
     description:
       "Oli Mesin HuCha Matic 10W-30 diformulasikan khusus untuk motor matic, menjaga mesin tetap halus, bersih, dan dingin.",
-    tokopediaUrl: "https://tokopedia.com/hucha-id/oli-matic-10w-30",
-    shopeeUrl: "https://shopee.co.id/hucha-official/oli-matic-10w-30",
     tiktokshopUrl: "https://tiktok.com/@hucha.indonesia/shop/oli-matic-10w-30",
     isFeatured: true,
   },
@@ -304,8 +298,6 @@ const products = [
     shortDescription: "Oli sokbreker dengan redaman stabil dan awet.",
     description:
       "Oli sokbreker HuCha SAE 20 menjaga performa suspensi tetap stabil, mengurangi getaran, dan memperpanjang umur sokbreker.",
-    tokopediaUrl: "https://tokopedia.com/hucha-id/oli-sokbreker-sae-20",
-    shopeeUrl: "https://shopee.co.id/hucha-official/oli-sokbreker-sae-20",
     tiktokshopUrl:
       "https://tiktok.com/@hucha.indonesia/shop/oli-sokbreker-sae-20",
     isFeatured: false,
@@ -318,8 +310,6 @@ const products = [
     shortDescription: "Shampo motor dengan busa tebal dan hasil mengkilap.",
     description:
       "Shampo Motor HuCha Super Gloss membersihkan kotoran dan lumpur tanpa merusak cat, menghasilkan kilap alami.",
-    tokopediaUrl: "https://tokopedia.com/hucha-id/shampo-motor-super-gloss",
-    shopeeUrl: "https://shopee.co.id/hucha-official/shampo-motor-super-gloss",
     tiktokshopUrl:
       "https://tiktok.com/@hucha.indonesia/shop/shampo-motor-super-gloss",
     isFeatured: false,
@@ -332,8 +322,6 @@ const products = [
     shortDescription: "Coating nano ceramic untuk melindungi cat motor.",
     description:
       "Pelindung Cat HuCha Nano Ceramic membentuk lapisan pelindung anti gores dan anti air selama berbulan-bulan.",
-    tokopediaUrl: "https://tokopedia.com/hucha-id/nano-ceramic-coating",
-    shopeeUrl: "https://shopee.co.id/hucha-official/nano-ceramic-coating",
     tiktokshopUrl:
       "https://tiktok.com/@hucha.indonesia/shop/nano-ceramic-coating",
     isFeatured: false,
@@ -831,8 +819,6 @@ async function seedProducts(
       brandId: brandIds[productBrandByCategory[product.categorySlug]],
       shortDescription: product.shortDescription,
       description: product.description,
-      tokopediaUrl: product.tokopediaUrl,
-      shopeeUrl: product.shopeeUrl,
       tiktokshopUrl: product.tiktokshopUrl,
       isFeatured: product.isFeatured,
       status: "published",

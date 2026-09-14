@@ -48,8 +48,6 @@ export default async function EditProductPage({
         brandId: product.brandId,
         shortDescription: product.shortDescription,
         description: product.description,
-        tokopediaUrl: product.tokopediaUrl,
-        shopeeUrl: product.shopeeUrl,
         tiktokshopUrl: product.tiktokshopUrl,
         isFeatured: product.isFeatured,
         status: product.status,

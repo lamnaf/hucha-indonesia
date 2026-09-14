@@ -48,8 +48,6 @@ function ProductCard({ product }: ProductCardProps) {
         </p>
         <div className="mt-auto">
           <MarketplaceBadges
-            tokopediaUrl={product.tokopediaUrl}
-            shopeeUrl={product.shopeeUrl}
             tiktokshopUrl={product.tiktokshopUrl}
           />
         </div>

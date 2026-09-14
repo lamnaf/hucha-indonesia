@@ -28,8 +28,6 @@ export interface ProductInput {
   brandId?: number | null;
   shortDescription?: string | null;
   description?: string | null;
-  tokopediaUrl?: string | null;
-  shopeeUrl?: string | null;
   tiktokshopUrl?: string | null;
   isFeatured?: boolean;
   status?: ProductStatus;
