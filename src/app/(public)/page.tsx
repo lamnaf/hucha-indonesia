@@ -78,6 +78,7 @@ export default async function Home() {
         badge="Distributor Resmi Spareparts & Autocare Motor"
         title="Solusi perawatan lengkap motor Anda"
         description="Produk dan layanan terbaik untuk menjaga performa & keamanan motor Anda dengan konsultasi ahli dari HuCha Indonesia"
+        align="center"
         actions={
           <>
             <Button asChild size="lg">
@@ -87,13 +88,6 @@ export default async function Home() {
               <Link href="/kemitraan">Jadi Distributor</Link>
             </Button>
           </>
-        }
-        visual={
-          <div className="grid gap-4 sm:grid-cols-2">
-            {featured.slice(0, 2).map((product) => (
-              <ProductCard key={product.slug} product={product} />
-            ))}
-          </div>
         }
       />
 
