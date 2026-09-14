@@ -110,7 +110,7 @@ export default async function About() {
         <div className="container grid items-center gap-10 lg:grid-cols-2">
           <div className="space-y-4">
             <Badge variant="outline">Visi & Misi</Badge>
-            <h2 className="text-balance text-3xl font-bold tracking-tight">
+            <h2 className="text-balance text-3xl">
               Visi Kami
             </h2>
             <p className="text-muted-foreground text-pretty">
@@ -118,7 +118,7 @@ export default async function About() {
               produk otomotif berkualitas tinggi yang mendukung kenyamanan dan
               keselamatan berkendara.
             </p>
-            <h3 className="pt-2 text-xl font-bold tracking-tight">Misi Kami</h3>
+            <h3 className="pt-2 text-xl">Misi Kami</h3>
             <ul className="space-y-2">
               {[
                 "Menyediakan produk original dengan kualitas konsisten.",

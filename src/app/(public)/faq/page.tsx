@@ -49,7 +49,7 @@ export default async function Faq() {
             className="text-muted-foreground size-8"
             aria-hidden="true"
           />
-          <h2 className="text-2xl font-bold tracking-tight">
+          <h2 className="text-2xl">
             Tidak menemukan jawaban?
           </h2>
           <p className="text-muted-foreground max-w-xl">

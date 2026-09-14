@@ -89,7 +89,7 @@ export default async function JobDetail({ params }: JobDetailProps) {
             </Badge>
             <Badge variant="outline">{job.department}</Badge>
           </div>
-          <h1 className="text-balance max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">
+          <h1 className="text-balance max-w-2xl text-3xl sm:text-4xl">
             {job.title}
           </h1>
           <div className="text-muted-foreground flex flex-wrap gap-4 text-sm">
@@ -117,7 +117,7 @@ export default async function JobDetail({ params }: JobDetailProps) {
               </p>
             </div>
             <div className="space-y-3">
-              <h2 className="text-xl font-bold tracking-tight">Persyaratan</h2>
+              <h2 className="text-xl">Persyaratan</h2>
               <ul className="space-y-2">
                 {job.requirements.map((requirement) => (
                   <li

@@ -39,7 +39,7 @@ function SectionHeading({
             </span>
           </div>
         ) : null}
-        <h2 className="text-balance text-2xl font-bold tracking-tight sm:text-3xl">
+        <h2 className="text-balance text-2xl sm:text-3xl lg:text-4xl uppercase tracking-wider font-heading leading-none">
           {title}
         </h2>
         {description ? (

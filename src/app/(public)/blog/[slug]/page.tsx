@@ -94,7 +94,7 @@ export default async function ArticleDetail({ params }: ArticleDetailProps) {
               · {article.readingMinutes} menit baca
             </span>
           </div>
-          <h1 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">
+          <h1 className="text-balance text-3xl sm:text-4xl">
             {article.title}
           </h1>
           <div className="flex flex-wrap gap-2">

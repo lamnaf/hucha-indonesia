@@ -36,11 +36,11 @@ function Hero({
       )}
     >
       {badge ? <Badge variant="outline">{badge}</Badge> : null}
-      <h1 className="text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+      <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl uppercase tracking-wider font-heading leading-none">
         {title}
       </h1>
       {description ? (
-        <p className="text-muted-foreground text-pretty text-lg">
+        <p className="text-muted-foreground text-pretty text-lg font-sans">
           {description}
         </p>
       ) : null}

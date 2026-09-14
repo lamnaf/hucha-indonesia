@@ -105,7 +105,7 @@ export default async function ProductDetail({ params }: ProductDetailProps) {
               </Link>
               <Badge variant="secondary">{product.subcategory}</Badge>
             </div>
-            <h1 className="text-balance text-3xl font-bold tracking-tight sm:text-4xl">
+            <h1 className="text-balance text-3xl sm:text-4xl">
               {product.name}
             </h1>
             <p className="text-muted-foreground text-lg">

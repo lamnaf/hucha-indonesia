@@ -211,7 +211,7 @@ export default async function Home() {
           <p className="rounded-md border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider">
             Strategi Terbaik
           </p>
-          <h2 className="text-balance max-w-2xl text-3xl font-bold tracking-tight">
+          <h2 className="text-balance max-w-2xl text-3xl sm:text-4xl uppercase tracking-wider font-heading leading-none">
             Ingin Menjadi Distributor Resmi?
           </h2>
           <p className="text-primary-foreground/80 max-w-2xl">

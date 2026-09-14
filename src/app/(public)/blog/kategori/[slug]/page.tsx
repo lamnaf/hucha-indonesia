@@ -54,7 +54,7 @@ export default async function BlogCategory({ params }: BlogCategoryProps) {
           <Breadcrumb
             items={[{ label: "Blog", href: "/blog" }, { label: category.name }]}
           />
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h1 className="text-3xl sm:text-4xl">
             {category.name}
           </h1>
           <p className="text-muted-foreground max-w-2xl">
