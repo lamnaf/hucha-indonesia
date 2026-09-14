@@ -68,10 +68,10 @@ function Navbar({ brand, links = [], actions, className }: NavbarProps) {
                     href={link.href}
                     data-active={link.active ?? false}
                     className={cn(
-                      "rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                      "inline-flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors",
                       link.active
-                        ? "text-foreground"
-                        : "text-muted-foreground hover:text-foreground"
+                        ? "bg-white/15 text-white"
+                        : "text-white/80 hover:bg-white/10 hover:text-white"
                     )}
                   >
                     {link.label}
@@ -156,12 +156,12 @@ function DropdownNavLink({ link }: { link: NavbarLink }) {
         href={link.href}
         data-active={link.active ?? false}
         aria-haspopup="menu"
-                    className={cn(
-                      "rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                      link.active
-                        ? "text-white"
-                        : "text-white/70 hover:text-white"
-                    )}
+        className={cn(
+          "inline-flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors",
+          link.active
+            ? "bg-white/15 text-white"
+            : "text-white/80 hover:bg-white/10 hover:text-white"
+        )}
       >
         {link.label}
         <ChevronDownIcon className="size-3.5 opacity-60" aria-hidden="true" />
