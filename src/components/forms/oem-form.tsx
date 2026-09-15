@@ -23,6 +23,7 @@ import { whatsappChatLink } from "@/lib/whatsapp-link";
 
 const categoryOptions = [
   { value: "fluids", label: "Cairan Otomotif" },
+  { value: "lubricants", label: "Lubricants" },
   { value: "autocare", label: "Perawatan Kendaraan" },
   { value: "other", label: "Lainnya" },
 ];

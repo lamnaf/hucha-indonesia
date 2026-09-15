@@ -14,6 +14,7 @@ import type {
 export const CATEGORY_TYPE_LABELS: Record<CategoryType, string> = {
   spareparts: "Spareparts",
   fluids: "Cairan Otomotif",
+  lubricants: "Lubricants",
   autocare: "Perawatan Kendaraan",
 };
 

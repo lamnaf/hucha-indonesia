@@ -40,7 +40,13 @@ const categoryGroups = [
     name: "Cairan Otomotif",
     slug: "cairan-otomotif",
     type: "fluids",
-    subcategories: ["Oli Mesin", "Oli Sokbreker", "Coolant"],
+    subcategories: ["Coolant"],
+  },
+  {
+    name: "Lubricants",
+    slug: "lubricants",
+    type: "lubricants",
+    subcategories: ["Oli Mesin", "Oli Sokbreker"],
   },
   {
     name: "Perawatan Kendaraan",

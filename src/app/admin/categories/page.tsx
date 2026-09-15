@@ -24,6 +24,7 @@ const PAGE_SIZE = 30;
 const TYPE_OPTIONS: { value: CategoryType; label: string }[] = [
   { value: "spareparts", label: "Spareparts" },
   { value: "fluids", label: "Cairan Otomotif" },
+  { value: "lubricants", label: "Lubricants" },
   { value: "autocare", label: "Perawatan Kendaraan" },
 ];
 

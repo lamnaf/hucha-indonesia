@@ -405,6 +405,7 @@ model Setting {
 enum CategoryType {
   spareparts
   fluids
+  lubricants
   autocare
 }
 

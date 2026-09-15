@@ -1,4 +1,4 @@
-export type CategoryType = "spareparts" | "fluids" | "autocare";
+export type CategoryType = "spareparts" | "fluids" | "lubricants" | "autocare";
 
 export interface MockCategory {
   name: string;
@@ -32,7 +32,13 @@ export const categories: MockCategory[] = [
     name: "Cairan Otomotif",
     slug: "cairan-otomotif",
     type: "fluids",
-    subcategories: ["Oli Mesin", "Oli Sokbreker", "Coolant"],
+    subcategories: ["Coolant"],
+  },
+  {
+    name: "Lubricants",
+    slug: "lubricants",
+    type: "lubricants",
+    subcategories: ["Oli Mesin", "Oli Sokbreker"],
   },
   {
     name: "Perawatan Kendaraan",
@@ -119,6 +125,7 @@ export const products: MockProduct[] = [
 export const categoryTypeLabel: Record<CategoryType, string> = {
   spareparts: "Spareparts",
   fluids: "Cairan Otomotif",
+  lubricants: "Lubricants",
   autocare: "Perawatan Kendaraan",
 };
 

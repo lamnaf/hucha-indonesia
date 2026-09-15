@@ -9,6 +9,7 @@ import { deleteCategoryAction } from "@/domain/products/category-actions";
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "@/components/ui/button";
 import { Modal } from "@/components/ui/modal";
+import type { CategoryType } from "@/infrastructure/database/generated/client";
 import { CategoryForm, type CategoryFormCategory } from "./category-form";
 
 export interface CategoryRowActionsProps {
@@ -16,7 +17,7 @@ export interface CategoryRowActionsProps {
     id: number;
     name: string;
     slug: string;
-    type: "spareparts" | "fluids" | "autocare";
+    type: CategoryType;
     parentId: number | null;
   };
   categories: CategoryFormCategory[];

@@ -34,6 +34,7 @@ export default async function BrandsPage({
   const category =
     params.category === "spareparts" ||
     params.category === "fluids" ||
+    params.category === "lubricants" ||
     params.category === "autocare"
       ? (params.category as CategoryType)
       : undefined;
@@ -95,6 +96,7 @@ export default async function BrandsPage({
             <option value="">Semua</option>
             <option value="spareparts">Spareparts</option>
             <option value="fluids">Cairan Otomotif</option>
+            <option value="lubricants">Lubricants</option>
             <option value="autocare">Perawatan Kendaraan</option>
           </select>
         </label>

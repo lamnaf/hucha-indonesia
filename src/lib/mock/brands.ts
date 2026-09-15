@@ -81,6 +81,11 @@ export const brandCategoryIndex: Record<
     slug: "cairan-otomotif",
     href: "/produk?kategori=fluids",
   },
+  lubricants: {
+    name: "Lubricants",
+    slug: "lubricants",
+    href: "/produk?kategori=lubricants",
+  },
   autocare: {
     name: "Perawatan Kendaraan",
     slug: "perawatan-kendaraan",

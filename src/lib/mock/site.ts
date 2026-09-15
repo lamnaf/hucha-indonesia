@@ -37,6 +37,7 @@ export const primaryNav: NavLink[] = [
     children: [
       { label: "Spareparts", href: "/produk?kategori=spareparts" },
       { label: "Cairan Otomotif", href: "/produk?kategori=fluids" },
+      { label: "Lubricants", href: "/produk?kategori=lubricants" },
       { label: "Perawatan Kendaraan", href: "/produk?kategori=autocare" },
       { label: "Lihat Semua Produk", href: "/produk" },
     ],

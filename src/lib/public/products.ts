@@ -6,7 +6,8 @@ import type { CategoryType, MockCategory, MockProduct } from "@/lib/mock/product
 const CATEGORY_TYPE_ORDER: Record<CategoryType, number> = {
   spareparts: 0,
   fluids: 1,
-  autocare: 2,
+  lubricants: 2,
+  autocare: 3,
 };
 
 type PublicProduct = Awaited<
@@ -45,9 +46,11 @@ export async function getPublicCategories(): Promise<MockCategory[]> {
           ? "/spareparts.jpeg"
           : category.type === "fluids"
             ? "/cairan.jpeg"
-            : category.type === "autocare"
-              ? "/autocare.jpeg"
-              : undefined,
+            : category.type === "lubricants"
+              ? "/lubricants.jpeg"
+              : category.type === "autocare"
+                ? "/autocare.jpeg"
+                : undefined,
     }))
     .sort((a, b) => CATEGORY_TYPE_ORDER[a.type] - CATEGORY_TYPE_ORDER[b.type]);
 }
