@@ -16,7 +16,17 @@ function toMockBrand(brand: PublicBrand): MockBrand {
     tagline: brand.tagline ?? "",
     description: brand.description ?? "",
     category: brand.category as CategoryType,
-    icon: brand.logo?.filePath ?? undefined,
+    icon:
+      brand.logo?.filePath ??
+      (brand.category === "spareparts"
+        ? "/spareparts_icon.jpeg"
+        : brand.category === "fluids"
+          ? "/cairan_icon.jpeg"
+          : brand.category === "lubricants"
+            ? "/lubricants_icon.jpeg"
+            : brand.category === "autocare"
+              ? "/autocare_icon.jpeg"
+              : undefined),
     highlights,
   };
 }
