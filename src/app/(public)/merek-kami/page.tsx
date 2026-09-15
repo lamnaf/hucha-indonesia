@@ -41,11 +41,19 @@ export default async function Brands() {
             <Card key={brand.name} className="gap-4">
               <CardHeader>
                 <div className="flex items-center gap-3">
-                  <MediaPlaceholder
-                    icon={<PackageIcon />}
-                    aspect="square"
-                    className="size-14 rounded-lg"
-                  />
+                  {brand.icon ? (
+                    <img
+                      src={brand.icon}
+                      alt={brand.name}
+                      className="size-14 rounded-lg object-cover"
+                    />
+                  ) : (
+                    <MediaPlaceholder
+                      icon={<PackageIcon />}
+                      aspect="square"
+                      className="size-14 rounded-lg"
+                    />
+                  )}
                   <div>
                     <CardTitle>{brand.name}</CardTitle>
                     <p className="text-muted-foreground text-sm">

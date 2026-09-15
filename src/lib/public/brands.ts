@@ -16,6 +16,7 @@ function toMockBrand(brand: PublicBrand): MockBrand {
     tagline: brand.tagline ?? "",
     description: brand.description ?? "",
     category: brand.category as CategoryType,
+    icon: brand.logo?.filePath ?? undefined,
     highlights,
   };
 }

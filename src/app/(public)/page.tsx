@@ -185,9 +185,17 @@ export default async function Home() {
               <Card key={brand.name} className="flex h-full flex-col gap-4">
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <div className="bg-primary/10 text-primary flex size-12 items-center justify-center rounded-xl">
-                      <WrenchIcon className="size-6" aria-hidden="true" />
-                    </div>
+                    {brand.icon ? (
+                      <img
+                        src={brand.icon}
+                        alt={brand.name}
+                        className="size-12 rounded-xl object-cover"
+                      />
+                    ) : (
+                      <div className="bg-primary/10 text-primary flex size-12 items-center justify-center rounded-xl">
+                        <WrenchIcon className="size-6" aria-hidden="true" />
+                      </div>
+                    )}
                     <div>
                       <CardTitle className="text-lg">{brand.name}</CardTitle>
                       <p className="text-muted-foreground text-sm">

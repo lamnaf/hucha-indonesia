@@ -22,6 +22,7 @@ export const brands: MockBrand[] = [
     description:
       "Lini spareparts performa tinggi — kampas rem, busi, dan komponen lain yang dirancang untuk ketahanan dan daya cengkeram maksimal.",
     category: "spareparts",
+    icon: "/spareparts_icon.jpeg",
     highlights: [
       "Material non-asbestos",
       "Tahan panas tinggi",
@@ -33,7 +34,8 @@ export const brands: MockBrand[] = [
     tagline: "Cairan pelumas berkualitas",
     description:
       "Oli mesin, oli sokbreker, dan coolant dengan formulasi khusus untuk menjaga mesin dan suspensi motor Anda tetap prima.",
-    category: "fluids",
+    category: "lubricants",
+    icon: "/lubricants_icon.jpeg",
     highlights: [
       "Formulasi khusus matic",
       "Perlindungan maksimal",
@@ -46,6 +48,7 @@ export const brands: MockBrand[] = [
     description:
       "Shampo, pelindung cat, hingga perawatan rantai — rangkaian produk perawatan untuk membuat motor tampil dan awet.",
     category: "autocare",
+    icon: "/autocare_icon.jpeg",
     highlights: [
       "Formula aman untuk cat",
       "Kilap tahan lama",
