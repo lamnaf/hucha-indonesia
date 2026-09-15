@@ -103,10 +103,18 @@ export default async function Home() {
             {categories.map((category) => (
               <Card key={category.slug} className="group overflow-hidden gap-0 flex flex-col h-full">
                 <Link href={`/produk?kategori=${category.type}`}>
-                  <MediaPlaceholder
-                    label={category.name}
-                    className="h-32 w-full transition-transform duration-300 group-hover:scale-[1.02] bg-primary/10 border-primary/20 rounded-lg flex items-center justify-center"
-                  />
+                  {category.imageUrl ? (
+                    <img
+                      src={category.imageUrl}
+                      alt={category.name}
+                      className="h-40 w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    />
+                  ) : (
+                    <MediaPlaceholder
+                      label={category.name}
+                      className="h-32 w-full transition-transform duration-300 group-hover:scale-[1.02] bg-primary/10 border-primary/20 rounded-lg flex items-center justify-center"
+                    />
+                  )}
                 </Link>
                 <CardContent className="flex flex-col flex-1 gap-4 p-4">
                   <p className="text-muted-foreground text-sm line-clamp-2">

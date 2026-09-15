@@ -5,6 +5,7 @@ export interface MockCategory {
   slug: string;
   type: CategoryType;
   subcategories: string[];
+  imageUrl?: string;
 }
 
 export interface MockProduct {

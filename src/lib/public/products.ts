@@ -40,6 +40,14 @@ export async function getPublicCategories(): Promise<MockCategory[]> {
       slug: category.slug,
       type: category.type as CategoryType,
       subcategories: (category.children ?? []).map((child) => child.name),
+      imageUrl:
+        category.type === "spareparts"
+          ? "/spareparts.jpeg"
+          : category.type === "fluids"
+            ? "/cairan.jpeg"
+            : category.type === "autocare"
+              ? "/autocare.jpeg"
+              : undefined,
     }))
     .sort((a, b) => CATEGORY_TYPE_ORDER[a.type] - CATEGORY_TYPE_ORDER[b.type]);
 }
