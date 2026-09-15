@@ -8,6 +8,7 @@ export interface MockArticle {
   body: string;
   publishedAt: string;
   readingMinutes: number;
+  imageUrl?: string;
 }
 
 export const blogCategories = [

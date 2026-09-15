@@ -109,7 +109,15 @@ export default async function ArticleDetail({ params }: ArticleDetailProps) {
 
       <section className="bg-muted/40 py-12 sm:py-16">
         <div className="container mx-auto max-w-3xl space-y-8">
-          <MediaPlaceholder label={article.title} />
+          {article.imageUrl ? (
+            <img
+              src={article.imageUrl}
+              alt={article.title}
+              className="aspect-video w-full rounded-lg object-cover"
+            />
+          ) : (
+            <MediaPlaceholder label={article.title} />
+          )}
           <div
             className="space-y-5 text-pretty break-words text-base leading-relaxed [&_h2]:mt-8 [&_h2]:scroll-mt-24 [&_h2]:text-2xl [&_h2]:font-bold [&_h3]:mt-6 [&_h3]:scroll-mt-24 [&_h3]:text-xl [&_h3]:font-semibold [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:my-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_blockquote]:border-primary [&_blockquote]:my-6 [&_blockquote]:border-l-4 [&_blockquote]:pl-4 [&_blockquote]:italic [&_a]:text-primary [&_a]:underline [&_pre]:overflow-x-auto [&_img]:my-6 [&_img]:h-auto [&_img]:max-w-full [&_img]:rounded-lg"
             dangerouslySetInnerHTML={{ __html: article.body }}

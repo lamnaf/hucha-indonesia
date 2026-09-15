@@ -1,6 +1,7 @@
 import { ArticleRepository } from "@/domain/articles/article.repository";
 import { BlogCategoryRepository } from "@/domain/articles/blog-category.repository";
 import { sanitizeRichText } from "@/lib/sanitize-rich-text";
+import { normalizeImageUrl } from "@/lib/utils";
 import type { MockArticle } from "@/lib/mock/blog";
 
 export interface PublicBlogCategory {
@@ -46,6 +47,7 @@ function toMockArticle(article: PublicArticle): MockArticle {
       ? article.publishedAt.toISOString().slice(0, 10)
       : new Date().toISOString().slice(0, 10),
     readingMinutes: estimateReadingMinutes(article.body ?? ""),
+    imageUrl: article.featuredMedia ? normalizeImageUrl(article.featuredMedia.filePath) : undefined,
   };
 }
 

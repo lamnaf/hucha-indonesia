@@ -13,12 +13,20 @@ export interface ArticleCardProps {
 function ArticleCard({ article }: ArticleCardProps) {
   return (
     <Card className="group flex flex-col overflow-hidden gap-0">
-      <Link href={`/blog/${article.slug}`} aria-label={article.title}>
-        <MediaPlaceholder
-          icon={<FileTextIcon />}
-          className="transition-opacity group-hover:opacity-90"
-        />
-      </Link>
+        <Link href={`/blog/${article.slug}`} aria-label={article.title}>
+          {article.imageUrl ? (
+            <img
+              src={article.imageUrl}
+              alt={article.title}
+              className="aspect-video w-full object-cover transition-opacity group-hover:opacity-90"
+            />
+          ) : (
+            <MediaPlaceholder
+              icon={<FileTextIcon />}
+              className="transition-opacity group-hover:opacity-90"
+            />
+          )}
+        </Link>
       <CardHeader>
         <div className="flex items-center gap-2">
           <Badge variant="secondary" className="w-fit">
