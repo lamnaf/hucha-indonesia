@@ -11,6 +11,7 @@ export interface MockBrand {
   tagline: string;
   description: string;
   category: CategoryType;
+  icon?: string;
   highlights: string[];
 }
 

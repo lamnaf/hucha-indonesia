@@ -23,7 +23,7 @@ export interface ProductCatalogProps {
 }
 
 function normalizeCategory(value?: string | null): CategoryFilter {
-  return value === "spareparts" || value === "fluids" || value === "autocare"
+  return value === "spareparts" || value === "fluids" || value === "lubricants" || value === "autocare"
     ? value
     : "all";
 }
