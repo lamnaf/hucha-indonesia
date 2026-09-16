@@ -14,7 +14,7 @@ export const brandSchema = z.object({
   slug: slugSchema.optional(),
   tagline: z.string().trim().max(120).optional().nullable(),
   description: z.string().trim().max(2000).optional().nullable(),
-  category: z.enum(["spareparts", "fluids", "autocare"]),
+  category: z.enum(["spareparts", "fluids", "lubricants", "autocare"]),
   logoMediaId: idSchema.nullable().optional(),
   highlights: z
     .array(z.string().trim().min(1).max(120))

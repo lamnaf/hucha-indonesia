@@ -8,7 +8,7 @@ export const categorySchema = z.object({
     .min(3, "Nama kategori minimal 3 karakter")
     .max(100, "Nama kategori maksimal 100 karakter"),
   slug: slugSchema.optional(),
-  type: z.enum(["spareparts", "fluids", "autocare"]),
+  type: z.enum(["spareparts", "fluids", "lubricants", "autocare"]),
   parentId: idSchema.nullable().optional(),
 });
 

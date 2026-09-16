@@ -41,6 +41,7 @@ export default async function CategoriesPage({
   const type =
     params.type === "spareparts" ||
     params.type === "fluids" ||
+    params.type === "lubricants" ||
     params.type === "autocare"
       ? (params.type as CategoryType)
       : undefined;

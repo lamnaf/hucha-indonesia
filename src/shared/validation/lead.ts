@@ -34,7 +34,7 @@ export const oemLeadSchema = z
     picName: nameSchema,
     whatsapp: whatsappSchema.optional().or(z.literal("")),
     email: emailSchema.optional().or(z.literal("")),
-    categoryOfInterest: z.enum(["fluids", "autocare", "other"]),
+    categoryOfInterest: z.enum(["fluids", "lubricants", "autocare", "other"]),
     message: messageSchema(20, 2000),
     sourcePage: z.string().trim().max(255).optional().nullable(),
   })
