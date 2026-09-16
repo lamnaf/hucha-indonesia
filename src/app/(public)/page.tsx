@@ -73,19 +73,31 @@ export default async function Home() {
 
   return (
     <>
-      <section className="relative flex min-h-[640px] items-center justify-center overflow-hidden bg-[url('/background.jpeg')] bg-cover bg-no-repeat bg-center text-white py-20 md:py-28">
+      <section className="relative flex min-h-[640px] items-center overflow-hidden bg-[url('/background.jpeg')] bg-cover bg-no-repeat bg-center text-white py-20 md:py-24">
         <div className="absolute inset-0 bg-navy-dark/60" aria-hidden="true" />
-        <div className="container relative z-10 flex flex-col items-center gap-8 text-center">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-4xl sm:text-5xl font-heading uppercase tracking-widest text-white">HuCha</span>
-            <span className="font-heading text-xl sm:text-2xl uppercase italic tracking-widest text-white">Built to Protect</span>
+        <div className="container relative z-10 grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="flex flex-col items-start gap-6 text-left">
+            <div className="flex flex-col gap-1.5">
+              <span className="text-4xl font-heading uppercase tracking-widest text-white">HuCha</span>
+              <span className="font-heading text-xl uppercase italic tracking-widest text-white">Built to Protect</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading uppercase leading-[1.15] tracking-wide text-white">
+              PERLINDUNGAN DAN PERAWATAN UNTUK SETIAP KENDARAAN
+            </h1>
+            <p className="max-w-xl text-base sm:text-lg leading-relaxed tracking-wide text-white/90">
+              produk cairan dan perawatan dari HUCHA untuk kebutuhan bengkel toko spareparts distributor dan pengguna di indonesia
+            </p>
           </div>
-          <h1 className="max-w-4xl text-balance text-4xl sm:text-5xl lg:text-6xl font-heading uppercase leading-[1.15] tracking-wide text-white">
-            PERLINDUNGAN DAN PERAWATAN UNTUK SETIAP KENDARAAN
-          </h1>
-          <p className="max-w-2xl text-pretty text-base sm:text-lg leading-relaxed tracking-wide text-white/90">
-            produk cairan dan perawatan dari HUCHA untuk kebutuhan bengkel toko spareparts distributor dan pengguna di indonesia
-          </p>
+          <div className="relative h-[320px] sm:h-[400px] lg:h-[520px]">
+            <Image
+              src="/orang.png"
+              alt="HuCha Representatives"
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-contain object-center drop-shadow-2xl"
+              priority
+            />
+          </div>
         </div>
       </section>
 
