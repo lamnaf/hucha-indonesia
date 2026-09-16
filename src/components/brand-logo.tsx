@@ -14,7 +14,7 @@ function BrandLogo({ className }: BrandLogoProps) {
         alt="HuCha Logo"
         width={140}
         height={40}
-        className="h-8 w-auto object-contain"
+        className="h-10 w-auto object-contain"
         priority
       />
     </span>
