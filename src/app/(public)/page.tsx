@@ -27,6 +27,7 @@ import { ProductCard } from "@/components/product-card";
 import { ArticleCard } from "@/components/article-card";
 import { StarRating } from "@/components/star-rating";
 import { MediaPlaceholder } from "@/components/media-placeholder";
+import Image from "next/image";
 
 export const metadata = pageMetadata({
   title: "Suku Cadang Motor, Cairan Otomotif & Autocare Terpercaya",
@@ -74,22 +75,37 @@ export default async function Home() {
 
   return (
     <>
-      <Hero
-        badge="Distributor Resmi Spareparts & Autocare Motor"
-        title="Solusi perawatan lengkap motor Anda"
-        description="Produk dan layanan terbaik untuk menjaga performa & keamanan motor Anda dengan konsultasi ahli dari HuCha Indonesia"
-        align="center"
-        actions={
-          <>
-            <Button asChild size="lg">
-              <Link href="/produk">Lihat Produk</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link href="/kemitraan">Jadi Distributor</Link>
-            </Button>
-          </>
-        }
-      />
+      <section className="relative min-h-screen bg-[url('/background.jpeg')] bg-cover bg-no-repeat bg-center text-white">
+        <div className="relative min-h-screen overflow-hidden">
+          <Image
+            src="/orang.png"
+            alt="Foto orang HuCha"
+            className="absolute bottom-16 right-8 w-64 h-64 object-cover rounded-full border-4 border-navy-dark"
+            width={400}
+            height={400}
+          />
+        </div>
+        <div className="relative min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-5xl mx-auto text-center">
+            <Hero
+              badge="Distributor Resmi Spareparts & Autocare Motor"
+              title="Solusi perawatan lengkap motor Anda"
+              description="Produk dan layanan terbaik untuk menjaga performa & keamanan motor Anda dengan konsultasi ahli dari HuCha Indonesia"
+              align="center"
+              actions={
+                <>
+                  <Button asChild size="lg">
+                    <Link href="/produk">Lihat Produk</Link>
+                  </Button>
+                  <Button asChild size="lg" variant="outline">
+                    <Link href="/kemitraan">Jadi Distributor</Link>
+                  </Button>
+                </>
+              }
+            />
+          </div>
+        </div>
+      </section>
 
       <section className="border-t bg-navy-dark py-16 sm:py-20 text-white">
         <div className="container">
