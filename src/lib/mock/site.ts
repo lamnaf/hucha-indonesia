@@ -29,24 +29,22 @@ export interface NavLink {
 
 export const primaryNav: NavLink[] = [
   { label: "Beranda", href: "/" },
-  { label: "Tentang Kami", href: "/tentang-kami" },
-  { label: "Merek Kami", href: "/merek-kami" },
-  {
-    label: "Produk",
-    href: "/produk",
-    children: [
-      { label: "Spareparts", href: "/produk?kategori=spareparts" },
-      { label: "Cairan Otomotif", href: "/produk?kategori=fluids" },
-      { label: "Lubricants", href: "/produk?kategori=lubricants" },
-      { label: "Perawatan Kendaraan", href: "/produk?kategori=autocare" },
-      { label: "Lihat Semua Produk", href: "/produk" },
-    ],
-  },
-  { label: "Kemitraan", href: "/kemitraan" },
-  { label: "OEM", href: "/oem" },
-  { label: "Blog", href: "/blog" },
+  { label: "Produk", href: "/produk", children: [
+    { label: "Cairan Otomotif", href: "/produk?kategori=fluids" },
+    { label: "Spareparts", href: "/produk?kategori=spareparts" },
+    { label: "Lubricants", href: "/produk?kategori=lubricants" },
+    { label: "Perawatan Kendaraan", href: "/produk?kategori=autocare" },
+    { label: "Lihat Semua Produk", href: "/produk" },
+  ]},
+  { label: "Tentang Hucha", href: "/tentang-kami" },
+  { label: "Artikel Otomotif", href: "/blog" },
+  { label: "Kerjasama", href: "/kemitraan", children: [
+    { label: "Distributor", href: "/kemitraan" },
+    { label: "Supplier", href: "/kemitraan" },
+    { label: "OEM / Services", href: "/oem" },
+  ]},
   { label: "Karir", href: "/karir" },
-  { label: "Kontak", href: "/kontak" },
+  { label: "Contact Us", href: "/kontak" },
 ];
 
 export const footerColumns: {

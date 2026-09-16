@@ -44,15 +44,22 @@ function SiteHeader() {
       brand={<BrandLogo />}
       links={buildLinks(pathname)}
       actions={
-        <Button asChild size="sm">
-          <a
-            href={siteConfig.social.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Hubungi Kami
-          </a>
-        </Button>
+        <>
+          <Button asChild size="sm">
+            <a
+              href={siteConfig.social.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              HUBUNGI KAMI
+            </a>
+          </Button>
+          <Button asChild size="sm" variant="outline" className="hidden lg:flex border-white text-white hover:bg-white/10 uppercase font-semibold">
+            <Link href="/kemitraan">
+              MENJADI DISTRIBUTOR
+            </Link>
+          </Button>
+        </>
       }
     />
   );

@@ -75,33 +75,27 @@ export default async function Home() {
 
   return (
     <>
-      <section className="relative min-h-screen bg-[url('/background.jpeg')] bg-cover bg-no-repeat bg-center text-white">
-        <div className="relative min-h-screen overflow-hidden">
-          <Image
-            src="/orang.png"
-            alt="Foto orang HuCha"
-            className="absolute bottom-16 right-8 w-64 h-64 object-cover rounded-full border-4 border-navy-dark"
-            width={400}
-            height={400}
-          />
-        </div>
-        <div className="relative min-h-screen flex items-center justify-center py-20 px-4 sm:px-6 lg:px-8">
-          <div className="relative max-w-5xl mx-auto text-center">
-            <Hero
-              badge="Distributor Resmi Spareparts & Autocare Motor"
-              title="Solusi perawatan lengkap motor Anda"
-              description="Produk dan layanan terbaik untuk menjaga performa & keamanan motor Anda dengan konsultasi ahli dari HuCha Indonesia"
-              align="center"
-              actions={
-                <>
-                  <Button asChild size="lg">
-                    <Link href="/produk">Lihat Produk</Link>
-                  </Button>
-                  <Button asChild size="lg" variant="outline">
-                    <Link href="/kemitraan">Jadi Distributor</Link>
-                  </Button>
-                </>
-              }
+      <section className="relative min-h-[600px] flex items-center bg-[url('/background.jpeg')] bg-cover bg-no-repeat bg-center text-white">
+        <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col gap-6">
+            <div className="flex items-center gap-2 text-white/90">
+              <span className="font-bold text-lg">HuCha</span>
+              <span className="font-light">Built to Protect</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-wide leading-tight">
+              PERLINDUNGAN DAN PERAWATAN UNTUK SETIAP KENDARAAN
+            </h1>
+            <p className="text-lg text-white/90 leading-relaxed max-w-xl">
+              produk cairan dan perawatan dari HUCHA untuk kebutuhan bengkel toko spareparts distributor dan pengguna di indonesia
+            </p>
+          </div>
+          <div className="hidden lg:block relative h-[500px]">
+            <Image
+              src="/orang.png"
+              alt="Foto orang HuCha"
+              fill
+              className="object-contain object-right-bottom"
+              priority
             />
           </div>
         </div>
