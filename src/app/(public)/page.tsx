@@ -75,12 +75,12 @@ export default async function Home() {
     <>
       <section className="relative min-h-[600px] flex items-center bg-[url('/background.jpeg')] bg-cover bg-no-repeat bg-center text-white py-16 md:py-24">
         <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-12 items-center text-center">
+            <div className="flex flex-col gap-1.5">
               <span className="text-4xl font-heading tracking-widest text-white uppercase">HuCha</span>
               <span className="text-white text-xl font-heading italic tracking-widest uppercase">Built to Protect</span>
             </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-widest leading-[1.1] uppercase font-heading text-white">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-widest leading-[1.2] uppercase font-heading text-white">
               PERLINDUNGAN DAN PERAWATAN UNTUK SETIAP KENDARAAN
             </h1>
             <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-xl font-normal tracking-wide">
