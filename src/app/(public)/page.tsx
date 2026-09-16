@@ -73,29 +73,19 @@ export default async function Home() {
 
   return (
     <>
-      <section className="relative min-h-[600px] flex items-center bg-[url('/background.jpeg')] bg-cover bg-no-repeat bg-center text-white py-16 md:py-24">
-        <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="flex flex-col gap-12 items-center text-center">
-            <div className="flex flex-col gap-1.5">
-              <span className="text-4xl font-heading tracking-widest text-white uppercase">HuCha</span>
-              <span className="text-white text-xl font-heading italic tracking-widest uppercase">Built to Protect</span>
-            </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-widest leading-[1.2] uppercase font-heading text-white">
-              PERLINDUNGAN DAN PERAWATAN UNTUK SETIAP KENDARAAN
-            </h1>
-            <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-xl font-normal tracking-wide">
-              produk cairan dan perawatan dari HUCHA untuk kebutuhan bengkel toko spareparts distributor dan pengguna di indonesia
-            </p>
+      <section className="relative flex min-h-[640px] items-center justify-center overflow-hidden bg-[url('/background.jpeg')] bg-cover bg-no-repeat bg-center text-white py-20 md:py-28">
+        <div className="absolute inset-0 bg-navy-dark/60" aria-hidden="true" />
+        <div className="container relative z-10 flex flex-col items-center gap-8 text-center">
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-4xl sm:text-5xl font-heading uppercase tracking-widest text-white">HuCha</span>
+            <span className="font-heading text-xl sm:text-2xl uppercase italic tracking-widest text-white">Built to Protect</span>
           </div>
-          <div className="hidden lg:block relative h-[500px]">
-            <Image
-              src="/orang.png"
-              alt="HuCha Representatives"
-              fill
-              className="object-contain object-right-bottom drop-shadow-2xl"
-              priority
-            />
-          </div>
+          <h1 className="max-w-4xl text-balance text-4xl sm:text-5xl lg:text-6xl font-heading uppercase leading-[1.15] tracking-wide text-white">
+            PERLINDUNGAN DAN PERAWATAN UNTUK SETIAP KENDARAAN
+          </h1>
+          <p className="max-w-2xl text-pretty text-base sm:text-lg leading-relaxed tracking-wide text-white/90">
+            produk cairan dan perawatan dari HUCHA untuk kebutuhan bengkel toko spareparts distributor dan pengguna di indonesia
+          </p>
         </div>
       </section>
 
