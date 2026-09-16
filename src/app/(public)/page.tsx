@@ -77,13 +77,13 @@ export default async function Home() {
         <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-1">
-              <span className="text-2xl font-bold tracking-tight text-white">HuCha</span>
-              <span className="text-white text-base italic tracking-wider">Built to Protect</span>
+              <span className="text-4xl font-heading tracking-widest text-white uppercase">HuCha</span>
+              <span className="text-white text-xl font-heading italic tracking-widest uppercase">Built to Protect</span>
             </div>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] uppercase font-heading text-white">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-widest leading-[1.1] uppercase font-heading text-white">
               PERLINDUNGAN DAN PERAWATAN UNTUK SETIAP KENDARAAN
             </h1>
-            <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-xl font-normal">
+            <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-xl font-normal tracking-wide">
               produk cairan dan perawatan dari HUCHA untuk kebutuhan bengkel toko spareparts distributor dan pengguna di indonesia
             </p>
           </div>
