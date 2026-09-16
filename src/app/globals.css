@@ -132,6 +132,12 @@
 }
 
 @layer base {
+  .distributor-cta:hover,
+  .distributor-cta:hover *,
+  .distributor-cta:focus-visible,
+  .distributor-cta:focus-visible * {
+    color: #000b3b !important;
+  }
   * {
     @apply border-border outline-ring/50;
   }

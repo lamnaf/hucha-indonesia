@@ -46,7 +46,11 @@ function SiteHeader() {
       links={buildLinks(pathname)}
       actions={
         <>
-          <Button asChild size="sm">
+          <Button
+            asChild
+            size="sm"
+            className="bg-white font-semibold uppercase tracking-wide text-navy-dark shadow-sm hover:bg-white/85 hover:text-navy-dark"
+          >
             <a
               href={siteConfig.social.whatsapp}
               target="_blank"
@@ -55,10 +59,13 @@ function SiteHeader() {
               HUBUNGI KAMI
             </a>
           </Button>
-          <Button asChild size="sm" variant="outline" className="hidden lg:flex border-white text-white hover:bg-white/10 uppercase font-semibold">
-            <Link href="/kemitraan">
-              MENJADI DISTRIBUTOR
-            </Link>
+          <Button
+            asChild
+            size="sm"
+            variant="outline"
+            className="distributor-cta hidden font-semibold uppercase tracking-wide border-white/50 bg-transparent text-white shadow-none hover:border-white hover:bg-white hover:text-navy-dark max-md:flex max-md:w-full lg:inline-flex"
+          >
+            <Link href="/kemitraan">MENJADI DISTRIBUTOR</Link>
           </Button>
         </>
       }
