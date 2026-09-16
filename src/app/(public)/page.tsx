@@ -76,9 +76,9 @@ export default async function Home() {
       <section className="relative min-h-[600px] flex items-center bg-[url('/background.jpeg')] bg-cover bg-no-repeat bg-center text-white py-16 md:py-24">
         <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-2">
-              <Image src="/logo.png" alt="HuCha Logo" width={200} height={60} className="w-auto h-12 object-contain" priority />
-              <p className="text-white text-lg font-bold italic tracking-wider">Built to Protect</p>
+            <div className="flex flex-col gap-1">
+              <span className="text-2xl font-bold tracking-tight text-white">HuCha</span>
+              <span className="text-white text-base italic tracking-wider">Built to Protect</span>
             </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] uppercase font-heading text-white">
               PERLINDUNGAN DAN PERAWATAN UNTUK SETIAP KENDARAAN
