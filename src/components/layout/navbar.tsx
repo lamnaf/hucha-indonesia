@@ -68,10 +68,10 @@ function Navbar({ brand, links = [], actions, className }: NavbarProps) {
                     href={link.href}
                     data-active={link.active ?? false}
                     className={cn(
-                      "inline-flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors",
+                      "inline-flex items-center rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-200",
                       link.active
-                        ? "bg-white/15 text-white"
-                        : "text-white/80 hover:bg-white/10 hover:text-white"
+                        ? "bg-white/10 text-white shadow-sm ring-1 ring-white/20"
+                        : "text-white/70 hover:bg-white/5 hover:text-white"
                     )}
                   >
                     {link.label}
@@ -157,26 +157,26 @@ function DropdownNavLink({ link }: { link: NavbarLink }) {
         data-active={link.active ?? false}
         aria-haspopup="menu"
         className={cn(
-          "inline-flex items-center rounded-md px-3 py-2 text-sm font-medium transition-colors",
+          "inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-200",
           link.active
-            ? "bg-white/15 text-white"
-            : "text-white/80 hover:bg-white/10 hover:text-white"
+            ? "bg-white/10 text-white shadow-sm ring-1 ring-white/20"
+            : "text-white/70 hover:bg-white/5 hover:text-white"
         )}
       >
         {link.label}
-        <ChevronDownIcon className="size-3.5 opacity-60" aria-hidden="true" />
+        <ChevronDownIcon className="size-3.5 opacity-60 transition-transform duration-200 group-hover:rotate-180" aria-hidden="true" />
       </Link>
-      <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-150 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+      <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-200 group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100 translate-y-1 group-hover:translate-y-0">
         <div
           role="menu"
-          className="bg-popover text-popover-foreground min-w-56 rounded-md border p-1 shadow-md"
+          className="bg-navy-dark text-white min-w-56 rounded-xl border border-white/10 p-1.5 shadow-xl backdrop-blur-xl"
         >
           {link.children?.map((child) => (
             <Link
               key={child.href}
               href={child.href}
               role="menuitem"
-              className="focus:bg-accent focus:text-accent-foreground hover:bg-accent hover:text-accent-foreground block rounded-sm px-3 py-2 text-sm outline-hidden"
+              className="hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white block rounded-lg px-3 py-2 text-sm font-medium text-white/80 transition-colors outline-hidden"
             >
               {child.label}
             </Link>

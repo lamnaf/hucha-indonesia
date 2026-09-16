@@ -73,26 +73,26 @@ export default async function Home() {
 
   return (
     <>
-      <section className="relative min-h-[600px] flex items-center bg-[url('/background.jpeg')] bg-cover bg-no-repeat bg-center text-white">
+      <section className="relative min-h-[600px] flex items-center bg-[url('/background.jpeg')] bg-cover bg-no-repeat bg-center text-white py-16 md:py-24">
         <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col gap-6">
-            <div className="flex items-center gap-2 text-white/90">
-              <span className="font-bold text-lg">HuCha</span>
-              <span className="font-light">Built to Protect</span>
+            <div className="flex items-center gap-3 text-white/90">
+              <span className="font-extrabold text-xl tracking-wider text-yellow-400">HuCha</span>
+              <span className="text-sm font-medium tracking-widest uppercase bg-white/10 px-3 py-1 rounded-full border border-white/20">Built to Protect</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold uppercase tracking-wide leading-tight">
-              PERLINDUNGAN DAN PERAWATAN UNTUK SETIAP KENDARAAN
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] font-sans">
+              Perlindungan & Perawatan untuk Setiap Kendaraan
             </h1>
-            <p className="text-lg text-white/90 leading-relaxed max-w-xl">
-              produk cairan dan perawatan dari HUCHA untuk kebutuhan bengkel toko spareparts distributor dan pengguna di indonesia
+            <p className="text-lg sm:text-xl text-white/85 leading-relaxed max-w-xl font-normal">
+              Produk cairan & perawatan berkualitas tinggi dari HUCHA untuk kebutuhan bengkel, toko spareparts, distributor, dan pengguna di seluruh Indonesia.
             </p>
           </div>
           <div className="hidden lg:block relative h-[500px]">
             <Image
               src="/orang.png"
-              alt="Foto orang HuCha"
+              alt="HuCha Representatives"
               fill
-              className="object-contain object-right-bottom"
+              className="object-contain object-right-bottom drop-shadow-2xl"
               priority
             />
           </div>
