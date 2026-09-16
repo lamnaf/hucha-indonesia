@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 import { Navbar, type NavbarLink } from "@/components/layout/navbar";
 import { BrandLogo } from "@/components/brand-logo";

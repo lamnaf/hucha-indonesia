@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 
 import { pageMetadata } from "@/lib/seo";
-import { getSiteConfig } from "@/lib/public/site";
 import {
   getPublicCategories,
   getFeaturedProducts,
@@ -19,7 +18,6 @@ import { getPublicBrands } from "@/lib/public/brands";
 import { getPublicTestimonials } from "@/lib/public/testimonials";
 import { getArticlesNewestFirst } from "@/lib/public/blog";
 
-import { Hero } from "@/components/hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
