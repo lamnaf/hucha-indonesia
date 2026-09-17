@@ -6,7 +6,6 @@ import {
   QuoteIcon,
   RocketIcon,
   TruckIcon,
-  UsersIcon,
 } from "lucide-react";
 
 import { pageMetadata } from "@/lib/seo";
@@ -81,7 +80,6 @@ const process = [
 
 export default async function Distributor() {
   const testimonials = await getPublicTestimonials();
-  const featuredTestimonial = testimonials[0];
 
   return (
     <>
@@ -124,49 +122,7 @@ export default async function Distributor() {
             </Button>
           </>
         }
-        visual={
-          featuredTestimonial ? (
-            <Card className="gap-4">
-              <CardHeader>
-                <div className="bg-primary/10 text-primary flex size-10 items-center justify-center rounded-lg">
-                  <UsersIcon className="size-5" aria-hidden="true" />
-                </div>
-                <CardTitle className="text-base">
-                  {featuredTestimonial.partnerName}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-1 flex-col gap-4">
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  &quot;{featuredTestimonial.quote}&quot;
-                </p>
-                <StarRating rating={featuredTestimonial.rating} />
-                <p className="text-muted-foreground text-sm">
-                  {featuredTestimonial.partnerBusiness} ·{" "}
-                  {featuredTestimonial.partnerRegion}
-                </p>
-              </CardContent>
-            </Card>
-          ) : (
-            <Card className="gap-4">
-              <CardContent className="flex flex-1 flex-col gap-4">
-                <div className="bg-primary/10 text-primary flex size-10 items-center justify-center rounded-lg">
-                  <UsersIcon className="size-5" aria-hidden="true" />
-                </div>
-                <p className="text-sm font-semibold">
-                  Jadilah Mitra Pertama Kami
-                </p>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  Cerita sukses para distributor HuCha Indonesia akan tampil di
-                  sini. Daftarkan usaha Anda dan jadilah bagian dari cerita
-                  pertama itu.
-                </p>
-                <Button asChild variant="outline" size="sm">
-                  <Link href="#daftar">Daftar Sekarang</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          )
-        }
+        align="center"
       />
 
       <section className="border-t bg-muted/40 py-16 sm:py-20">
