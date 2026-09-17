@@ -9,6 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-montserrat), sans-serif;
   --font-heading: var(--font-anton), sans-serif;
+  --font-dynamo: var(--font-dynamo), sans-serif;
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);

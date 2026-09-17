@@ -77,9 +77,16 @@ export default async function Home() {
         <div className="absolute inset-0 bg-navy-dark/60" aria-hidden="true" />
         <div className="container relative z-10 grid items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="flex flex-col items-start gap-6 text-left">
-            <div className="flex flex-col gap-1.5">
-              <span className="text-4xl font-heading uppercase tracking-widest text-white">HuCha</span>
-              <span className="font-heading text-xl uppercase italic tracking-widest text-white">Built to Protect</span>
+            <div className="flex flex-col gap-1">
+              <div className="flex items-start">
+                <span className="font-dynamo text-6xl sm:text-7xl lg:text-8xl uppercase tracking-wider text-white italic font-extrabold">
+                  HuCha
+                </span>
+                <span className="text-xs sm:text-sm text-white font-sans font-bold ml-0.5 mt-2">®</span>
+              </div>
+              <span className="font-dynamo text-xl sm:text-2xl uppercase italic tracking-widest text-white font-bold -mt-2 sm:-mt-3">
+                Built to Protect
+              </span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading uppercase leading-[1.15] tracking-wide text-white">
               PERLINDUNGAN DAN PERAWATAN UNTUK SETIAP KENDARAAN
