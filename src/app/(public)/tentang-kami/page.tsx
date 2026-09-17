@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { Hero } from "@/components/hero";
-import { Button } from "@/components/ui/button";
 import { getSiteConfig } from "@/lib/public/site";
 import { pageMetadata } from "@/lib/seo";
 
@@ -194,32 +192,17 @@ export default async function About() {
 
   return (
     <>
-      <Hero
-        align="center"
-        badge="Tentang Kami"
-        title="Dedikasi untuk Perawatan Motor Indonesia"
-        description={`${siteConfig.name} beroperasi di bawah ${siteConfig.legalName}, sebuah perusahaan distribusi yang berfokus pada suku cadang motor, cairan otomotif, dan produk perawatan kendaraan.`}
-        actions={
-          <>
-            <Button asChild size="lg">
-              <Link href="/produk">Lihat Produk</Link>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <Link href="/kontak">Hubungi Kami</Link>
-            </Button>
-          </>
-        }
-      />
-
       <div className="container py-16 sm:py-20 space-y-16">
         {sections.map((section) => (
-          <section key={section.id} id={section.id} className="scroll-mt-20">
-            <div className="mb-8">
-              <h2 className="text-2xl font-bold tracking-tight text-primary mb-2">{section.title}</h2>
-              <h3 className="text-xl font-semibold">{section.subtitle}</h3>
-            </div>
-            <div className="prose prose-primary max-w-none">
-              {section.content}
+          <section key={section.id} id={section.id} className="scroll-mt-20 text-center">
+            <div className="mx-auto max-w-3xl space-y-8">
+              <div>
+                <h2 className="text-2xl font-bold tracking-tight text-primary mb-2">{section.title}</h2>
+                <h3 className="text-xl font-semibold">{section.subtitle}</h3>
+              </div>
+              <div className="prose prose-primary max-w-none text-center">
+                {section.content}
+              </div>
             </div>
           </section>
         ))}
