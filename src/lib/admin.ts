@@ -74,6 +74,7 @@ export function applicationStatusLabel(status: ApplicationStatus): string {
 
 export const LEAD_TYPE_LABELS: Record<LeadType, string> = {
   distributor: "Distributor",
+  supplier: "Supplier",
   oem: "OEM",
   contact: "Kontak",
   career_note: "Catatan Karir",

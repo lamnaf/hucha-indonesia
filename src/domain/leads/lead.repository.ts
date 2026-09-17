@@ -27,6 +27,7 @@ export interface LeadInput {
   email?: string | null;
   message?: string | null;
   categoryOfInterest?: string | null;
+  businessType?: string | null;
   sourcePage?: string | null;
 }
 

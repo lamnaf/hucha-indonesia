@@ -422,6 +422,7 @@ enum ArticleStatus {
 
 enum LeadType {
   distributor
+  supplier
   oem
   contact
   career_note

@@ -51,6 +51,29 @@ export const oemLeadSchema = z
   });
 
 /**
+ * Supplier registration (FR-05).
+ * Validation: company name, PIC name, region, WhatsApp, email, product category, description.
+ */
+export const supplierLeadSchema = z.object({
+  companyName: companyNameSchema,
+  picName: nameSchema,
+  region: z
+    .string()
+    .trim()
+    .min(2, "Wilayah minimal 2 karakter")
+    .max(100, "Wilayah maksimal 100 karakter"),
+  whatsapp: whatsappSchema,
+  email: emailSchema,
+  productCategory: z
+    .string()
+    .trim()
+    .min(3, "Kategori produk minimal 3 karakter")
+    .max(100, "Kategori produk maksimal 100 karakter"),
+  description: messageSchema(20, 2000),
+  sourcePage: z.string().trim().max(255).optional().nullable(),
+});
+
+/**
  * General contact inquiry (FR-09 / §36 POST /api/leads/contact).
  */
 export const contactLeadSchema = z.object({
@@ -78,6 +101,7 @@ export const leadNoteSchema = z
   .max(1000, "Catatan maksimal 1000 karakter");
 
 export type DistributorLeadInput = z.input<typeof distributorLeadSchema>;
+export type SupplierLeadInput = z.input<typeof supplierLeadSchema>;
 export type OemLeadInput = z.input<typeof oemLeadSchema>;
 export type ContactLeadInput = z.input<typeof contactLeadSchema>;
 export type LeadUpdateInput = z.input<typeof leadUpdateSchema>;

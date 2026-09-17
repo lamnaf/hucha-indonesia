@@ -40,7 +40,7 @@ export const primaryNav: NavLink[] = [
   { label: "Artikel Otomotif", href: "/blog" },
   { label: "Kerjasama", href: "/kemitraan", children: [
     { label: "Distributor", href: "/kemitraan" },
-    { label: "Supplier", href: "/kemitraan" },
+    { label: "Supplier", href: "/supplier" },
     { label: "OEM / Services", href: "/oem" },
   ]},
   { label: "Karir", href: "/karir" },
@@ -57,6 +57,7 @@ export const footerColumns: {
       { label: "Tentang Kami", href: "/tentang-kami" },
       { label: "Merek Kami", href: "/merek-kami" },
       { label: "Kemitraan Distributor", href: "/kemitraan" },
+      { label: "Kemitraan Supplier", href: "/supplier" },
       { label: "OEM / Maklon", href: "/oem" },
       { label: "Karir", href: "/karir" },
     ],

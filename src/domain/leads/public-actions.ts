@@ -6,6 +6,7 @@ import {
   contactLeadSchema,
   distributorLeadSchema,
   oemLeadSchema,
+  supplierLeadSchema,
 } from "@/shared/validation/lead";
 import type { ZodType } from "zod";
 import {
@@ -33,6 +34,15 @@ const DISTRIBUTOR_FIELDS = [
   "region",
   "whatsapp",
   "businessType",
+] as const;
+const SUPPLIER_FIELDS = [
+  "companyName",
+  "picName",
+  "region",
+  "whatsapp",
+  "email",
+  "productCategory",
+  "description",
 ] as const;
 const OEM_FIELDS = [
   "companyName",
@@ -71,7 +81,7 @@ function fieldErrors(
 
 async function submitLead(
   formData: FormData,
-  kind: "contact" | "distributor" | "oem",
+  kind: "contact" | "distributor" | "supplier" | "oem",
   schema: ZodType,
   fields: readonly string[],
   sourcePage: string
@@ -102,11 +112,14 @@ async function submitLead(
 
     const input = parsed.data as {
       fullName: string;
+      picName: string;
       companyName?: string;
       region?: string;
       whatsapp?: string;
       email?: string;
       message?: string;
+      description?: string;
+      productCategory?: string;
       categoryOfInterest?: string;
       businessType?: string;
       sourcePage?: string;
@@ -115,17 +128,32 @@ async function submitLead(
     const typeByKind = {
       contact: "contact",
       distributor: "distributor",
+      supplier: "supplier",
       oem: "oem",
-    } as const;
+    } as const satisfies Record<string, import("@/infrastructure/database/generated/client").LeadType>;
 
     const created = await new LeadRepository().create(typeByKind[kind], {
-      fullName: input.fullName,
+      fullName:
+        kind === "contact"
+          ? input.fullName
+          : kind === "supplier"
+          ? input.picName || input.companyName || "Supplier"
+          : input.fullName,
       companyName: input.companyName || null,
       region: input.region || null,
       whatsapp: input.whatsapp || null,
       email: input.email || null,
-      message: input.message || null,
-      categoryOfInterest: input.categoryOfInterest || null,
+      message:
+        kind === "supplier"
+          ? input.description
+          : kind === "distributor"
+          ? null
+          : input.message,
+      categoryOfInterest:
+        kind === "supplier"
+          ? input.productCategory
+          : input.categoryOfInterest,
+      businessType: input.businessType || null,
       sourcePage: input.sourcePage || null,
     });
 
@@ -173,4 +201,16 @@ export async function submitOemLeadAction(
   formData: FormData
 ): Promise<PublicSubmitResult> {
   return submitLead(formData, "oem", oemLeadSchema, OEM_FIELDS, "/oem");
+}
+
+export async function submitSupplierLeadAction(
+  formData: FormData
+): Promise<PublicSubmitResult> {
+  return submitLead(
+    formData,
+    "supplier",
+    supplierLeadSchema,
+    SUPPLIER_FIELDS,
+    "/supplier"
+  );
 }

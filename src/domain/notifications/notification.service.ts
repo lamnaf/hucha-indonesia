@@ -18,7 +18,7 @@ import { trySendEmail } from "@/infrastructure/email/send-email";
  */
 
 interface LeadEvent {
-  type: "distributor" | "oem" | "contact";
+  type: "distributor" | "supplier" | "oem" | "contact";
   fullName: string;
   companyName?: string | null;
   region?: string | null;
@@ -123,6 +123,14 @@ function leadEmailTemplates(event: LeadEvent): {
         text: baseText(
           `Inquiry OEM Baru: ${event.companyName ?? event.fullName}`,
           `Perusahaan: ${event.companyName ?? "-"}\nPIC: ${event.fullName}`
+        ),
+      };
+    case "supplier":
+      return {
+        subject: `Lead Supplier Baru: ${event.companyName ?? event.fullName} – ${event.region ?? "-"}`,
+        text: baseText(
+          `Lead Supplier Baru: ${event.companyName ?? event.fullName}`,
+          `Perusahaan: ${event.companyName ?? "-"}\nPIC: ${event.fullName}\nWilayah: ${event.region ?? "-"}`
         ),
       };
     case "contact":
