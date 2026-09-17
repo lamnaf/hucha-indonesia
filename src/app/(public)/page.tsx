@@ -91,7 +91,7 @@ export default async function Home() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading uppercase leading-[1.15] tracking-wide text-white">
               PERLINDUNGAN DAN PERAWATAN UNTUK SETIAP KENDARAAN
             </h1>
-            <p className="max-w-xl text-base sm:text-lg leading-relaxed tracking-wide text-white/90">
+            <p className="max-w-xl text-lg sm:text-xl leading-relaxed tracking-wide text-white/90">
               Produk cairan dan perawatan dari HUCHA untuk kebutuhan bengkel, toko spareparts, distributor, dan pengguna di Indonesia
             </p>
           </div>
