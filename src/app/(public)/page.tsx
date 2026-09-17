@@ -92,7 +92,7 @@ export default async function Home() {
               PERLINDUNGAN DAN PERAWATAN UNTUK SETIAP KENDARAAN
             </h1>
             <p className="max-w-xl text-base sm:text-lg leading-relaxed tracking-wide text-white/90">
-              produk cairan dan perawatan dari HUCHA untuk kebutuhan bengkel toko spareparts distributor dan pengguna di indonesia
+              Produk cairan dan perawatan dari HUCHA untuk kebutuhan bengkel, toko spareparts, distributor, dan pengguna di Indonesia
             </p>
           </div>
           <div className="relative h-[320px] sm:h-[400px] lg:h-[520px]">
