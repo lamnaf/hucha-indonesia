@@ -1,11 +1,7 @@
 import Link from "next/link";
-import { StarRating } from "@/components/star-rating";
 import { Hero } from "@/components/hero";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { SectionHeading } from "@/components/section-heading";
 import { getSiteConfig } from "@/lib/public/site";
-import { getPublicTestimonials } from "@/lib/public/testimonials";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -16,10 +12,7 @@ export const metadata = pageMetadata({
 });
 
 export default async function About() {
-  const [siteConfig, testimonials] = await Promise.all([
-    getSiteConfig(),
-    getPublicTestimonials(),
-  ]);
+  const siteConfig = await getSiteConfig();
 
   const sections = [
     {
@@ -230,37 +223,7 @@ export default async function About() {
             </div>
           </section>
         ))}
-      </div>
-
-      <section className="border-t bg-muted/40 py-16 sm:py-20">
-        <div className="container">
-          <SectionHeading
-            eyebrow="Testimoni"
-            title="Kepercayaan Mitra Kami"
-            link={{ label: "Lihat semua", href: "/testimoni" }}
-          />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.slice(0, 3).map((testimonial) => (
-              <Card key={testimonial.partnerName} className="gap-4">
-                <CardContent className="flex flex-1 flex-col gap-4 pt-6">
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    &quot;{testimonial.quote}&quot;
-                  </p>
-                  <div className="mt-auto">
-                    <StarRating rating={testimonial.rating} />
-                    <p className="mt-2 text-sm font-semibold">
-                      {testimonial.partnerName}
-                    </p>
-                    <p className="text-muted-foreground text-sm">
-                      {testimonial.partnerBusiness}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+</div>
     </>
   );
 }
