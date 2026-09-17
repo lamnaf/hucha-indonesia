@@ -11,6 +11,7 @@ export interface HeroProps {
   visual?: React.ReactNode;
   align?: "left" | "center";
   className?: string;
+  titleClassName?: string;
 }
 
 /**
@@ -25,6 +26,7 @@ function Hero({
   visual,
   align = "left",
   className,
+  titleClassName,
 }: HeroProps) {
   const centered = align === "center";
 
@@ -36,7 +38,7 @@ function Hero({
       )}
     >
       {badge ? <Badge variant="outline">{badge}</Badge> : null}
-      <h1 className="text-balance text-4xl sm:text-5xl lg:text-6xl uppercase tracking-wider font-heading leading-none">
+      <h1 className={cn("text-balance text-4xl sm:text-5xl lg:text-6xl uppercase tracking-wider font-heading leading-none", titleClassName)}>
         {title}
       </h1>
       {description ? (
