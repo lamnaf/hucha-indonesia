@@ -109,34 +109,22 @@ const products = [
     image: "/cairan.jpeg",
   },
   {
-    category: "BRAKE SYSTEM",
-    desc: "Produk pendukung perawatan sistem pengereman dan keselamatan kendaraan.",
-    icon: ZapIcon,
-    image: "/cairan.jpeg",
-  },
-  {
     category: "LUBRICATION",
     desc: "Solusi pelumasan untuk berbagai komponen dan aplikasi sepeda motor.",
     icon: SettingsIcon,
     image: "/lubricants.jpeg",
   },
   {
-    category: "BATTERY CARE",
-    desc: "Produk pendukung perawatan dan pemeliharaan aki sepeda motor.",
-    icon: BatteryIcon,
-    image: "/autocare.jpeg",
-  },
-  {
-    category: "MOTORCYCLE MAINTENANCE",
-    desc: "Produk praktis untuk pemeliharaan dan servis berkala sepeda motor.",
-    icon: WrenchIcon,
-    image: "/autocare.jpeg",
-  },
-  {
     category: "MOTORCYCLE PARTS",
     desc: "Komponen dan suku cadang pilihan untuk kebutuhan pasar sehari-hari.",
     icon: PackageIcon,
     image: "/spareparts.jpeg",
+  },
+  {
+    category: "BATTERY CARE",
+    desc: "Produk pendukung perawatan dan pemeliharaan aki sepeda motor.",
+    icon: BatteryIcon,
+    image: "/autocare.jpeg",
   },
 ];
 
@@ -341,7 +329,7 @@ export default async function About() {
               HUCHA menyediakan berbagai rangkaian produk yang terus berkembang untuk perawatan kendaraan sehari-hari.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product) => (
               <article
                 key={product.category}
