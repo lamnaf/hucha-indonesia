@@ -103,25 +103,25 @@ const purposeCards = [
 
 const products = [
   {
-    category: "COOLING SYSTEM",
+    category: "CAIRAN OTOMOTIF",
     desc: "Produk untuk pemeliharaan dan perlindungan sistem pendingin kendaraan.",
     icon: DropletsIcon,
     image: "/cairan.jpeg",
   },
   {
-    category: "LUBRICATION",
+    category: "LUBRICANTS",
     desc: "Solusi pelumasan untuk berbagai komponen dan aplikasi sepeda motor.",
     icon: SettingsIcon,
     image: "/lubricants.jpeg",
   },
   {
-    category: "MOTORCYCLE PARTS",
+    category: "SPAREPARTS",
     desc: "Komponen dan suku cadang pilihan untuk kebutuhan pasar sehari-hari.",
     icon: PackageIcon,
     image: "/spareparts.jpeg",
   },
   {
-    category: "BATTERY CARE",
+    category: "AUTOCARE",
     desc: "Produk pendukung perawatan dan pemeliharaan aki sepeda motor.",
     icon: BatteryIcon,
     image: "/autocare.jpeg",
