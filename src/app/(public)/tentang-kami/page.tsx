@@ -203,18 +203,18 @@ export default async function About() {
         </section>
 
         {/* OUR PURPOSE - Centered Text + 3 Card Grid */}
-        <section id="purpose" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #c8ddff 0%, #d0e4ff 100%)' }}>
+        <section id="purpose" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="max-w-4xl mx-auto text-center mb-16">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-primary/30 rounded-full mb-6">
                 OUR PURPOSE
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
                 SOLVING PROBLEMS.<br />
                 CREATING VALUE.<br />
-                <span className="text-primary">BUILDING RELATIONSHIPS.</span>
+                <span className="text-primary-foreground">BUILDING RELATIONSHIPS.</span>
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-white/80 max-w-2xl mx-auto">
                 Di HUCHA, kami percaya bahwa bisnis bukan sekadar menjual produk. Ini adalah tentang memahami apa yang dibutuhkan pelanggan, menemukan solusi praktis, dan menciptakan nilai yang bertahan lama.
               </p>
             </div>
@@ -287,17 +287,17 @@ export default async function About() {
         </section>
 
         {/* HUCHA PROTECT - Icon Grid */}
-        <section id="values" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #c8ddff 0%, #d0e4ff 100%)' }}>
+        <section id="values" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-primary/30 rounded-full mb-6">
                 HUCHA PROTECT
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
                 THE VALUES BEHIND<br />
-                <span className="text-primary">HOW WE WORK</span>
+                <span className="text-primary-foreground">HOW WE WORK</span>
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-white/80 max-w-2xl mx-auto">
                 Prinsip P-R-O-T-E-C-T mengarah pada satu tujuan: melindungi kendaraan, menciptakan nilai, dan membangun kepercayaan bersama mitra.
               </p>
             </div>
@@ -373,17 +373,17 @@ export default async function About() {
         </section>
 
         {/* OUR PRODUCT APPROACH - Horizontal Flow Diagram */}
-        <section id="approach" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #c8ddff 0%, #d0e4ff 100%)' }}>
+        <section id="approach" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-primary/30 rounded-full mb-6">
                 OUR PRODUCT APPROACH
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
                 PRODUCTS WITH<br />
-                <span className="text-primary">A PURPOSE</span>
+                <span className="text-primary-foreground">A PURPOSE</span>
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
+              <p className="text-lg text-white/80 max-w-2xl mx-auto mb-12">
                 Kami percaya pengembangan produk harus dimulai dengan pertanyaan sederhana: &ldquo;What problem are we solving?&rdquo;
               </p>
             </div>
@@ -394,8 +394,8 @@ export default async function About() {
                   <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary text-white mb-4 mx-auto shadow-lg">
                     <HelpCircleIcon className="w-10 h-10" aria-hidden="true" />
                   </div>
-                  <p className="text-sm font-bold text-navy-dark uppercase tracking-wider">What problem are</p>
-                  <p className="text-sm font-bold text-navy-dark uppercase tracking-wider">we solving?</p>
+                  <p className="text-sm font-bold text-white uppercase tracking-wider">What problem are</p>
+                  <p className="text-sm font-bold text-white uppercase tracking-wider">we solving?</p>
                 </div>
                 {approachPillars.map((pillar, index) => (
                   <div
@@ -403,12 +403,12 @@ export default async function About() {
                     className="flex flex-col items-center w-full lg:w-1/6 p-4 relative"
                   >
                     <div className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 w-full h-0.5 bg-primary/20 z-0" />
-                    <div className="relative z-10 flex flex-col items-center bg-secondary/80 backdrop-blur-sm p-2 rounded-xl">
-                      <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                    <div className="relative z-10 flex flex-col items-center bg-white/10 backdrop-blur-sm p-2 rounded-xl">
+                      <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white/20 text-white mb-4 group-hover:bg-white group-hover:text-primary transition-colors">
                         <TargetIcon className="w-7 h-7" aria-hidden="true" />
                       </div>
-                      <h3 className="text-sm font-bold text-navy-dark text-center mb-1">{pillar.title}</h3>
-                      <p className="text-xs text-muted-foreground text-center max-w-xs">{pillar.desc}</p>
+                      <h3 className="text-sm font-bold text-white text-center mb-1">{pillar.title}</h3>
+                      <p className="text-xs text-white/70 text-center max-w-xs">{pillar.desc}</p>
                     </div>
                     {index < approachPillars.length - 1 && (
                       <div className="hidden lg:block absolute top-1/2 right-0 translate-x-1/2 text-primary">
@@ -469,7 +469,7 @@ export default async function About() {
         </section>
 
         {/* COMMITMENT - Interactive List with Icons */}
-        <section id="commitment" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #c8ddff 0%, #d0e4ff 100%)' }}>
+        <section id="commitment" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
@@ -550,7 +550,7 @@ export default async function About() {
         </section>
 
         {/* OUR FUTURE - Full-width Banner */}
-        <section id="future" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #c8ddff 0%, #d0e4ff 100%)' }}>
+        <section id="future" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="relative rounded-3xl overflow-hidden shadow-xl">
               <div className="relative min-h-[500px] flex items-center justify-center">
@@ -657,7 +657,7 @@ export default async function About() {
         </section>
 
         {/* CLOSING - 4 Pillars with Shield Watermark */}
-        <section id="closing" className="scroll-mt-20 py-16 sm:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #c8ddff 0%, #d0e4ff 100%)' }}>
+        <section id="closing" className="scroll-mt-20 py-16 sm:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="absolute inset-0 opacity-5">
             <ShieldCheckIcon className="w-full h-full text-primary mx-auto my-20" aria-hidden="true" />
           </div>
