@@ -106,25 +106,25 @@ const products = [
     category: "CAIRAN OTOMOTIF",
     desc: "Produk untuk pemeliharaan dan perlindungan sistem pendingin kendaraan.",
     icon: DropletsIcon,
-    image: "/tentang-hucha/53.png",
+    image: "/cairan.jpeg",
   },
   {
     category: "LUBRICANTS",
     desc: "Solusi pelumasan untuk berbagai komponen dan aplikasi sepeda motor.",
     icon: SettingsIcon,
-    image: "/tentang-hucha/54.png",
+    image: "/lubricants.jpeg",
   },
   {
     category: "SPAREPARTS",
     desc: "Komponen dan suku cadang pilihan untuk kebutuhan pasar sehari-hari.",
     icon: PackageIcon,
-    image: "/tentang-hucha/55.png",
+    image: "/spareparts.jpeg",
   },
   {
     category: "AUTOCARE",
     desc: "Produk pendukung perawatan dan pemeliharaan aki sepeda motor.",
     icon: BatteryIcon,
-    image: "/tentang-hucha/56.png",
+    image: "/autocare.jpeg",
   },
 ];
 
