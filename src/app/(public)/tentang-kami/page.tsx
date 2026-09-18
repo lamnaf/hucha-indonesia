@@ -517,15 +517,13 @@ src="/tentang-hucha/54.png"
                   </div>
                   <div className="relative z-10 flex-shrink-0 w-6 h-6 rounded-full bg-primary border-4 border-white shadow-lg lg:order-2" />
                   <div className="relative z-10 w-full lg:w-1/3 text-left lg:pl-8 order-1 lg:order-3">
-                    {index % 2 === 0 && (
-                      <div className="aspect-video rounded-xl bg-muted overflow-hidden shadow-lg">
-                        <img
-                          src={`/tentang-hucha/${index === 0 ? 58 : index === 2 ? 60 : index === 4 ? 62 : 59}.png`}
-                          alt={`HUCHA Journey - ${item.year}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    )}
+                    <div className="aspect-video rounded-xl bg-muted overflow-hidden shadow-lg">
+                      <img
+                        src={`/tentang-hucha/${58 + index}.png`}
+                        alt={`HUCHA Journey - ${item.year}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                   </div>
                 </div>
               ))}
