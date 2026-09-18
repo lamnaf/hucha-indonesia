@@ -519,7 +519,7 @@ src="/tentang-hucha/54.png"
                   <div className="relative z-10 w-full lg:w-1/3 text-left lg:pl-8 order-1 lg:order-3">
                     <div className="aspect-video rounded-xl bg-muted overflow-hidden shadow-lg">
                       <img
-                        src={`/tentang-hucha/${58 + index}.png`}
+                        src={`/tentang-hucha/${index === 1 ? 65 : index === 3 ? 50 : 58 + index}.png`}
                         alt={`HUCHA Journey - ${item.year}`}
                         className="w-full h-full object-cover"
                       />
