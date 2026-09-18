@@ -91,13 +91,13 @@ const purposeCards = [
     title: "CREATING VALUE",
     desc: "Setiap produk harus memberikan nilai yang berarti bagi pelanggan dan mitra bisnis — bukan sekadar menjalankan fungsinya.",
     icon: TargetIcon,
-    image: "/tentang-hucha/50.png",
+    image: "/tentang-hucha/51.png",
   },
   {
     title: "BUILDING RELATIONSHIPS",
     desc: "Kemitraan berbasis saling percaya, saling menguntungkan, dan tumbuh bersama dalam jangka panjang.",
     icon: HandshakeIcon,
-    image: "/tentang-hucha/51.png",
+    image: "/tentang-hucha/52.png",
   },
 ];
 
@@ -250,7 +250,7 @@ export default async function About() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted order-2 lg:order-1">
               <img
-src="/tentang-hucha/52.png"
+src="/tentang-hucha/54.png"
                 alt="Peta Indonesia dengan titik distribusi HUCHA"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
