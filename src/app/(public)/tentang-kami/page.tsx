@@ -570,7 +570,7 @@ src="/tentang-hucha/54.png"
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
               <img
-                src="/tentang-hucha/63.png"
+                src="/tentang-hucha/55.png"
                 alt="Kemitraan HUCHA"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
