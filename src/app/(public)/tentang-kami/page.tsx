@@ -15,7 +15,7 @@ export default async function About() {
   const sections = [
     {
       id: "about",
-      title: "01 — ABOUT HUCHA",
+      title: "ABOUT HUCHA",
       subtitle: "Built to Protect. Made to Grow.",
       content: (
         <div className="space-y-4">
@@ -28,7 +28,7 @@ export default async function About() {
     },
     {
       id: "purpose",
-      title: "02 — OUR PURPOSE",
+      title: "OUR PURPOSE",
       subtitle: "SOLVING PROBLEMS. CREATING VALUE. BUILDING RELATIONSHIPS.",
       content: (
         <div className="space-y-4">
@@ -40,7 +40,7 @@ export default async function About() {
     },
     {
       id: "vision",
-      title: "03 — OUR VISION",
+      title: "OUR VISION",
       subtitle: "A TRUSTED AUTOMOTIVE CARE BRAND ACROSS INDONESIA",
       content: (
         <div className="space-y-4">
@@ -52,7 +52,7 @@ export default async function About() {
     },
     {
       id: "values",
-      title: "04 — HUCHA PROTECT",
+      title: "HUCHA PROTECT",
       subtitle: "THE VALUES BEHIND HOW WE WORK",
       content: (
         <ul className="space-y-3">
@@ -68,7 +68,7 @@ export default async function About() {
     },
     {
       id: "provide",
-      title: "05 — WHAT WE PROVIDE",
+      title: "WHAT WE PROVIDE",
       subtitle: "AUTOMOTIVE CARE & MAINTENANCE SOLUTIONS",
       content: (
         <div className="space-y-4">
@@ -87,7 +87,7 @@ export default async function About() {
     },
     {
       id: "approach",
-      title: "06 — OUR PRODUCT APPROACH",
+      title: "OUR PRODUCT APPROACH",
       subtitle: "PRODUCTS WITH A PURPOSE",
       content: (
         <div className="space-y-4">
@@ -105,7 +105,7 @@ export default async function About() {
     },
     {
       id: "partners",
-      title: "07 — OUR PARTNERS",
+      title: "OUR PARTNERS",
       subtitle: "GROWING TOGETHER",
       content: (
         <div className="space-y-4">
@@ -123,7 +123,7 @@ export default async function About() {
     },
     {
       id: "commitment",
-      title: "08 — OUR COMMITMENT",
+      title: "OUR COMMITMENT",
       subtitle: "ALWAYS MOVING FORWARD",
       content: (
         <div className="space-y-4">
@@ -140,7 +140,7 @@ export default async function About() {
     },
     {
       id: "journey",
-      title: "09 — OUR JOURNEY",
+      title: "OUR JOURNEY",
       subtitle: "FROM A SIMPLE IDEA TO A GROWING INDONESIAN BRAND",
       content: (
         <div className="space-y-4">
@@ -153,7 +153,7 @@ export default async function About() {
     },
     {
       id: "future",
-      title: "10 — OUR FUTURE",
+      title: "OUR FUTURE",
       subtitle: "BUILT TO GROW. BUILT TO PROTECT.",
       content: (
         <div className="space-y-4">
@@ -165,7 +165,7 @@ export default async function About() {
     },
     {
       id: "join",
-      title: "11 — LET'S GROW TOGETHER",
+      title: "LET'S GROW TOGETHER",
       subtitle: "LOOKING FOR A LONG-TERM PARTNER?",
       content: (
         <div className="space-y-4">
@@ -182,7 +182,7 @@ export default async function About() {
     },
     {
       id: "closing",
-      title: "12 — CLOSING",
+      title: "CLOSING",
       subtitle: "HUCHA — BUILT TO PROTECT.",
       content: (
         <p className="italic">Protect the vehicle. • Create value for the customer. • Build trust with our partners. • Grow together. HUCHA — Built to Protect.</p>
