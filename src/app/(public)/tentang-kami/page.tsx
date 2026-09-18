@@ -10,7 +10,6 @@ import {
   UsersIcon,
   WrenchIcon,
   DropletsIcon,
-  ZapIcon,
   BatteryIcon,
   SettingsIcon,
   PackageIcon,
@@ -172,10 +171,10 @@ export default async function About() {
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div className="text-left lg:pr-8">
-                <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+                <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6 font-heading tracking-widest uppercase">
                   ABOUT HUCHA
                 </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider text-navy-dark mb-6 leading-tight font-heading">
                   Built to Protect.<br />
                   <span className="text-primary">Made to Grow.</span>
                 </h2>
@@ -206,10 +205,10 @@ export default async function About() {
         <section id="purpose" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="max-w-4xl mx-auto text-center mb-16">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-white/20 rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold font-heading tracking-widest uppercase text-white bg-white/20 rounded-full mb-6">
                 OUR PURPOSE
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider font-heading text-white mb-6 leading-tight">
                 SOLVING PROBLEMS.<br />
                 CREATING VALUE.<br />
                 <span className="text-white/90">BUILDING RELATIONSHIPS.</span>
@@ -269,10 +268,10 @@ export default async function About() {
                 </div>
               </div>
               <div className="text-left lg:pl-8 order-1 lg:order-2">
-                <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+                <span className="inline-block px-4 py-1.5 text-sm font-semibold font-heading tracking-widest uppercase text-primary bg-primary/10 rounded-full mb-6">
                   OUR VISION
                 </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider font-heading text-navy-dark mb-6 leading-tight">
                   A TRUSTED AUTOMOTIVE CARE BRAND<br />
                   <span className="text-primary">ACROSS INDONESIA</span>
                 </h2>
@@ -290,10 +289,10 @@ export default async function About() {
         <section id="values" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-white/20 rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold font-heading tracking-widest uppercase text-white bg-white/20 rounded-full mb-6">
                 HUCHA PROTECT
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider font-heading text-white mb-4 leading-tight">
                 THE VALUES BEHIND<br />
                 <span className="text-white/90">HOW WE WORK</span>
               </h2>
@@ -327,10 +326,10 @@ export default async function About() {
         <section id="provide" className="scroll-mt-20 py-16 sm:py-24 bg-white">
           <div className="container">
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold font-heading tracking-widest uppercase text-primary bg-primary/10 rounded-full mb-6">
                 WHAT WE PROVIDE
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider font-heading text-navy-dark mb-4 leading-tight">
                 AUTOMOTIVE CARE &<br />
                 <span className="text-primary">MAINTENANCE SOLUTIONS</span>
               </h2>
@@ -376,10 +375,10 @@ export default async function About() {
         <section id="approach" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-white/20 rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold font-heading tracking-widest uppercase text-white bg-white/20 rounded-full mb-6">
                 OUR PRODUCT APPROACH
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider font-heading text-white mb-4 leading-tight">
                 PRODUCTS WITH<br />
                 <span className="text-white/90">A PURPOSE</span>
               </h2>
@@ -427,10 +426,10 @@ export default async function About() {
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div className="text-left lg:pr-8">
-                <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+                <span className="inline-block px-4 py-1.5 text-sm font-semibold font-heading tracking-widest uppercase text-primary bg-primary/10 rounded-full mb-6">
                   OUR PARTNERS
                 </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider font-heading text-navy-dark mb-6 leading-tight">
                   GROWING<br />
                   <span className="text-primary">TOGETHER</span>
                 </h2>
@@ -472,10 +471,10 @@ export default async function About() {
         <section id="commitment" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-white/20 rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold font-heading tracking-widest uppercase text-white bg-white/20 rounded-full mb-6">
                 OUR COMMITMENT
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider font-heading text-white mb-4 leading-tight">
                 ALWAYS MOVING<br />
                 <span className="text-white/90">FORWARD</span>
               </h2>
@@ -510,10 +509,10 @@ export default async function About() {
         <section id="journey" className="scroll-mt-20 py-16 sm:py-24 bg-white">
           <div className="container">
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold font-heading tracking-widest uppercase text-primary bg-primary/10 rounded-full mb-6">
                 OUR JOURNEY
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider font-heading text-navy-dark mb-4 leading-tight">
                 FROM A SIMPLE IDEA TO A<br />
                 <span className="text-primary">GROWING INDONESIAN BRAND</span>
               </h2>
@@ -600,10 +599,10 @@ export default async function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent" />
               </div>
               <div className="text-left lg:pl-8">
-                <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+                <span className="inline-block px-4 py-1.5 text-sm font-semibold font-heading tracking-widest uppercase text-primary bg-primary/10 rounded-full mb-6">
                   LET’S GROW TOGETHER
                 </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider font-heading text-navy-dark mb-6 leading-tight">
                   LOOKING FOR A<br />
                   <span className="text-primary">LONG-TERM PARTNER?</span>
                 </h2>
@@ -663,7 +662,7 @@ export default async function About() {
           </div>
           <div className="container relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wider font-heading text-white mb-4 leading-tight">
                 CLOSING
               </h2>
               <p className="text-lg text-white/90 max-w-2xl mx-auto">
