@@ -570,7 +570,7 @@ src="/tentang-hucha/54.png"
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
               <img
-                src="/tentang-hucha/65.png"
+                src="/tentang-hucha/63.png"
                 alt="Kemitraan HUCHA"
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
               />
@@ -624,7 +624,7 @@ src="/tentang-hucha/54.png"
               <div className="mt-10 pt-8 border-t border-border space-y-2 text-sm text-muted-foreground">
                 <p className="font-bold text-navy-dark">HUCHA — Built to Protect</p>
                 <p>CV. Usaha Bintang Mulia</p>
-                <p>Website: {siteConfig.whatsappDisplay}</p>
+                <p>Website: huchaindonesia.com</p>
                 <p>Email: {siteConfig.email}</p>
                 <p>Phone / WhatsApp: {siteConfig.phone}</p>
               </div>
