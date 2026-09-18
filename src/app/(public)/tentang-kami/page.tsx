@@ -228,7 +228,7 @@ export default async function About() {
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {purposeCards.map((card, index) => (
+            {purposeCards.map((card) => (
               <article
                 key={card.title}
                 className="group relative overflow-hidden rounded-2xl bg-white border border-border shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
@@ -385,7 +385,7 @@ export default async function About() {
               <span className="text-primary">A PURPOSE</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
-              Kami percaya pengembangan produk harus dimulai dengan pertanyaan sederhana: "What problem are we solving?"
+              Kami percaya pengembangan produk harus dimulai dengan pertanyaan sederhana: &ldquo;What problem are we solving?&rdquo;
             </p>
           </div>
           <div className="relative">
@@ -572,14 +572,14 @@ export default async function About() {
                   ))}
                 </div>
                 <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto italic">
-                  "Karena melindungi kendaraan adalah fungsi dari produk kami. Namun membangun kepercayaan, menciptakan nilai, dan tumbuh bersama adalah prinsip utama berdirinya HUCHA."
+                  &ldquo;Karena melindungi kendaraan adalah fungsi dari produk kami. Namun membangun kepercayaan, menciptakan nilai, dan tumbuh bersama adalah prinsip utama berdirinya HUCHA.&rdquo;
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* LET'S GROW TOGETHER - CTA */}
+        {/* LET’S GROW TOGETHER - CTA */}
         <section id="join" className="scroll-mt-20">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
@@ -592,7 +592,7 @@ export default async function About() {
             </div>
             <div className="text-left lg:pl-8">
               <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
-                LET'S GROW TOGETHER
+                LET’S GROW TOGETHER
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
                 LOOKING FOR A<br />
@@ -649,7 +649,7 @@ export default async function About() {
         {/* CLOSING - 4 Pillars with Shield Watermark */}
         <section id="closing" className="scroll-mt-20 relative overflow-hidden">
           <div className="absolute inset-0 opacity-5">
-            <ShieldIcon className="w-full h-full text-primary mx-auto my-20" aria-hidden="true" />
+            <ShieldCheckIcon className="w-full h-full text-primary mx-auto my-20" aria-hidden="true" />
           </div>
           <div className="relative z-10 py-20">
             <div className="text-center mb-16">
@@ -662,7 +662,7 @@ export default async function About() {
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {[
-                { title: "PROTECT THE VEHICLE", icon: ShieldIcon, desc: "Fungsi utama produk kami adalah melindungi kendaraan pelanggan." },
+                { title: "PROTECT THE VEHICLE", icon:   ShieldCheckIcon, desc: "Fungsi utama produk kami adalah melindungi kendaraan pelanggan." },
                 { title: "CREATE VALUE", icon: LightbulbIcon, desc: "Memberikan nilai nyata dan berarti bagi setiap pelanggan." },
                 { title: "BUILD TRUST", icon: HandshakeIcon, desc: "Membangun kepercayaan jangka panjang dengan semua mitra." },
                 { title: "GROW TOGETHER", icon: TrendingUpIcon, desc: "Berkembang bersama mitra, pelanggan, dan tim HUCHA." },
@@ -686,7 +686,7 @@ export default async function About() {
             </div>
             <div className="text-center mt-16">
               <p className="text-2xl sm:text-3xl font-heading font-bold text-navy-dark italic tracking-wide">
-                "Protect the vehicle. • Create value for the customer. • Build trust with our partners. • Grow together."
+                &ldquo;Protect the vehicle. • Create value for the customer. • Build trust with our partners. • Grow together.&rdquo;
               </p>
               <p className="mt-4 text-lg font-bold text-primary font-heading tracking-widest">
                 HUCHA — Built to Protect.
