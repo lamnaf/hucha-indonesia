@@ -533,31 +533,31 @@ src="/tentang-hucha/54.png"
 
         {/* OUR FUTURE - Full-width Banner */}
         <section id="future" className="scroll-mt-20 relative rounded-3xl overflow-hidden">
-          <div className="relative aspect-[21/9] min-h-[400px]">
+          <div className="relative min-h-[500px] flex items-center justify-center">
             <img
               src="/tentang-hucha/64.png"
               alt="Gudang distribusi HUCHA"
-              className="w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/80 to-navy/70" />
-            <div className="absolute inset-0 flex items-center justify-center p-8">
-              <div className="text-center text-white max-w-4xl relative z-10">
-                <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary-foreground bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/20">
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/80 to-navy/70 lg:from-navy-dark/90" />
+            <div className="relative z-10 w-full py-12 px-6 sm:px-12">
+              <div className="text-center text-white max-w-4xl mx-auto">
+                <span className="inline-block px-4 py-1.5 text-xs sm:text-sm font-semibold text-primary-foreground bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/20">
                   OUR FUTURE
                 </span>
-                <h2 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight font-heading">
+                <h2 className="text-3xl sm:text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight font-heading">
                   BUILT TO GROW.<br />
                   <span className="text-primary-foreground">BUILT TO PROTECT.</span>
                 </h2>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl mx-auto mb-10 text-left">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-6 max-w-3xl mx-auto mb-10 text-left">
                   {futureGoals.map((goal) => (
-                    <div key={goal} className="flex items-center gap-3 text-sm">
-                      <div className="w-2 h-2 rounded-full bg-primary-foreground flex-shrink-0 mt-1" />
+                    <div key={goal} className="flex items-start gap-3 text-xs sm:text-sm">
+                      <div className="w-2 h-2 rounded-full bg-primary-foreground flex-shrink-0 mt-1.5" />
                       <span className="font-medium">{goal}</span>
                     </div>
                   ))}
                 </div>
-                <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto italic">
+                <p className="text-sm sm:text-lg text-primary-foreground/80 max-w-2xl mx-auto italic">
                   &ldquo;Karena melindungi kendaraan adalah fungsi dari produk kami. Namun membangun kepercayaan, menciptakan nilai, dan tumbuh bersama adalah prinsip utama berdirinya HUCHA.&rdquo;
                 </p>
               </div>
