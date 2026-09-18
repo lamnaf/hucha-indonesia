@@ -166,478 +166,502 @@ export default async function About() {
 
   return (
     <>
-      <div className="container py-16 sm:py-20 space-y-24">
+      <div className="w-full space-y-0">
         {/* ABOUT HUCHA - Zig-zag: Text Left, Image Right */}
-        <section id="about" className="scroll-mt-20">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="text-left lg:pr-8">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
-                ABOUT HUCHA
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
-                Built to Protect.<br />
-                <span className="text-primary">Made to Grow.</span>
-              </h2>
-              <div className="space-y-4 text-lg text-muted-foreground max-w-xl">
-                <p>HUCHA adalah merek perawatan otomotif Indonesia yang berfokus pada penyediaan solusi praktis untuk pemeliharaan dan perlindungan kendaraan.</p>
-                <p>Kami mengembangkan dan menyediakan produk yang dirancang untuk mendukung perawatan kendaraan sehari-hari mulai dari cooling system, brake system, lubrication, battery care, hingga kebutuhan sepeda motor dan otomotif lainnya.</p>
-                <p>Kami percaya bahwa produk otomotif yang baik harus melakukan lebih dari sekadar menjalankan fungsinya. Produk tersebut harus mampu memberikan solusi masalah, memberikan nilai nyata (real value), dan memberikan rasa percaya diri kepada pelanggan terhadap kendaraan mereka.</p>
-                <p>HUCHA terus berkembang dengan memperluas portofolio produk kami, meningkatkan layanan kepada para mitra, serta membangun hubungan jangka panjang dengan pelanggan dan pemasok di seluruh Indonesia.</p>
+        <section id="about" className="scroll-mt-20 py-16 sm:py-24 bg-white">
+          <div className="container">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="text-left lg:pr-8">
+                <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+                  ABOUT HUCHA
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
+                  Built to Protect.<br />
+                  <span className="text-primary">Made to Grow.</span>
+                </h2>
+                <div className="space-y-4 text-lg text-muted-foreground max-w-xl">
+                  <p>HUCHA adalah merek perawatan otomotif Indonesia yang berfokus pada penyediaan solusi praktis untuk pemeliharaan dan perlindungan kendaraan.</p>
+                  <p>Kami mengembangkan dan menyediakan produk yang dirancang untuk mendukung perawatan kendaraan sehari-hari mulai dari cooling system, brake system, lubrication, battery care, hingga kebutuhan sepeda motor dan otomotif lainnya.</p>
+                  <p>Kami percaya bahwa produk otomotif yang baik harus melakukan lebih dari sekadar menjalankan fungsinya. Produk tersebut harus mampu memberikan solusi masalah, memberikan nilai nyata (real value), dan memberikan rasa percaya diri kepada pelanggan terhadap kendaraan mereka.</p>
+                  <p>HUCHA terus berkembang dengan memperluas portofolio produk kami, meningkatkan layanan kepada para mitra, serta membangun hubungan jangka panjang dengan pelanggan dan pemasok di seluruh Indonesia.</p>
+                </div>
               </div>
-            </div>
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
-              <img
-                src="/tentang-hucha/48.png"
-                alt="Produk HUCHA tertata rapi di bengkel modern"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-white">
-                <p className="text-sm font-medium text-primary-foreground/80 mb-1">HUCHA Product Lineup</p>
-                <p className="text-lg font-heading tracking-wide">Complete Automotive Care Solutions</p>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted shadow-lg">
+                <img
+                  src="/tentang-hucha/48.png"
+                  alt="Produk HUCHA tertata rapi di bengkel modern"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <p className="text-sm font-medium text-primary-foreground/80 mb-1">HUCHA Product Lineup</p>
+                  <p className="text-lg font-heading tracking-wide">Complete Automotive Care Solutions</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* OUR PURPOSE - Centered Text + 3 Card Grid */}
-        <section id="purpose" className="scroll-mt-20">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
-              OUR PURPOSE
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
-              SOLVING PROBLEMS.<br />
-              CREATING VALUE.<br />
-              <span className="text-primary">BUILDING RELATIONSHIPS.</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Di HUCHA, kami percaya bahwa bisnis bukan sekadar menjual produk. Ini adalah tentang memahami apa yang dibutuhkan pelanggan, menemukan solusi praktis, dan menciptakan nilai yang bertahan lama.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {purposeCards.map((card) => (
-              <article
-                key={card.title}
-                className="group relative overflow-hidden rounded-2xl bg-white border border-border shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
-              >
-                <div className="relative aspect-[16/9] overflow-hidden">
-                  <img
-                    src={card.image}
-                    alt={card.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/70 via-transparent to-transparent" />
-                </div>
-                <div className="absolute top-4 left-4 right-4">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/90 backdrop-blur-sm text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                    <card.icon className="w-6 h-6" aria-hidden="true" />
+        <section id="purpose" className="scroll-mt-20 py-16 sm:py-24 bg-secondary">
+          <div className="container">
+            <div className="max-w-4xl mx-auto text-center mb-16">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+                OUR PURPOSE
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
+                SOLVING PROBLEMS.<br />
+                CREATING VALUE.<br />
+                <span className="text-primary">BUILDING RELATIONSHIPS.</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Di HUCHA, kami percaya bahwa bisnis bukan sekadar menjual produk. Ini adalah tentang memahami apa yang dibutuhkan pelanggan, menemukan solusi praktis, dan menciptakan nilai yang bertahan lama.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {purposeCards.map((card) => (
+                <article
+                  key={card.title}
+                  className="group relative overflow-hidden rounded-2xl bg-white border border-border shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/70 via-transparent to-transparent" />
                   </div>
-                </div>
-                <div className="p-6 space-y-3">
-                  <h3 className="text-xl font-bold text-navy-dark group-hover:text-primary transition-colors">
-                    {card.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">{card.desc}</p>
-                </div>
-              </article>
-            ))}
+                  <div className="absolute top-4 left-4 right-4">
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/90 backdrop-blur-sm text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                      <card.icon className="w-6 h-6" aria-hidden="true" />
+                    </div>
+                  </div>
+                  <div className="p-6 space-y-3">
+                    <h3 className="text-xl font-bold text-navy-dark group-hover:text-primary transition-colors">
+                      {card.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed">{card.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
         {/* OUR VISION - Zig-zag: Image Left, Text Right */}
-        <section id="vision" className="scroll-mt-20">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted order-2 lg:order-1">
-              <img
-src="/tentang-hucha/54.png"
-                alt="Peta Indonesia dengan titik distribusi HUCHA"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/60 via-transparent to-transparent" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center text-white p-8">
-                  <MapPinIcon className="w-16 h-16 mx-auto text-primary mb-4 opacity-90" />
-                  <p className="text-sm font-medium text-primary-foreground/80 mb-1">Jaringan Distribusi</p>
-                  <p className="text-2xl font-heading tracking-wide">Seluruh Indonesia</p>
+        <section id="vision" className="scroll-mt-20 py-16 sm:py-24 bg-white">
+          <div className="container">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted order-2 lg:order-1 shadow-lg">
+                <img
+                  src="/tentang-hucha/54.png"
+                  alt="Peta Indonesia dengan titik distribusi HUCHA"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white p-8">
+                    <MapPinIcon className="w-16 h-16 mx-auto text-primary mb-4 opacity-90" />
+                    <p className="text-sm font-medium text-primary-foreground/80 mb-1">Jaringan Distribusi</p>
+                    <p className="text-2xl font-heading tracking-wide">Seluruh Indonesia</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="text-left lg:pl-8 order-1 lg:order-2">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
-                OUR VISION
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
-                A TRUSTED AUTOMOTIVE CARE BRAND<br />
-                <span className="text-primary">ACROSS INDONESIA</span>
-              </h2>
-              <div className="space-y-4 text-lg text-muted-foreground max-w-xl">
-                <p>Ambisi kami sederhana: Menjadikan HUCHA sebagai merek perawatan otomotif terpercaya yang dapat ditemukan dan diandalkan oleh pelanggan serta mitra bisnis di seluruh Indonesia.</p>
-                <p>Kami membangun HUCHA langkah demi langkah dengan memperluas portofolio produk, memperkuat kemitraan, meningkatkan kapabilitas, dan terus belajar dari kebutuhan pasar.</p>
-                <p className="font-medium text-navy-dark">Tujuan kami bukan sekadar menjadi lebih besar. Tujuan kami adalah tumbuh lebih kuat, lebih terpercaya, dan memberikan nilai yang lebih berdampak bagi semua pihak yang kami layani.</p>
+              <div className="text-left lg:pl-8 order-1 lg:order-2">
+                <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+                  OUR VISION
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
+                  A TRUSTED AUTOMOTIVE CARE BRAND<br />
+                  <span className="text-primary">ACROSS INDONESIA</span>
+                </h2>
+                <div className="space-y-4 text-lg text-muted-foreground max-w-xl">
+                  <p>Ambisi kami sederhana: Menjadikan HUCHA sebagai merek perawatan otomotif terpercaya yang dapat ditemukan dan diandalkan oleh pelanggan serta mitra bisnis di seluruh Indonesia.</p>
+                  <p>Kami membangun HUCHA langkah demi langkah dengan memperluas portofolio produk, memperkuat kemitraan, meningkatkan kapabilitas, dan terus belajar dari kebutuhan pasar.</p>
+                  <p className="font-medium text-navy-dark">Tujuan kami bukan sekadar menjadi lebih besar. Tujuan kami adalah tumbuh lebih kuat, lebih terpercaya, dan memberikan nilai yang lebih berdampak bagi semua pihak yang kami layani.</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* HUCHA PROTECT - Icon Grid */}
-        <section id="values" className="scroll-mt-20">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
-              HUCHA PROTECT
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
-              THE VALUES BEHIND<br />
-              <span className="text-primary">HOW WE WORK</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Prinsip P-R-O-T-E-C-T mengarah pada satu tujuan: melindungi kendaraan, menciptakan nilai, dan membangun kepercayaan bersama mitra.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {values.map((value) => (
-              <article
-                key={`${value.letter}-${value.title}`}
-                className="group p-6 rounded-2xl bg-white border border-border shadow-sm transition-all duration-500 hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 text-center"
-              >
-                <div className="relative mb-4">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 mx-auto">
-                    <value.icon className="w-8 h-8" aria-hidden="true" />
-                  </div>
-                  <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold font-heading">
-                    {value.letter}
-                  </span>
-                </div>
-                <h3 className="text-lg font-bold text-navy-dark mb-2">{value.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{value.desc}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* WHAT WE PROVIDE - Product Card Grid */}
-        <section id="provide" className="scroll-mt-20">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
-              WHAT WE PROVIDE
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
-              AUTOMOTIVE CARE &<br />
-              <span className="text-primary">MAINTENANCE SOLUTIONS</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              HUCHA menyediakan berbagai rangkaian produk yang terus berkembang untuk perawatan kendaraan sehari-hari.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {products.map((product) => (
-              <article
-                key={product.category}
-                className="group relative overflow-hidden rounded-2xl bg-white border border-border shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
-              >
-                <div className="relative aspect-square overflow-hidden bg-muted">
-                  <img
-                    src={product.image}
-                    alt={product.category}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute top-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/90 backdrop-blur-sm text-primary">
-                      <product.icon className="w-6 h-6" aria-hidden="true" />
-                    </div>
-                  </div>
-                </div>
-                <div className="p-5 space-y-2">
-                  <h3 className="text-lg font-bold text-navy-dark group-hover:text-primary transition-colors">
-                    {product.category}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{product.desc}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-          <p className="text-center text-muted-foreground mt-8 text-sm">
-            Portofolio produk kami terus berkembang seiring mendengarkan kebutuhan pasar dan mengidentifikasi peluang baru untuk melayani pelanggan.
-          </p>
-        </section>
-
-        {/* OUR PRODUCT APPROACH - Horizontal Flow Diagram */}
-        <section id="approach" className="scroll-mt-20">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
-              OUR PRODUCT APPROACH
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
-              PRODUCTS WITH<br />
-              <span className="text-primary">A PURPOSE</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
-              Kami percaya pengembangan produk harus dimulai dengan pertanyaan sederhana: &ldquo;What problem are we solving?&rdquo;
-            </p>
-          </div>
-          <div className="relative">
-            <div className="hidden lg:block absolute top-1/2 left-0 right-0 -translate-y-1/2 h-0.5 bg-primary/20" />
-            <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-0 relative z-10">
-              <div className="text-center w-full lg:w-1/6 p-4">
-                <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary text-white mb-4 mx-auto shadow-lg">
-                  <HelpCircleIcon className="w-10 h-10" aria-hidden="true" />
-                </div>
-                <p className="text-sm font-bold text-navy-dark uppercase tracking-wider">What problem are</p>
-                <p className="text-sm font-bold text-navy-dark uppercase tracking-wider">we solving?</p>
-              </div>
-              {approachPillars.map((pillar, index) => (
-                <div
-                  key={pillar.title}
-                  className="flex flex-col items-center w-full lg:w-1/6 p-4 relative"
+        <section id="values" className="scroll-mt-20 py-16 sm:py-24 bg-secondary">
+          <div className="container">
+            <div className="text-center mb-16">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+                HUCHA PROTECT
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
+                THE VALUES BEHIND<br />
+                <span className="text-primary">HOW WE WORK</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Prinsip P-R-O-T-E-C-T mengarah pada satu tujuan: melindungi kendaraan, menciptakan nilai, dan membangun kepercayaan bersama mitra.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {values.map((value) => (
+                <article
+                  key={`${value.letter}-${value.title}`}
+                  className="group p-6 rounded-2xl bg-white border border-border shadow-sm transition-all duration-500 hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 text-center"
                 >
-                  <div className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 w-full h-0.5 bg-primary/20 z-0" />
-                  <div className="relative z-10 flex flex-col items-center">
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                      <TargetIcon className="w-7 h-7" aria-hidden="true" />
+                  <div className="relative mb-4">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 mx-auto">
+                      <value.icon className="w-8 h-8" aria-hidden="true" />
                     </div>
-                    <h3 className="text-sm font-bold text-navy-dark text-center mb-1">{pillar.title}</h3>
-                    <p className="text-xs text-muted-foreground text-center max-w-xs">{pillar.desc}</p>
+                    <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold font-heading">
+                      {value.letter}
+                    </span>
                   </div>
-                  {index < approachPillars.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 right-0 translate-x-1/2 text-primary">
-                      <ChevronRightIcon className="w-5 h-5" />
-                    </div>
-                  )}
-                </div>
+                  <h3 className="text-lg font-bold text-navy-dark mb-2">{value.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{value.desc}</p>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* OUR PARTNERS - Zig-zag: Text Left, Image Right */}
-        <section id="partners" className="scroll-mt-20">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="text-left lg:pr-8">
+        {/* WHAT WE PROVIDE - Product Card Grid */}
+        <section id="provide" className="scroll-mt-20 py-16 sm:py-24 bg-white">
+          <div className="container">
+            <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
-                OUR PARTNERS
+                WHAT WE PROVIDE
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
-                GROWING<br />
-                <span className="text-primary">TOGETHER</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
+                AUTOMOTIVE CARE &<br />
+                <span className="text-primary">MAINTENANCE SOLUTIONS</span>
               </h2>
-              <div className="space-y-4 text-lg text-muted-foreground max-w-xl mb-8">
-                <p>Pelanggan dan pemasok kami bukan sekadar nilai transaksi bisnis semata. Mereka adalah bagian penting dari pertumbuhan HUCHA.</p>
-                <p>Kami bertujuan untuk membangun kemitraan yang:</p>
-              </div>
-              <ul className="space-y-3 max-w-xl">
-                {["TRUSTED", "RELIABLE", "MUTUALLY BENEFICIAL", "LONG-TERM"].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-navy-dark">
-                    <div className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <CheckIcon className="w-4 h-4 text-primary" aria-hidden="true" />
-                    </div>
-                    <span className="font-medium">{item.toLowerCase()}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-6 text-lg text-navy-dark font-medium max-w-xl">
-                Kami percaya bahwa ketika mitra kami berkembang, HUCHA tumbuh bersama mereka.
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                HUCHA menyediakan berbagai rangkaian produk yang terus berkembang untuk perawatan kendaraan sehari-hari.
               </p>
             </div>
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
-              <img
-                src="/tentang-hucha/57.png"
-                alt="Tim HUCHA berdiskusi dengan mitra bengkel"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 text-white">
-                <p className="text-sm font-medium text-primary-foreground/80 mb-1">Building Partnerships</p>
-                <p className="text-lg font-heading tracking-wide">Trusted. Reliable. Long-term.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {products.map((product) => (
+                <article
+                  key={product.category}
+                  className="group relative overflow-hidden rounded-2xl bg-white border border-border shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
+                >
+                  <div className="relative aspect-square overflow-hidden bg-muted">
+                    <img
+                      src={product.image}
+                      alt={product.category}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute top-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 translate-y-2 group-hover:translate-y-0">
+                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/90 backdrop-blur-sm text-primary">
+                        <product.icon className="w-6 h-6" aria-hidden="true" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-5 space-y-2">
+                    <h3 className="text-lg font-bold text-navy-dark group-hover:text-primary transition-colors">
+                      {product.category}
+                    </h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{product.desc}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <p className="text-center text-muted-foreground mt-8 text-sm">
+              Portofolio produk kami terus berkembang seiring mendengarkan kebutuhan pasar dan mengidentifikasi peluang baru untuk melayani pelanggan.
+            </p>
+          </div>
+        </section>
+
+        {/* OUR PRODUCT APPROACH - Horizontal Flow Diagram */}
+        <section id="approach" className="scroll-mt-20 py-16 sm:py-24 bg-secondary">
+          <div className="container">
+            <div className="text-center mb-16">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+                OUR PRODUCT APPROACH
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
+                PRODUCTS WITH<br />
+                <span className="text-primary">A PURPOSE</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12">
+                Kami percaya pengembangan produk harus dimulai dengan pertanyaan sederhana: &ldquo;What problem are we solving?&rdquo;
+              </p>
+            </div>
+            <div className="relative">
+              <div className="hidden lg:block absolute top-1/2 left-0 right-0 -translate-y-1/2 h-0.5 bg-primary/20" />
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-0 relative z-10">
+                <div className="text-center w-full lg:w-1/6 p-4">
+                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary text-white mb-4 mx-auto shadow-lg">
+                    <HelpCircleIcon className="w-10 h-10" aria-hidden="true" />
+                  </div>
+                  <p className="text-sm font-bold text-navy-dark uppercase tracking-wider">What problem are</p>
+                  <p className="text-sm font-bold text-navy-dark uppercase tracking-wider">we solving?</p>
+                </div>
+                {approachPillars.map((pillar, index) => (
+                  <div
+                    key={pillar.title}
+                    className="flex flex-col items-center w-full lg:w-1/6 p-4 relative"
+                  >
+                    <div className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 w-full h-0.5 bg-primary/20 z-0" />
+                    <div className="relative z-10 flex flex-col items-center bg-secondary/80 backdrop-blur-sm p-2 rounded-xl">
+                      <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <TargetIcon className="w-7 h-7" aria-hidden="true" />
+                      </div>
+                      <h3 className="text-sm font-bold text-navy-dark text-center mb-1">{pillar.title}</h3>
+                      <p className="text-xs text-muted-foreground text-center max-w-xs">{pillar.desc}</p>
+                    </div>
+                    {index < approachPillars.length - 1 && (
+                      <div className="hidden lg:block absolute top-1/2 right-0 translate-x-1/2 text-primary">
+                        <ChevronRightIcon className="w-5 h-5" />
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* OUR PARTNERS - Zig-zag: Text Left, Image Right */}
+        <section id="partners" className="scroll-mt-20 py-16 sm:py-24 bg-white">
+          <div className="container">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="text-left lg:pr-8">
+                <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+                  OUR PARTNERS
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
+                  GROWING<br />
+                  <span className="text-primary">TOGETHER</span>
+                </h2>
+                <div className="space-y-4 text-lg text-muted-foreground max-w-xl mb-8">
+                  <p>Pelanggan dan pemasok kami bukan sekadar nilai transaksi bisnis semata. Mereka adalah bagian penting dari pertumbuhan HUCHA.</p>
+                  <p>Kami bertujuan untuk membangun kemitraan yang:</p>
+                </div>
+                <ul className="space-y-3 max-w-xl">
+                  {["TRUSTED", "RELIABLE", "MUTUALLY BENEFICIAL", "LONG-TERM"].map((item) => (
+                    <li key={item} className="flex items-center gap-3 text-navy-dark">
+                      <div className="w-6 h-6 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                        <CheckIcon className="w-4 h-4 text-primary" aria-hidden="true" />
+                      </div>
+                      <span className="font-medium">{item.toLowerCase()}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-6 text-lg text-navy-dark font-medium max-w-xl">
+                  Kami percaya bahwa ketika mitra kami berkembang, HUCHA tumbuh bersama mereka.
+                </p>
+              </div>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted shadow-lg">
+                <img
+                  src="/tentang-hucha/57.png"
+                  alt="Tim HUCHA berdiskusi dengan mitra bengkel"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <p className="text-sm font-medium text-primary-foreground/80 mb-1">Building Partnerships</p>
+                  <p className="text-lg font-heading tracking-wide">Trusted. Reliable. Long-term.</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* COMMITMENT - Interactive List with Icons */}
-        <section id="commitment" className="scroll-mt-20">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
-              OUR COMMITMENT
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
-              ALWAYS MOVING<br />
-              <span className="text-primary">FORWARD</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Sebagai perusahaan yang terus berkembang, kami menyadari selalu ada ruang untuk menjadi lebih baik.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {commitments.map((commitment) => (
-              <article
-                key={commitment.title}
-                className="group p-6 rounded-2xl bg-white border border-border shadow-sm transition-all duration-500 hover:shadow-lg hover:border-primary/30 hover:-translate-y-1"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 flex-shrink-0">
-                    <commitment.icon className="w-6 h-6" aria-hidden="true" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-bold text-navy-dark mb-2 group-hover:text-primary transition-colors">
-                      {commitment.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{commitment.desc}</p>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* JOURNEY - Vertical Timeline */}
-        <section id="journey" className="scroll-mt-20">
-          <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
-              OUR JOURNEY
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
-              FROM A SIMPLE IDEA TO A<br />
-              <span className="text-primary">GROWING INDONESIAN BRAND</span>
-            </h2>
-          </div>
-          <div className="max-w-3xl mx-auto relative">
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-0.5 bg-primary/20" />
-            <div className="space-y-12 relative">
-              {timeline.map((item, index) => (
-                <div
-                  key={item.year}
-                  className="relative flex flex-col lg:flex-row items-start lg:items-center gap-6"
+        <section id="commitment" className="scroll-mt-20 py-16 sm:py-24 bg-secondary">
+          <div className="container">
+            <div className="text-center mb-16">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+                OUR COMMITMENT
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
+                ALWAYS MOVING<br />
+                <span className="text-primary">FORWARD</span>
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Sebagai perusahaan yang terus berkembang, kami menyadari selalu ada ruang untuk menjadi lebih baik.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {commitments.map((commitment) => (
+                <article
+                  key={commitment.title}
+                  className="group p-6 rounded-2xl bg-white border border-border shadow-sm transition-all duration-500 hover:shadow-lg hover:border-primary/30 hover:-translate-y-1"
                 >
-                  <div className="relative z-10 w-full lg:w-1/3 text-right lg:pr-8 order-2 lg:order-1">
-                    <span className="inline-block px-4 py-1.5 text-sm font-bold font-heading text-primary bg-primary/10 rounded-full mb-3">
-                      {item.year}
-                    </span>
-                    <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
-                  </div>
-                  <div className="relative z-10 flex-shrink-0 w-6 h-6 rounded-full bg-primary border-4 border-white shadow-lg lg:order-2" />
-                  <div className="relative z-10 w-full lg:w-1/3 text-left lg:pl-8 order-1 lg:order-3">
-                    <div className="aspect-video rounded-xl bg-muted overflow-hidden shadow-lg">
-                      <img
-                        src={`/tentang-hucha/${index === 1 ? 65 : index === 3 ? 50 : 58 + index}.png`}
-                        alt={`HUCHA Journey - ${item.year}`}
-                        className="w-full h-full object-cover"
-                      />
+                  <div className="flex items-start gap-4">
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 flex-shrink-0">
+                      <commitment.icon className="w-6 h-6" aria-hidden="true" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-navy-dark mb-2 group-hover:text-primary transition-colors">
+                        {commitment.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{commitment.desc}</p>
                     </div>
                   </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* OUR FUTURE - Full-width Banner */}
-        <section id="future" className="scroll-mt-20 relative rounded-3xl overflow-hidden">
-          <div className="relative min-h-[500px] flex items-center justify-center">
-            <img
-              src="/tentang-hucha/64.png"
-              alt="Gudang distribusi HUCHA"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/80 to-navy/70 lg:from-navy-dark/90" />
-            <div className="relative z-10 w-full py-12 px-6 sm:px-12">
-              <div className="text-center text-white max-w-4xl mx-auto">
-                <span className="inline-block px-4 py-1.5 text-xs sm:text-sm font-semibold text-primary-foreground bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/20">
-                  OUR FUTURE
-                </span>
-                <h2 className="text-3xl sm:text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight font-heading">
-                  BUILT TO GROW.<br />
-                  <span className="text-primary-foreground">BUILT TO PROTECT.</span>
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-6 max-w-3xl mx-auto mb-10 text-left">
-                  {futureGoals.map((goal) => (
-                    <div key={goal} className="flex items-start gap-3 text-xs sm:text-sm">
-                      <div className="w-2 h-2 rounded-full bg-primary-foreground flex-shrink-0 mt-1.5" />
-                      <span className="font-medium">{goal}</span>
+        {/* JOURNEY - Vertical Timeline */}
+        <section id="journey" className="scroll-mt-20 py-16 sm:py-24 bg-white">
+          <div className="container">
+            <div className="text-center mb-16">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+                OUR JOURNEY
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
+                FROM A SIMPLE IDEA TO A<br />
+                <span className="text-primary">GROWING INDONESIAN BRAND</span>
+              </h2>
+            </div>
+            <div className="max-w-3xl mx-auto relative">
+              <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-0.5 bg-primary/20" />
+              <div className="space-y-12 relative">
+                {timeline.map((item, index) => (
+                  <div
+                    key={item.year}
+                    className="relative flex flex-col lg:flex-row items-start lg:items-center gap-6"
+                  >
+                    <div className="relative z-10 w-full lg:w-1/3 text-right lg:pr-8 order-2 lg:order-1">
+                      <span className="inline-block px-4 py-1.5 text-sm font-bold font-heading text-primary bg-primary/10 rounded-full mb-3">
+                        {item.year}
+                      </span>
+                      <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
                     </div>
-                  ))}
+                    <div className="relative z-10 flex-shrink-0 w-6 h-6 rounded-full bg-primary border-4 border-white shadow-lg lg:order-2" />
+                    <div className="relative z-10 w-full lg:w-1/3 text-left lg:pl-8 order-1 lg:order-3">
+                      <div className="aspect-video rounded-xl bg-muted overflow-hidden shadow-lg">
+                        <img
+                          src={`/tentang-hucha/${index === 1 ? 65 : index === 3 ? 50 : 58 + index}.png`}
+                          alt={`HUCHA Journey - ${item.year}`}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* OUR FUTURE - Full-width Banner */}
+        <section id="future" className="scroll-mt-20 py-16 sm:py-24 bg-secondary">
+          <div className="container">
+            <div className="relative rounded-3xl overflow-hidden shadow-xl">
+              <div className="relative min-h-[500px] flex items-center justify-center">
+                <img
+                  src="/tentang-hucha/64.png"
+                  alt="Gudang distribusi HUCHA"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/80 to-navy/70 lg:from-navy-dark/90" />
+                <div className="relative z-10 w-full py-12 px-6 sm:px-12">
+                  <div className="text-center text-white max-w-4xl mx-auto">
+                    <span className="inline-block px-4 py-1.5 text-xs sm:text-sm font-semibold text-primary-foreground bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/20">
+                      OUR FUTURE
+                    </span>
+                    <h2 className="text-3xl sm:text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight font-heading">
+                      BUILT TO GROW.<br />
+                      <span className="text-primary-foreground">BUILT TO PROTECT.</span>
+                    </h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-6 max-w-3xl mx-auto mb-10 text-left">
+                      {futureGoals.map((goal) => (
+                        <div key={goal} className="flex items-start gap-3 text-xs sm:text-sm">
+                          <div className="w-2 h-2 rounded-full bg-primary-foreground flex-shrink-0 mt-1.5" />
+                          <span className="font-medium">{goal}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-sm sm:text-lg text-primary-foreground/80 max-w-2xl mx-auto italic">
+                      &ldquo;Karena melindungi kendaraan adalah fungsi dari produk kami. Namun membangun kepercayaan, menciptakan nilai, dan tumbuh bersama adalah prinsip utama berdirinya HUCHA.&rdquo;
+                    </p>
+                  </div>
                 </div>
-                <p className="text-sm sm:text-lg text-primary-foreground/80 max-w-2xl mx-auto italic">
-                  &ldquo;Karena melindungi kendaraan adalah fungsi dari produk kami. Namun membangun kepercayaan, menciptakan nilai, dan tumbuh bersama adalah prinsip utama berdirinya HUCHA.&rdquo;
-                </p>
               </div>
             </div>
           </div>
         </section>
 
         {/* LET’S GROW TOGETHER - CTA */}
-        <section id="join" className="scroll-mt-20">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted">
-              <img
-                src="/tentang-hucha/55.png"
-                alt="Kemitraan HUCHA"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent" />
-            </div>
-            <div className="text-left lg:pl-8">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
-                LET’S GROW TOGETHER
-              </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
-                LOOKING FOR A<br />
-                <span className="text-primary">LONG-TERM PARTNER?</span>
-              </h2>
-              <div className="space-y-4 text-lg text-muted-foreground max-w-xl mb-8">
-                <p>HUCHA menyambut terbuka para distributor, retailer, pemilik bengkel, mitra bisnis, dan supplier yang memiliki komitmen sama untuk membangun nilai jangka panjang.</p>
-                <p>Jika Anda mencari merek otomotif yang solid untuk berkembang bersama, kami sangat senang untuk memulai pembicaraan.</p>
+        <section id="join" className="scroll-mt-20 py-16 sm:py-24 bg-white">
+          <div className="container">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted shadow-lg">
+                <img
+                  src="/tentang-hucha/55.png"
+                  alt="Kemitraan HUCHA"
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent" />
               </div>
-              <div className="space-y-4">
-                <a
-                  href={siteConfig.social.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-navy-dark transition-colors shadow-lg hover:shadow-xl"
-                >
-                  <MessageCircleIcon className="w-5 h-5" aria-hidden="true" />
-                  Hubungi Kami via WhatsApp
-                  <ArrowRightIcon className="w-5 h-5" aria-hidden="true" />
-                </a>
-                <div className="flex items-center gap-6 text-sm text-muted-foreground">
-                  <span>Follow us:</span>
-                  <a
-                    href={siteConfig.social.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 hover:text-primary transition-colors"
-                  >
-                    <CameraIcon className="w-5 h-5" aria-hidden="true" />
-                    Instagram
-                  </a>
-                  <a
-                    href={siteConfig.social.tiktok}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 hover:text-primary transition-colors"
-                  >
-                    <Music2Icon className="w-5 h-5" aria-hidden="true" />
-                    TikTok
-                  </a>
+              <div className="text-left lg:pl-8">
+                <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+                  LET’S GROW TOGETHER
+                </span>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-6 leading-tight">
+                  LOOKING FOR A<br />
+                  <span className="text-primary">LONG-TERM PARTNER?</span>
+                </h2>
+                <div className="space-y-4 text-lg text-muted-foreground max-w-xl mb-8">
+                  <p>HUCHA menyambut terbuka para distributor, retailer, pemilik bengkel, mitra bisnis, dan supplier yang memiliki komitmen sama untuk membangun nilai jangka panjang.</p>
+                  <p>Jika Anda mencari merek otomotif yang solid untuk berkembang bersama, kami sangat senang untuk memulai pembicaraan.</p>
                 </div>
-              </div>
-              <div className="mt-10 pt-8 border-t border-border space-y-2 text-sm text-muted-foreground">
-                <p className="font-bold text-navy-dark">HUCHA — Built to Protect</p>
-                <p>CV. Usaha Bintang Mulia</p>
-                <p>Website: huchaindonesia.com</p>
-                <p>Email: {siteConfig.email}</p>
-                <p>Phone / WhatsApp: {siteConfig.phone}</p>
+                <div className="space-y-4">
+                  <a
+                    href={siteConfig.social.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-navy-dark transition-colors shadow-lg hover:shadow-xl"
+                  >
+                    <MessageCircleIcon className="w-5 h-5" aria-hidden="true" />
+                    Hubungi Kami via WhatsApp
+                    <ArrowRightIcon className="w-5 h-5" aria-hidden="true" />
+                  </a>
+                  <div className="flex items-center gap-6 text-sm text-muted-foreground">
+                    <span>Follow us:</span>
+                    <a
+                      href={siteConfig.social.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 hover:text-primary transition-colors"
+                    >
+                      <CameraIcon className="w-5 h-5" aria-hidden="true" />
+                      Instagram
+                    </a>
+                    <a
+                      href={siteConfig.social.tiktok}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 hover:text-primary transition-colors"
+                    >
+                      <Music2Icon className="w-5 h-5" aria-hidden="true" />
+                      TikTok
+                    </a>
+                  </div>
+                </div>
+                <div className="mt-10 pt-8 border-t border-border space-y-2 text-sm text-muted-foreground">
+                  <p className="font-bold text-navy-dark">HUCHA — Built to Protect</p>
+                  <p>CV. Usaha Bintang Mulia</p>
+                  <p>Website: huchaindonesia.com</p>
+                  <p>Email: {siteConfig.email}</p>
+                  <p>Phone / WhatsApp: {siteConfig.phone}</p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* CLOSING - 4 Pillars with Shield Watermark */}
-        <section id="closing" className="scroll-mt-20 relative overflow-hidden">
+        <section id="closing" className="scroll-mt-20 py-16 sm:py-24 bg-secondary relative overflow-hidden">
           <div className="absolute inset-0 opacity-5">
             <ShieldCheckIcon className="w-full h-full text-primary mx-auto my-20" aria-hidden="true" />
           </div>
-          <div className="relative z-10 py-20">
+          <div className="container relative z-10">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
                 CLOSING
@@ -648,7 +672,7 @@ src="/tentang-hucha/54.png"
             </div>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
               {[
-                { title: "PROTECT THE VEHICLE", icon:   ShieldCheckIcon, desc: "Fungsi utama produk kami adalah melindungi kendaraan pelanggan." },
+                { title: "PROTECT THE VEHICLE", icon: ShieldCheckIcon, desc: "Fungsi utama produk kami adalah melindungi kendaraan pelanggan." },
                 { title: "CREATE VALUE", icon: LightbulbIcon, desc: "Memberikan nilai nyata dan berarti bagi setiap pelanggan." },
                 { title: "BUILD TRUST", icon: HandshakeIcon, desc: "Membangun kepercayaan jangka panjang dengan semua mitra." },
                 { title: "GROW TOGETHER", icon: TrendingUpIcon, desc: "Berkembang bersama mitra, pelanggan, dan tim HUCHA." },
