@@ -203,7 +203,7 @@ export default async function About() {
         </section>
 
         {/* OUR PURPOSE - Centered Text + 3 Card Grid */}
-        <section id="purpose" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #e8f0ff 0%, #f0f8ff 100%)' }}>
+        <section id="purpose" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #c8ddff 0%, #d0e4ff 100%)' }}>
           <div className="container">
             <div className="max-w-4xl mx-auto text-center mb-16">
               <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
@@ -287,7 +287,7 @@ export default async function About() {
         </section>
 
         {/* HUCHA PROTECT - Icon Grid */}
-        <section id="values" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #e8f0ff 0%, #f0f8ff 100%)' }}>
+        <section id="values" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #c8ddff 0%, #d0e4ff 100%)' }}>
           <div className="container">
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
@@ -373,7 +373,7 @@ export default async function About() {
         </section>
 
         {/* OUR PRODUCT APPROACH - Horizontal Flow Diagram */}
-        <section id="approach" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #e8f0ff 0%, #f0f8ff 100%)' }}>
+        <section id="approach" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #c8ddff 0%, #d0e4ff 100%)' }}>
           <div className="container">
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
@@ -469,7 +469,7 @@ export default async function About() {
         </section>
 
         {/* COMMITMENT - Interactive List with Icons */}
-        <section id="commitment" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #e8f0ff 0%, #f0f8ff 100%)' }}>
+        <section id="commitment" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #c8ddff 0%, #d0e4ff 100%)' }}>
           <div className="container">
             <div className="text-center mb-16">
               <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
@@ -550,7 +550,7 @@ export default async function About() {
         </section>
 
         {/* OUR FUTURE - Full-width Banner */}
-        <section id="future" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #e8f0ff 0%, #f0f8ff 100%)' }}>
+        <section id="future" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(180deg, #c8ddff 0%, #d0e4ff 100%)' }}>
           <div className="container">
             <div className="relative rounded-3xl overflow-hidden shadow-xl">
               <div className="relative min-h-[500px] flex items-center justify-center">
@@ -657,7 +657,7 @@ export default async function About() {
         </section>
 
         {/* CLOSING - 4 Pillars with Shield Watermark */}
-        <section id="closing" className="scroll-mt-20 py-16 sm:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #e8f0ff 0%, #f0f8ff 100%)' }}>
+        <section id="closing" className="scroll-mt-20 py-16 sm:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(180deg, #c8ddff 0%, #d0e4ff 100%)' }}>
           <div className="absolute inset-0 opacity-5">
             <ShieldCheckIcon className="w-full h-full text-primary mx-auto my-20" aria-hidden="true" />
           </div>
