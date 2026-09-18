@@ -206,15 +206,15 @@ export default async function About() {
         <section id="purpose" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="max-w-4xl mx-auto text-center mb-16">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-primary/30 rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-white/20 rounded-full mb-6">
                 OUR PURPOSE
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-tight">
                 SOLVING PROBLEMS.<br />
                 CREATING VALUE.<br />
-                <span className="text-primary-foreground">BUILDING RELATIONSHIPS.</span>
+                <span className="text-white/90">BUILDING RELATIONSHIPS.</span>
               </h2>
-              <p className="text-lg text-white/80 max-w-2xl mx-auto">
+              <p className="text-lg text-white/90 max-w-2xl mx-auto">
                 Di HUCHA, kami percaya bahwa bisnis bukan sekadar menjual produk. Ini adalah tentang memahami apa yang dibutuhkan pelanggan, menemukan solusi praktis, dan menciptakan nilai yang bertahan lama.
               </p>
             </div>
@@ -290,14 +290,14 @@ export default async function About() {
         <section id="values" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-primary/30 rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-white/20 rounded-full mb-6">
                 HUCHA PROTECT
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
                 THE VALUES BEHIND<br />
-                <span className="text-primary-foreground">HOW WE WORK</span>
+                <span className="text-white/90">HOW WE WORK</span>
               </h2>
-              <p className="text-lg text-white/80 max-w-2xl mx-auto">
+              <p className="text-lg text-white/90 max-w-2xl mx-auto">
                 Prinsip P-R-O-T-E-C-T mengarah pada satu tujuan: melindungi kendaraan, menciptakan nilai, dan membangun kepercayaan bersama mitra.
               </p>
             </div>
@@ -376,14 +376,14 @@ export default async function About() {
         <section id="approach" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-primary/30 rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-white/20 rounded-full mb-6">
                 OUR PRODUCT APPROACH
               </span>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
                 PRODUCTS WITH<br />
-                <span className="text-primary-foreground">A PURPOSE</span>
+                <span className="text-white/90">A PURPOSE</span>
               </h2>
-              <p className="text-lg text-white/80 max-w-2xl mx-auto mb-12">
+              <p className="text-lg text-white/90 max-w-2xl mx-auto mb-12">
                 Kami percaya pengembangan produk harus dimulai dengan pertanyaan sederhana: &ldquo;What problem are we solving?&rdquo;
               </p>
             </div>
@@ -472,14 +472,14 @@ export default async function About() {
         <section id="commitment" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="text-center mb-16">
-              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-6">
+              <span className="inline-block px-4 py-1.5 text-sm font-semibold text-white bg-white/20 rounded-full mb-6">
                 OUR COMMITMENT
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
                 ALWAYS MOVING<br />
-                <span className="text-primary">FORWARD</span>
+                <span className="text-white/90">FORWARD</span>
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-white/90 max-w-2xl mx-auto">
                 Sebagai perusahaan yang terus berkembang, kami menyadari selalu ada ruang untuk menjadi lebih baik.
               </p>
             </div>
@@ -562,22 +562,22 @@ export default async function About() {
                 <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/80 to-navy/70 lg:from-navy-dark/90" />
                 <div className="relative z-10 w-full py-12 px-6 sm:px-12">
                   <div className="text-center text-white max-w-4xl mx-auto">
-                    <span className="inline-block px-4 py-1.5 text-xs sm:text-sm font-semibold text-primary-foreground bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/20">
+                    <span className="inline-block px-4 py-1.5 text-xs sm:text-sm font-semibold text-white bg-white/20 backdrop-blur-sm rounded-full mb-6 border border-white/20">
                       OUR FUTURE
                     </span>
                     <h2 className="text-3xl sm:text-5xl lg:text-7xl font-bold tracking-tight mb-8 leading-tight font-heading">
                       BUILT TO GROW.<br />
-                      <span className="text-primary-foreground">BUILT TO PROTECT.</span>
+                      <span className="text-white/90">BUILT TO PROTECT.</span>
                     </h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-4 gap-x-6 max-w-3xl mx-auto mb-10 text-left">
                       {futureGoals.map((goal) => (
                         <div key={goal} className="flex items-start gap-3 text-xs sm:text-sm">
-                          <div className="w-2 h-2 rounded-full bg-primary-foreground flex-shrink-0 mt-1.5" />
-                          <span className="font-medium">{goal}</span>
+                          <div className="w-2 h-2 rounded-full bg-white/20 flex-shrink-0 mt-1.5" />
+                          <span className="font-medium text-white/90">{goal}</span>
                         </div>
                       ))}
                     </div>
-                    <p className="text-sm sm:text-lg text-primary-foreground/80 max-w-2xl mx-auto italic">
+                    <p className="text-sm sm:text-lg text-white/90 max-w-2xl mx-auto italic">
                       &ldquo;Karena melindungi kendaraan adalah fungsi dari produk kami. Namun membangun kepercayaan, menciptakan nilai, dan tumbuh bersama adalah prinsip utama berdirinya HUCHA.&rdquo;
                     </p>
                   </div>
@@ -659,14 +659,14 @@ export default async function About() {
         {/* CLOSING - 4 Pillars with Shield Watermark */}
         <section id="closing" className="scroll-mt-20 py-16 sm:py-24 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="absolute inset-0 opacity-5">
-            <ShieldCheckIcon className="w-full h-full text-primary mx-auto my-20" aria-hidden="true" />
+            <ShieldCheckIcon className="w-full h-full text-white mx-auto my-20" aria-hidden="true" />
           </div>
           <div className="container relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy-dark mb-4 leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4 leading-tight">
                 CLOSING
               </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-white/90 max-w-2xl mx-auto">
                 Prinsip dasar yang menggerakkan setiap langkah HUCHA
               </p>
             </div>
@@ -695,10 +695,10 @@ export default async function About() {
               ))}
             </div>
             <div className="text-center mt-16">
-              <p className="text-2xl sm:text-3xl font-heading font-bold text-navy-dark italic tracking-wide">
+              <p className="text-2xl sm:text-3xl font-heading font-bold text-white/90 italic tracking-wide">
                 &ldquo;Protect the vehicle. • Create value for the customer. • Build trust with our partners. • Grow together.&rdquo;
               </p>
-              <p className="mt-4 text-lg font-bold text-primary font-heading tracking-widest">
+              <p className="mt-4 text-lg font-bold text-white font-heading tracking-widest">
                 HUCHA — Built to Protect.
               </p>
             </div>
