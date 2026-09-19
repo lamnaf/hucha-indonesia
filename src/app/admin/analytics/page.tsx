@@ -10,6 +10,7 @@ import {
 
 import { requireAdmin } from "@/domain/auth/guards";
 import { AnalyticsRepository } from "@/domain/analytics/analytics.repository";
+import { AnalyticsAggregationService } from "@/domain/analytics/analytics-aggregation.service";
 import { LeadRepository } from "@/domain/leads/lead.repository";
 import type { LeadType } from "@/infrastructure/database/generated/client";
 import { AnalyticsLineChart } from "@/components/admin/analytics-line-chart";
@@ -19,6 +20,7 @@ import { Badge } from "@/components/ui/badge";
 import { EmptyState } from "@/components/empty-state";
 import { leadTypeLabel } from "@/lib/admin";
 import { parseTopArticles } from "@/lib/analytics";
+import { GenerateSnapshotButton } from "@/components/admin/generate-snapshot-button";
 
 export const metadata: Metadata = {
   title: "Analytics",
@@ -72,6 +74,19 @@ export default async function AnalyticsPage({
     new AnalyticsRepository().listBetween(from, to),
     new LeadRepository().countByType(),
   ]);
+
+  if (snapshots.length === 0) {
+    const agg = new AnalyticsAggregationService();
+    const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000);
+    yesterday.setUTCHours(0, 0, 0, 0);
+    for (let i = 0; i < range; i++) {
+      const day = new Date(yesterday);
+      day.setUTCDate(yesterday.getUTCDate() - i);
+      await agg.aggregateDay(day);
+    }
+    const refreshed = await new AnalyticsRepository().listBetween(from, to);
+    snapshots.push(...refreshed);
+  }
 
   const totalLeads = LEAD_TYPES.reduce(
     (sum, type) => sum + leadCounts[type],
@@ -144,6 +159,7 @@ export default async function AnalyticsPage({
           >
             <Link href="/admin/analytics?range=30">30 hari</Link>
           </Button>
+          <GenerateSnapshotButton />
         </div>
       </div>
 
