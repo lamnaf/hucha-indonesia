@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/json-ld";
 import { getSiteConfig } from "@/lib/public/site";
 import { siteUrl } from "@/lib/seo";
 import { AnalyticsScripts } from "@/components/analytics-scripts";
+import { AnalyticsConsent } from "@/components/analytics-consent";
 
 export default async function PublicLayout({
   children,
@@ -45,6 +46,7 @@ export default async function PublicLayout({
         googleAnalyticsId={siteConfig.analytics.googleAnalyticsId}
         googleTagManagerId={siteConfig.analytics.googleTagManagerId}
       />
+      <AnalyticsConsent />
     </>
   );
 }
