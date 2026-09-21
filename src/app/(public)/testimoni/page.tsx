@@ -13,8 +13,6 @@ export const metadata = pageMetadata({
 });
 
 export default async function Testimonials() {
-  const testimonials = await getPublicTestimonials();
-
   return (
     <>
       <Hero

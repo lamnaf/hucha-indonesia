@@ -15,6 +15,7 @@ import { Hero } from "@/components/hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
+import { PartnerSlider } from "@/components/partner-slider";
 import { DistributorForm } from "@/components/forms/distributor-form";
 
 export const metadata = pageMetadata({
