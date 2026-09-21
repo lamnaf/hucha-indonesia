@@ -41,6 +41,7 @@ export const primaryNav: NavLink[] = [
   { label: "Kerjasama", href: "/kemitraan", children: [
     { label: "Distributor", href: "/kemitraan" },
     { label: "Supplier", href: "/supplier" },
+    { label: "OEM / Services", href: "/oem" },
   ]},
   { label: "Karir", href: "/karir" },
   { label: "Contact Us", href: "/kontak" },
