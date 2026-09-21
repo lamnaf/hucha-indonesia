@@ -128,10 +128,9 @@ export default async function ArticleDetail({ params }: ArticleDetailProps) {
       <section className="py-16 sm:py-20">
         <div className="container">
               <SectionHeading
-                title="Artikel Lainnya"
-            title="Baca Juga"
-            link={{ label: "Semua artikel", href: "/blog" }}
-          />
+                title="Baca Juga"
+                link={{ label: "Semua artikel", href: "/blog" }}
+              />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((item) => (
               <ArticleCard key={item.slug} article={item} />

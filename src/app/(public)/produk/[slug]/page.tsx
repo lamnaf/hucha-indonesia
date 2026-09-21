@@ -147,6 +147,7 @@ export default async function ProductDetail({ params }: ProductDetailProps) {
 
       <section className="bg-muted/40 py-16 sm:py-20">
         <div className="container">
+          <SectionHeading
             title={`Produk ${categoryName} Lainnya`}
             link={{
               label: "Lihat semua produk",

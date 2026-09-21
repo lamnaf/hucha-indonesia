@@ -42,13 +42,22 @@ function unwrapSetting(value: unknown): Record<string, string> | null {
  * the public site never renders empty contact fields.
  */
 export async function getSiteConfig(): Promise<PublicSiteConfig> {
-  const settings = new SettingRepository();
-  const [companyRaw, socialRaw, mediaRaw, analyticsRaw] = await Promise.all([
-    settings.get("company"),
-    settings.get("social"),
-    settings.get("media"),
-    settings.get("analytics"),
-  ]);
+  let companyRaw: unknown = null;
+  let socialRaw: unknown = null;
+  let mediaRaw: unknown = null;
+  let analyticsRaw: unknown = null;
+
+  try {
+    const settings = new SettingRepository();
+    [companyRaw, socialRaw, mediaRaw, analyticsRaw] = await Promise.all([
+      settings.get("company"),
+      settings.get("social"),
+      settings.get("media"),
+      settings.get("analytics"),
+    ]);
+  } catch {
+    // DB unreachable (e.g. during build on Vercel) — use defaults.
+  }
 
   const company = unwrapSetting(companyRaw);
   const social = unwrapSetting(socialRaw);

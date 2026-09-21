@@ -171,10 +171,9 @@ export default async function JobDetail({ params }: JobDetailProps) {
       <section className="py-16 sm:py-20">
         <div className="container">
               <SectionHeading
-                title="Lowongan Lainnya"
-            title="Posisi Menarik Lainnya"
-            link={{ label: "Semua lowongan", href: "/karir" }}
-          />
+                title="Posisi Menarik Lainnya"
+                link={{ label: "Semua lowongan", href: "/karir" }}
+              />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {jobs
               .filter((item) => item.slug !== job.slug)
