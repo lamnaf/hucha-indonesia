@@ -8,7 +8,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-montserrat), sans-serif;
-  --font-heading: var(--font-anton), sans-serif;
+  --font-heading: var(--font-montserrat), sans-serif;
   --font-dynamo: var(--font-dynamo), sans-serif;
   --font-mono: var(--font-geist-mono);
   --color-sidebar-ring: var(--sidebar-ring);
@@ -149,6 +149,6 @@
     @apply font-sans;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading uppercase tracking-wide;
+    @apply font-heading uppercase tracking-wide font-bold;
   }
 }

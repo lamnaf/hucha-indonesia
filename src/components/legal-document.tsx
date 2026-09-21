@@ -18,15 +18,15 @@ function LegalDocument({ updatedAt, sections }: LegalDocumentProps) {
           <CardContent className="space-y-8 py-8">
             {sections.map((section) => (
               <div key={section.heading} className="space-y-3">
-                <h2 className="text-xl font-bold tracking-tight">
+                <h2 className="text-2xl font-bold tracking-tight font-heading">
                   {section.heading}
                 </h2>
                 <div className="space-y-2">
                   {section.paragraphs.map((paragraph) => (
-                    <p
-                      key={paragraph}
-                      className="text-muted-foreground text-pretty text-sm leading-relaxed"
-                    >
+<p
+                        key={paragraph}
+                        className="text-muted-foreground text-pretty text-base leading-relaxed"
+                      >
                       {paragraph}
                     </p>
                   ))}

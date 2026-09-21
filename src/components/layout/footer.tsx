@@ -41,20 +41,20 @@ function Footer({
         <div className="space-y-3 lg:col-span-1">
           <div>{brand}</div>
           {description ? (
-            <p className="text-muted-foreground max-w-xs text-sm">
+            <p className="text-muted-foreground max-w-xs text-base">
               {description}
             </p>
           ) : null}
         </div>
         {columns.map((column) => (
           <div key={column.title} className="space-y-3">
-            <h3 className="text-sm font-semibold">{column.title}</h3>
+            <h3 className="text-base font-semibold">{column.title}</h3>
             <ul className="space-y-2">
               {column.links.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground hover:text-foreground text-sm transition-colors"
+                    className="text-muted-foreground hover:text-foreground text-base transition-colors"
                   >
                     {link.label}
                   </Link>

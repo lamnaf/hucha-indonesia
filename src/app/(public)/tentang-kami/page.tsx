@@ -4,8 +4,6 @@ import {
   HandshakeIcon,
   ShieldCheckIcon,
   TrendingUpIcon,
-  LockIcon,
-  MedalIcon,
   LightbulbIcon,
   UsersIcon,
   WrenchIcon,
@@ -39,43 +37,36 @@ const values = [
     letter: "P",
     title: "PARTNERSHIP",
     desc: "Pertumbuhan berkelanjutan dibangun bersama. Kami mengembangkan hubungan dengan pelanggan, pemasok, dan mitra berbasis kepercayaan, rasa hormat, manfaat bersama, dan komitmen jangka panjang.",
-    icon: HandshakeIcon,
   },
   {
     letter: "R",
     title: "RESPONSIBILITY",
     desc: "Kami bertanggung jawab penuh atas pekerjaan, keputusan, dan komitmen. Setiap anggota tim HUCHA mendorong kemajuan perusahaan dengan kontribusi terbaik.",
-    icon: ShieldCheckIcon,
   },
   {
     letter: "O",
     title: "OPPORTUNITY",
     desc: "Kami terus mencari peluang untuk perbaikan, belajar, berinovasi, dan berkembang. Tantangan adalah kesempatan bagi kami untuk menjadi lebih baik.",
-    icon: TrendingUpIcon,
   },
   {
     letter: "T",
     title: "TRUST",
     desc: "Kepercayaan adalah fondasi setiap hubungan kami. Kami menjunjung tinggi kejujuran, konsistensi, transparansi, dan komitmen yang tepat janji.",
-    icon: LockIcon,
   },
   {
     letter: "E",
     title: "EXCELLENCE",
     desc: "Kami terus meningkatkan kualitas produk, layanan, sistem, dan cara kerja. Kami mungkin belum sempurna, tetapi selalu berusaha memberikan yang terbaik.",
-    icon: MedalIcon,
   },
   {
     letter: "C",
     title: "CUSTOMER SOLUTIONS",
     desc: "Kami tidak sekadar menjual produk. Kami memahami permasalahan dan memberikan solusi praktis yang memberikan nilai nyata bagi pelanggan.",
-    icon: LightbulbIcon,
   },
   {
     letter: "T",
     title: "TOGETHER",
     desc: "HUCHA berkembang melalui kerja sama tim. Kami saling menghormati, mendukung, dan percaya keberhasilan adalah tanggung jawab bersama.",
-    icon: UsersIcon,
   },
 ];
 
@@ -285,7 +276,7 @@ export default async function About() {
           </div>
         </section>
 
-        {/* HUCHA PROTECT - Icon Grid */}
+        {/* HUCHA PROTECT - Minimal Letter Grid */}
         <section id="values" className="scroll-mt-20 py-16 sm:py-24" style={{ background: 'linear-gradient(135deg, #001a6d 0%, #0026AD 50%, #1a3dc9 100%)' }}>
           <div className="container">
             <div className="text-center mb-16">
@@ -300,23 +291,19 @@ export default async function About() {
                 Prinsip P-R-O-T-E-C-T mengarah pada satu tujuan: melindungi kendaraan, menciptakan nilai, dan membangun kepercayaan bersama mitra.
               </p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12 max-w-6xl mx-auto">
               {values.map((value) => (
-                <article
-                  key={`${value.letter}-${value.title}`}
-                  className="group p-6 rounded-2xl bg-white border border-border shadow-sm transition-all duration-500 hover:shadow-lg hover:border-primary/30 hover:-translate-y-1 text-center"
-                >
-                  <div className="relative mb-4">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500 mx-auto">
-                      <value.icon className="w-8 h-8" aria-hidden="true" />
-                    </div>
-                    <span className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-primary/10 text-primary text-xs font-bold font-heading">
-                      {value.letter}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-bold text-navy-dark mb-2">{value.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{value.desc}</p>
-                </article>
+                <div key={`${value.letter}-${value.title}`} className="text-left">
+                  <span className="block text-7xl sm:text-8xl lg:text-9xl font-bold text-white/20 font-heading leading-none select-none">
+                    {value.letter}
+                  </span>
+                  <h3 className="text-base sm:text-lg font-bold text-white mt-3 mb-2 uppercase tracking-wider">
+                    {value.title}
+                  </h3>
+                  <p className="text-base text-white/80 leading-relaxed">
+                    {value.desc}
+                  </p>
+                </div>
               ))}
             </div>
           </div>
@@ -393,8 +380,8 @@ export default async function About() {
                   <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-primary text-white mb-4 mx-auto shadow-lg">
                     <HelpCircleIcon className="w-10 h-10" aria-hidden="true" />
                   </div>
-                  <p className="text-sm font-bold text-white uppercase tracking-wider">What problem are</p>
-                  <p className="text-sm font-bold text-white uppercase tracking-wider">we solving?</p>
+                  <p className="text-lg font-bold text-white uppercase tracking-wider">What problem are</p>
+                  <p className="text-lg font-bold text-white uppercase tracking-wider">we solving?</p>
                 </div>
                 {approachPillars.map((pillar, index) => (
                   <div
@@ -406,8 +393,8 @@ export default async function About() {
                       <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-white/20 text-white mb-4 group-hover:bg-white group-hover:text-primary transition-colors">
                         <TargetIcon className="w-7 h-7" aria-hidden="true" />
                       </div>
-                      <h3 className="text-sm font-bold text-white text-center mb-1">{pillar.title}</h3>
-                      <p className="text-xs text-white/70 text-center max-w-xs">{pillar.desc}</p>
+                        <h3 className="text-base font-bold text-white text-center mb-1 uppercase tracking-wider">{pillar.title}</h3>
+                      <p className="text-sm text-white/80 text-center max-w-xs">{pillar.desc}</p>
                     </div>
                     {index < approachPillars.length - 1 && (
                       <div className="hidden lg:block absolute top-1/2 right-0 translate-x-1/2 text-primary">

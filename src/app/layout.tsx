@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Anton, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -13,13 +13,8 @@ const fontDynamo = localFont({
   display: "swap",
 });
 
-const fontAnton = Anton({
-  weight: "400",
-  variable: "--font-anton",
-  subsets: ["latin"],
-});
-
 const fontMontserrat = Montserrat({
+  weight: ["400", "700"],
   variable: "--font-montserrat",
   subsets: ["latin"],
 });
@@ -63,7 +58,7 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${fontAnton.variable} ${fontMontserrat.variable} ${fontDynamo.variable} h-full antialiased`}
+      className={`${fontMontserrat.variable} ${fontDynamo.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
         {children}
