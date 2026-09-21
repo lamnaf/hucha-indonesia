@@ -15,7 +15,7 @@ import {
   getFeaturedProducts,
 } from "@/lib/public/products";
 import { getPublicBrands } from "@/lib/public/brands";
-import { getPublicTestimonials } from "@/lib/public/testimonials";
+
 import { getArticlesNewestFirst } from "@/lib/public/blog";
 
 import { Button } from "@/components/ui/button";
@@ -23,7 +23,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
 import { ProductCard } from "@/components/product-card";
 import { ArticleCard } from "@/components/article-card";
-import { StarRating } from "@/components/star-rating";
 import { MediaPlaceholder } from "@/components/media-placeholder";
 import { PartnerSlider } from "@/components/partner-slider";
 import Image from "next/image";
@@ -63,14 +62,12 @@ const valueProps = [
 ];
 
 export default async function Home() {
-  const [categories, featured, brands, testimonials, articles] =
-    await Promise.all([
-      getPublicCategories(),
-      getFeaturedProducts(),
-      getPublicBrands(),
-      getPublicTestimonials(),
-      getArticlesNewestFirst(),
-    ]);
+  const [categories, featured, brands, articles] = await Promise.all([
+    getPublicCategories(),
+    getFeaturedProducts(),
+    getPublicBrands(),
+    getArticlesNewestFirst(),
+  ]);
 
   return (
     <>
@@ -263,8 +260,14 @@ export default async function Home() {
         </div>
       </section>
 
-<section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <div className="container">
+          <SectionHeading
+            eyebrow="Testimoni"
+            title="Tumbuh Bersama HUCHA"
+            description="Cerita dan pengalaman mitra bengkel, toko, dan distributor di seluruh Indonesia."
+            align="center"
+          />
           <PartnerSlider />
         </div>
       </section>
