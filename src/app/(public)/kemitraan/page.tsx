@@ -10,14 +10,11 @@ import {
 
 import { pageMetadata } from "@/lib/seo";
 import { whatsappChatLink } from "@/lib/whatsapp-link";
-import { getPublicTestimonials } from "@/lib/public/testimonials";
 
 import { Hero } from "@/components/hero";
-import { EmptyState } from "@/components/empty-state";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
-import { StarRating } from "@/components/star-rating";
 import { DistributorForm } from "@/components/forms/distributor-form";
 
 export const metadata = pageMetadata({
@@ -79,8 +76,6 @@ const process = [
 ];
 
 export default async function Distributor() {
-  const testimonials = await getPublicTestimonials();
-
   return (
     <>
       <Hero
@@ -217,40 +212,9 @@ export default async function Distributor() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+<section className="py-16 sm:py-20">
         <div className="container">
-          <SectionHeading
-            eyebrow="Testimoni"
-            title="Kata Distributor Kami"
-            link={{ label: "Lihat semua", href: "/testimoni" }}
-          />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.slice(0, 3).map((testimonial) => (
-              <Card key={testimonial.partnerName} className="gap-4">
-                <CardContent className="flex flex-1 flex-col gap-4">
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    &quot;{testimonial.quote}&quot;
-                  </p>
-                  <div className="mt-auto">
-                    <StarRating rating={testimonial.rating} />
-                    <p className="mt-2 text-sm font-semibold">
-                      {testimonial.partnerName}
-                    </p>
-                    <p className="text-muted-foreground text-sm">
-                      {testimonial.partnerBusiness}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          {testimonials.length === 0 ? (
-            <EmptyState
-              icon={<QuoteIcon aria-hidden="true" />}
-              title="Belum ada testimoni"
-              description="Cerita dari para distributor HuCha Indonesia akan segera hadir di sini."
-            />
-          ) : null}
+          <PartnerSlider />
         </div>
       </section>
     </>

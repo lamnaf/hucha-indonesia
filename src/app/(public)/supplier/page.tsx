@@ -3,13 +3,12 @@ import { CheckCircle2Icon, HeadphonesIcon, PercentIcon, RocketIcon, TruckIcon } 
 
 import { pageMetadata } from "@/lib/seo";
 import { whatsappChatLink } from "@/lib/whatsapp-link";
-import { getPublicTestimonials } from "@/lib/public/testimonials";
 
 import { Hero } from "@/components/hero";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
-import { StarRating } from "@/components/star-rating";
+import { PartnerSlider } from "@/components/partner-slider";
 import { SupplierForm } from "@/components/forms/supplier-form";
 
 export const metadata = pageMetadata({
@@ -71,8 +70,6 @@ const process = [
 ];
 
 export default async function Supplier() {
-  const testimonials = await getPublicTestimonials();
-
   return (
     <>
       <Hero
@@ -206,33 +203,9 @@ export default async function Supplier() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+<section className="py-16 sm:py-20">
         <div className="container">
-          <SectionHeading
-            eyebrow="Testimoni"
-            title="Kata Mitra Kami"
-            link={{ label: "Lihat semua", href: "/testimoni" }}
-          />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.slice(0, 3).map((testimonial) => (
-              <Card key={testimonial.partnerName} className="gap-4">
-                <CardContent className="flex flex-1 flex-col gap-4">
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    &quot;{testimonial.quote}&quot;
-                  </p>
-                  <div className="mt-auto">
-                    <StarRating rating={testimonial.rating} />
-                    <p className="mt-2 text-sm font-semibold">
-                      {testimonial.partnerName}
-                    </p>
-                    <p className="text-muted-foreground text-sm">
-                      {testimonial.partnerBusiness}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <PartnerSlider />
         </div>
       </section>
     </>
