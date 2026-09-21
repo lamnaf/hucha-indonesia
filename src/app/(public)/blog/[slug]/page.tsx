@@ -127,8 +127,8 @@ export default async function ArticleDetail({ params }: ArticleDetailProps) {
 
       <section className="py-16 sm:py-20">
         <div className="container">
-          <SectionHeading
-            eyebrow="Artikel Lainnya"
+              <SectionHeading
+                title="Artikel Lainnya"
             title="Baca Juga"
             link={{ label: "Semua artikel", href: "/blog" }}
           />

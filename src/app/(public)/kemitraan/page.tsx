@@ -125,7 +125,6 @@ export default async function Distributor() {
       <section className="border-t bg-muted/40 py-16 sm:py-20">
         <div className="container">
           <SectionHeading
-            eyebrow="Keuntungan"
             title="Mengapa Menjadi Distributor Kami?"
             align="center"
           />
@@ -150,7 +149,6 @@ export default async function Distributor() {
       <section className="py-16 sm:py-20">
         <div className="container">
           <SectionHeading
-            eyebrow="Proses"
             title="Cara Bergabung"
             description="Empat langkah sederhana untuk menjadi distributor HuCha Indonesia."
             align="center"
@@ -182,7 +180,6 @@ export default async function Distributor() {
         <div className="container grid gap-10 lg:grid-cols-2">
           <div className="space-y-4">
             <SectionHeading
-              eyebrow="Daftar"
               title="Formulir Pendaftaran Distributor"
               description="Isi data di bawah ini. Tim sales kami akan menghubungi Anda dalam 1x24 jam kerja."
             />

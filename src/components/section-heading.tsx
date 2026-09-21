@@ -5,7 +5,6 @@ import { ArrowRightIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface SectionHeadingProps {
-  eyebrow?: React.ReactNode;
   title: React.ReactNode;
   description?: React.ReactNode;
   link?: { label: string; href: string };
@@ -14,7 +13,6 @@ export interface SectionHeadingProps {
 }
 
 function SectionHeading({
-  eyebrow,
   title,
   description,
   link,
@@ -32,13 +30,6 @@ function SectionHeading({
       )}
     >
       <div className={cn("space-y-2", centered && "max-w-2xl")}>
-        {eyebrow ? (
-          <div className={cn("flex", centered && "justify-center")}>
-            <span className="inline-block rounded-md border border-primary/40 bg-background/50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-              {eyebrow}
-            </span>
-          </div>
-        ) : null}
         <h2 className="text-balance text-2xl sm:text-3xl lg:text-4xl uppercase tracking-wider font-heading leading-none">
           {title}
         </h2>

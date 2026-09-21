@@ -100,7 +100,7 @@ export default async function Brands() {
           {groups.map(({ brand, category, products: brandProducts }) => (
             <div key={brand.name} className="space-y-8">
               <SectionHeading
-                eyebrow={category.name}
+
                 title={brand.name}
                 description={brand.description}
                 link={{

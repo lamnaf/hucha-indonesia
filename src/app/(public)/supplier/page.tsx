@@ -100,7 +100,6 @@ export default async function Supplier() {
       <section className="border-t bg-muted/40 py-16 sm:py-20">
         <div className="container">
           <SectionHeading
-            eyebrow="Keuntungan"
             title="Mengapa Menjadi Supplier Kami?"
             align="center"
           />
@@ -125,7 +124,6 @@ export default async function Supplier() {
       <section className="py-16 sm:py-20">
         <div className="container">
           <SectionHeading
-            eyebrow="Proses"
             title="Cara Bergabung sebagai Supplier"
             description="Empat langkah untuk menjadi supplier HUCHA Indonesia."
             align="center"
@@ -157,7 +155,6 @@ export default async function Supplier() {
         <div className="container grid gap-10 lg:grid-cols-2">
           <div className="space-y-4">
             <SectionHeading
-              eyebrow="Daftar"
               title="Menjadi Bagian dari Perjalanan HUCHA"
               description="Mari kenalkan perusahaan dan produk Anda kepada tim kami untuk menjajaki peluang kerja sama sebagai supplier."
             />

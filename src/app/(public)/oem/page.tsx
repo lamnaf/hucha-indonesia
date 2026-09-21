@@ -107,7 +107,6 @@ export default function Oem() {
       <section className="border-t bg-muted/40 py-16 sm:py-20">
         <div className="container">
           <SectionHeading
-            eyebrow="Kapabilitas"
             title="Apa yang Kami Tawarkan"
             align="center"
           />
@@ -133,7 +132,6 @@ export default function Oem() {
         <div className="container grid items-center gap-10 lg:grid-cols-2">
           <div className="space-y-4">
             <SectionHeading
-              eyebrow="Kenapa OEM di HuCha?"
               title="Mitra Produksi yang Andal"
             />
             <ul className="space-y-3">
@@ -201,11 +199,10 @@ export default function Oem() {
 
       <section className="border-t bg-muted/40 py-16 sm:py-20">
         <div className="container">
-          <SectionHeading
-            eyebrow="Proses"
-            title="Alur Kerja Sama"
-            align="center"
-          />
+<SectionHeading
+              title="Alur Kerja Sama"
+              align="center"
+            />
           <ol className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {process.map((item) => (
               <Card key={item.step} className="gap-4">
@@ -230,7 +227,6 @@ export default function Oem() {
         <div className="container grid gap-10 lg:grid-cols-2">
           <div className="space-y-4">
             <SectionHeading
-              eyebrow="Inquiry"
               title="Formulir Inquiry OEM"
               description="Ceritakan kebutuhan Anda, dan tim kami akan menyiapkan penawaran terbaik."
             />

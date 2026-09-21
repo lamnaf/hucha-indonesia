@@ -170,8 +170,8 @@ export default async function JobDetail({ params }: JobDetailProps) {
 
       <section className="py-16 sm:py-20">
         <div className="container">
-          <SectionHeading
-            eyebrow="Lowongan Lainnya"
+              <SectionHeading
+                title="Lowongan Lainnya"
             title="Posisi Menarik Lainnya"
             link={{ label: "Semua lowongan", href: "/karir" }}
           />

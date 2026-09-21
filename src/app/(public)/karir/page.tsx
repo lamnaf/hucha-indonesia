@@ -42,7 +42,7 @@ export default async function Career() {
       >
         <div className="container">
           <SectionHeading
-            eyebrow="Lowongan Terbuka"
+
             title="Posisi yang Sedang Kami Cari"
             description="Temukan peran yang sesuai dengan keahlian Anda."
           />

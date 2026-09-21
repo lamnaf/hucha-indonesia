@@ -88,7 +88,7 @@ export default async function BlogCategory({ params }: BlogCategoryProps) {
       <section className="py-16 sm:py-20">
         <div className="container">
           <SectionHeading
-            eyebrow="Kategori Lainnya"
+            title="Kategori Lainnya"
             title="Jelajahi Kategori"
           />
           <div className="flex flex-wrap gap-2">
