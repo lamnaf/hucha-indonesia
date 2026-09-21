@@ -33,7 +33,7 @@ function SectionHeading({
     >
       <div className={cn("space-y-2", centered && "max-w-2xl")}>
         {eyebrow ? (
-          <div className="flex justify-center">
+          <div className={cn("flex", centered && "justify-center")}>
             <span className="inline-block rounded-md border border-primary/40 bg-background/50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
               {eyebrow}
             </span>

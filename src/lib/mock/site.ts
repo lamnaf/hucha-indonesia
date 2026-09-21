@@ -3,7 +3,7 @@ export const siteConfig = {
   legalName: "CV Usaha Bintang Mulia",
   tagline: "Spareparts, Cairan & Autocare Motor",
   description:
-    "Distributor spareparts, cairan otomotif, dan produk perawatan kendaraan berkualitas untuk motor Anda.",
+    "Merek perawatan otomotif Indonesia untuk perlindungan dan perawatan kendaraan Anda.",
   address: "HUCHA INDONESIA, Jl. Soekarno Hatta No.153A, Mayangan, Kec. Panggungrejo, Kota Pasuruan, Jawa Timur 67135",
   phone: "+6282221918775",
   email: "huchaindonesia@gmail.com",
@@ -41,7 +41,6 @@ export const primaryNav: NavLink[] = [
   { label: "Kerjasama", href: "/kemitraan", children: [
     { label: "Distributor", href: "/kemitraan" },
     { label: "Supplier", href: "/supplier" },
-    { label: "OEM / Services", href: "/oem" },
   ]},
   { label: "Karir", href: "/karir" },
   { label: "Contact Us", href: "/kontak" },
@@ -58,7 +57,6 @@ export const footerColumns: {
       { label: "Merek Kami", href: "/merek-kami" },
       { label: "Kemitraan Distributor", href: "/kemitraan" },
       { label: "Kemitraan Supplier", href: "/supplier" },
-      { label: "OEM / Maklon", href: "/oem" },
       { label: "Karir", href: "/karir" },
     ],
   },

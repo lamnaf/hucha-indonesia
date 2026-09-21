@@ -4,9 +4,7 @@ import {
   BadgeCheckIcon,
   HandshakeIcon,
   PackageCheckIcon,
-  QuoteIcon,
   TruckIcon,
-  WrenchIcon,
 } from "lucide-react";
 
 import { pageMetadata } from "@/lib/seo";
@@ -14,12 +12,10 @@ import {
   getPublicCategories,
   getFeaturedProducts,
 } from "@/lib/public/products";
-import { getPublicBrands } from "@/lib/public/brands";
-
 import { getArticlesNewestFirst } from "@/lib/public/blog";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
 import { ProductCard } from "@/components/product-card";
 import { ArticleCard } from "@/components/article-card";
@@ -30,42 +26,41 @@ import Image from "next/image";
 export const metadata = pageMetadata({
   title: "Suku Cadang Motor, Cairan Otomotif & Autocare Terpercaya",
   description:
-    "HuCha Indonesia — distributor resmi suku cadang motor, cairan otomotif, dan produk perawatan kendaraan berkualitas untuk bengkel, toko onderdil, dan komunitas motor di seluruh Indonesia.",
+    "HuCha Indonesia — merek perawatan otomotif untuk perlindungan dan perawatan kendaraan di seluruh Indonesia.",
   path: "/",
 });
 
-const valueProps = [
+const whyHucha = [
   {
     icon: BadgeCheckIcon,
     title: "Kualitas Terjamin",
     description:
-      "Setiap produk melalui kontrol kualitas ketat dan dijual melalui jalur distribusi resmi.",
+      "Setiap produk melalui kontrol kualitas ketat — dirancang untuk melindungi kendaraan Anda secara nyata.",
   },
   {
     icon: TruckIcon,
-    title: "Distribusi Luas",
+    title: "Jangkauan Luas",
     description:
-      "Jaringan distributor dan mitra toko di berbagai wilayah di Indonesia.",
+      "Tersedia di berbagai wilayah Indonesia, baik melalui mitra toko maupun marketplace resmi.",
   },
   {
     icon: HandshakeIcon,
-    title: "Kemitraan Mudah",
+    title: "Kemitraan Jangka Panjang",
     description:
-      "Program kemitraan distributor yang transparan dengan dukungan penuh untuk mitra.",
+      "Kami membangun hubungan berdasarkan kepercayaan, bukan sekadar transaksi.",
   },
   {
     icon: PackageCheckIcon,
-    title: "Marketplace Resmi",
+    title: "Solusi Praktis",
     description:
-      "Tersedia di Tokopedia, Shopee, dan TikTok Shop untuk memudahkan pembelian Anda.",
+      "Produk yang menjalankan fungsinya — tanpa klaim berlebihan, dengan nilai nyata untuk pelanggan.",
   },
 ];
 
 export default async function Home() {
-  const [categories, featured, brands, articles] = await Promise.all([
+  const [categories, featured, articles] = await Promise.all([
     getPublicCategories(),
     getFeaturedProducts(),
-    getPublicBrands(),
     getArticlesNewestFirst(),
   ]);
 
@@ -90,7 +85,7 @@ export default async function Home() {
               PERLINDUNGAN DAN PERAWATAN UNTUK SETIAP KENDARAAN
             </h1>
             <p className="max-w-xl text-lg sm:text-xl leading-relaxed tracking-wide text-white/90">
-              Produk cairan dan perawatan dari HUCHA untuk kebutuhan bengkel, toko spareparts, distributor, dan pengguna di Indonesia
+              Produk perawatan otomotif dari HUCHA untuk bengkel, toko spareparts, dan pengguna kendaraan di Indonesia
             </p>
           </div>
           <div className="relative h-[320px] sm:h-[400px] lg:h-[520px]">
@@ -109,9 +104,7 @@ export default async function Home() {
       <section className="border-t bg-navy-dark py-16 sm:py-20 text-white">
         <div className="container">
           <SectionHeading
-            eyebrow="Kategori"
-            title={<span className="text-white">Lini Produk Kami</span>}
-            description={<span className="text-white/80">Empat kategori utama produk otomotif untuk memenuhi kebutuhan motor Anda.</span>}
+            title={<span className="text-white">Produk Hucha</span>}
             align="center"
           />
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -151,7 +144,6 @@ export default async function Home() {
       <section className="py-16 sm:py-20">
         <div className="container">
           <SectionHeading
-            eyebrow="Produk Unggulan"
             title="Pilihan Terbaik Kami"
             description="Produk terlaris yang paling direkomendasikan pelanggan dan mitra kami."
             link={{ label: "Lihat semua produk", href: "/produk" }}
@@ -164,15 +156,15 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20 bg-muted/30">
         <div className="container">
           <SectionHeading
-            eyebrow="Mengapa HuCha"
-            title="Mitra Terpercaya Bengkel & Toko Onderdil"
+            title="Kenapa Hucha"
+            description="Kami percaya produk yang baik harus melakukan lebih dari sekadar menjalankan fungsinya. Berikut alasan mitra memilih kami."
             align="center"
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {valueProps.map(({ icon: Icon, title, description }) => (
+            {whyHucha.map(({ icon: Icon, title, description }) => (
               <div key={title} className="flex flex-col items-center text-center">
                 <div className="bg-primary/10 text-primary flex size-16 items-center justify-center rounded-full mb-4">
                   <Icon className="size-8" aria-hidden="true" />
@@ -187,71 +179,18 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <div className="container">
-          <SectionHeading
-            eyebrow="Merek Kami"
-            title="Brands di Bawah Naungan Kami"
-            description="Lini produk kami hadir untuk setiap kebutuhan — dari performa hingga perawatan harian."
-            link={{ label: "Lihat merek kami", href: "/merek-kami" }}
-          />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {brands.map((brand) => (
-              <Card key={brand.name} className="flex h-full flex-col gap-4">
-                <CardHeader>
-                  <div className="flex items-center gap-3">
-                    {brand.icon ? (
-                      <img
-                        src={brand.icon}
-                        alt={brand.name}
-                        className="size-12 rounded-xl object-cover"
-                      />
-                    ) : (
-                      <div className="bg-primary/10 text-primary flex size-12 items-center justify-center rounded-xl">
-                        <WrenchIcon className="size-6" aria-hidden="true" />
-                      </div>
-                    )}
-                    <div>
-                      <CardTitle className="text-lg">{brand.name}</CardTitle>
-                      <p className="text-muted-foreground text-sm">
-                        {brand.tagline}
-                      </p>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="flex flex-1 flex-col gap-4">
-                  <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3">
-                    {brand.description}
-                  </p>
-                  <Link
-                    href="/merek-kami"
-                    className="text-primary mt-auto inline-flex items-center gap-1 text-sm font-medium"
-                  >
-                    Selengkapnya
-                    <ArrowRightIcon className="size-4" aria-hidden="true" />
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="border-y bg-primary text-primary-foreground py-16 sm:py-20">
         <div className="container flex flex-col items-center gap-6 text-center">
-          <p className="rounded-md border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider">
-            Strategi Terbaik
-          </p>
           <h2 className="text-balance max-w-2xl text-3xl sm:text-4xl uppercase tracking-wider font-heading leading-none">
-            Ingin Menjadi Distributor Resmi?
+            Ingin Menjadi Mitra Kami?
           </h2>
           <p className="text-primary-foreground/80 max-w-2xl">
-            Bergabunglah dengan jaringan distributor HuCha Indonesia dan
+            Bergabunglah dengan jaringan mitra HuCha Indonesia dan
             dapatkan dukungan penuh untuk mengembangkan usaha Anda.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90">
-              <Link href="/kemitraan">Jadi Distributor</Link>
+              <Link href="/kemitraan">Lihat Program Kemitraan</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white">
               <Link href="/kontak">Konsultasi Gratis</Link>
@@ -263,7 +202,6 @@ export default async function Home() {
       <section className="py-16 sm:py-20">
         <div className="container">
           <SectionHeading
-            eyebrow="Testimoni"
             title="Tumbuh Bersama HUCHA"
             description="Cerita dan pengalaman mitra bengkel, toko, dan distributor di seluruh Indonesia."
             align="center"
@@ -275,7 +213,6 @@ export default async function Home() {
       <section className="border-t bg-navy-dark py-16 sm:py-20 text-white">
         <div className="container">
           <SectionHeading
-            eyebrow="Blog"
             title={<span className="text-white">Tips & Berita Terbaru</span>}
             description={<span className="text-white/80">Artikel seputar perawatan motor dan informasi terbaru dari HuCha Indonesia.</span>}
             link={{ label: "Kunjungi blog", href: "/blog" }}
