@@ -74,23 +74,8 @@ export default async function Supplier() {
     <>
       <Hero
         badge="Kerjasama Supplier"
-        title="Mitra Bahan Baku Berkualitas"
-        description={
-          <div className="space-y-4">
-            <p>
-              HUCHA mencari supplier bahan baku yang berkomitmen pada kualitas, konsistensi, dan keberlanjutan. 
-              Kami percaya produk berkualitas dimulai dari bahan baku terbaik.
-            </p>
-            <p>
-              Kami membangun kerjasama berbasis <strong>kepercayaan, transparansi, dan pertumbuhan bersama</strong>.
-            </p>
-            <p>
-              Kami tidak hanya membeli bahan baku. Kami ingin <strong>membangun ekosistem supply chain 
-              yang saling menguntungkan dan berkelanjutan</strong>.
-            </p>
-            <p className="font-semibold italic">Your quality drives our quality.</p>
-          </div>
-        }
+        title="Jajaki Peluang Kerja Sama Bersama HUCHA"
+        description="Kami terbuka untuk bekerja sama dengan supplier yang dapat mendukung kebutuhan bahan baku, kemasan, dan kebutuhan produksi HUCHA."
         actions={
           <>
             <Button asChild size="lg">
@@ -173,8 +158,8 @@ export default async function Supplier() {
           <div className="space-y-4">
             <SectionHeading
               eyebrow="Daftar"
-              title="Formulir Pendaftaran Supplier"
-              description="Isi data di bawah ini. Tim procurement kami akan menghubungi Anda dalam 1x24 jam kerja."
+              title="Menjadi Bagian dari Perjalanan HUCHA"
+              description="Mari kenalkan perusahaan dan produk Anda kepada tim kami untuk menjajaki peluang kerja sama sebagai supplier."
             />
             <ul className="space-y-2">
               {[
