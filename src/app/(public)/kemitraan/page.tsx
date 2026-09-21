@@ -104,7 +104,7 @@ export default async function Distributor() {
         actions={
           <>
             <Button asChild size="lg">
-              <Link href="#daftar">Daftar Sekarang</Link>
+              <Link href="#daftar">Menjadi Partner HUCHA</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
               <a

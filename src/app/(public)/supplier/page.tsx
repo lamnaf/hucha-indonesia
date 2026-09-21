@@ -94,7 +94,7 @@ export default async function Supplier() {
         actions={
           <>
             <Button asChild size="lg">
-              <Link href="#daftar">Daftar Sekarang</Link>
+              <Link href="#daftar">Menjadi Supplier HUCHA</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
               <a

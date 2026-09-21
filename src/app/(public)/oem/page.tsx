@@ -87,7 +87,7 @@ export default function Oem() {
         actions={
           <>
             <Button asChild size="lg">
-              <Link href="#inquiry">Kirim Inquiry</Link>
+              <Link href="#inquiry">Ajukan Kerja Sama</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
               <a
