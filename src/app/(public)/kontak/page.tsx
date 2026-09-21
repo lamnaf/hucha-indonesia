@@ -1,13 +1,6 @@
-"use client";
-
-import { useState } from "react";
-
 import { pageMetadata } from "@/lib/seo";
-import { getSiteConfig } from "@/lib/public/site";
-import { whatsappChatLink } from "@/lib/whatsapp-link";
 
 import { Hero } from "@/components/hero";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeading } from "@/components/section-heading";
 import { ContactForm } from "@/components/forms/contact-form";
@@ -19,9 +12,7 @@ export const metadata = pageMetadata({
   path: "/kontak",
 });
 
-export default async function Contact() {
-  const siteConfig = await getSiteConfig();
-
+export default function Contact() {
   return (
     <>
       <Hero
@@ -32,27 +23,17 @@ export default async function Contact() {
       />
 
       <section className="border-t bg-muted/40 py-12 sm:py-16">
-        <div className="container">
+        <div className="container max-w-2xl">
           <SectionHeading
-            eyebrow="Formulir"
             title="Kirim Pesan untuk Kami"
-            description="Isi formulir di samping dan tim kami akan membalas melalui email dalam 1x24 jam kerja."
+            description="Isi formulir di bawah ini dan tim kami akan membalas melalui email dalam 1x24 jam kerja."
+            align="center"
           />
-          <Card className="gap-0">
+          <Card className="gap-0 mt-6">
             <CardContent className="py-6">
               <ContactForm />
             </CardContent>
           </Card>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-20">
-        <div className="container">
-          <SectionHeading
-            eyebrow="Lokasi"
-            title="Kontak Kami"
-            description="Kami siap membahas kerjasama atau pertanyaan produk. Kirim pesan kami melalui formulir di atas."
-          />
         </div>
       </section>
     </>
