@@ -25,6 +25,7 @@ import { ProductCard } from "@/components/product-card";
 import { ArticleCard } from "@/components/article-card";
 import { StarRating } from "@/components/star-rating";
 import { MediaPlaceholder } from "@/components/media-placeholder";
+import { PartnerSlider } from "@/components/partner-slider";
 import Image from "next/image";
 
 export const metadata = pageMetadata({
@@ -262,39 +263,9 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
+<section className="py-16 sm:py-20">
         <div className="container">
-          <SectionHeading
-            eyebrow="Testimoni"
-            title="Kata Mitra Kami"
-            description="Kepercayaan dari bengkel dan toko onderdil di seluruh Indonesia."
-            link={{ label: "Lihat semua testimoni", href: "/testimoni" }}
-          />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {testimonials.slice(0, 3).map((testimonial) => (
-              <Card key={testimonial.partnerName} className="gap-4">
-                <CardContent className="flex flex-1 flex-col gap-4">
-                  <QuoteIcon
-                    className="text-muted-foreground/50 size-6"
-                    aria-hidden="true"
-                  />
-                  <p className="text-sm leading-relaxed">
-                    &quot;{testimonial.quote}&quot;
-                  </p>
-                  <div className="mt-auto">
-                    <StarRating rating={testimonial.rating} />
-                    <p className="mt-2 text-sm font-semibold">
-                      {testimonial.partnerName}
-                    </p>
-                    <p className="text-muted-foreground text-sm">
-                      {testimonial.partnerBusiness} ·{" "}
-                      {testimonial.partnerRegion}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <PartnerSlider />
         </div>
       </section>
 
