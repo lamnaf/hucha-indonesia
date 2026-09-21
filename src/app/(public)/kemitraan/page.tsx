@@ -1,11 +1,11 @@
 import Link from "next/link";
 import {
   CheckCircle2Icon,
+  HandshakeIcon,
   HeadphonesIcon,
   PercentIcon,
   QuoteIcon,
   RocketIcon,
-  TruckIcon,
 } from "lucide-react";
 
 import { pageMetadata } from "@/lib/seo";
@@ -30,25 +30,25 @@ const benefits = [
     icon: PercentIcon,
     title: "Harga Khusus Mitra",
     description:
-      "Margin keuntungan yang kompetitif dengan harga khusus untuk distributor.",
-  },
-  {
-    icon: TruckIcon,
-    title: "Prioritas Stok",
-    description:
-      "Prioritas ketersediaan stok untuk produk unggulan setiap periode.",
+      "Benefit harga yang dirancang untuk mendukung peluang bisnis distributor.",
   },
   {
     icon: RocketIcon,
     title: "Dukungan Promosi",
     description:
-      "Materi promosi, spanduk, dan kampanye bersama untuk mendukung penjualan.",
+      "Membantu partner memperkenalkan produk dan meningkatkan penjualan.",
   },
   {
     icon: HeadphonesIcon,
-    title: "Pendampingan Tim Sales",
+    title: "Pendampingan Sales & Aftersales",
     description:
-      "Tim sales mendampingi Anda mulai dari order, stok, hingga pemasaran.",
+      "Tim HUCHA siap mendukung kebutuhan Anda dari penjualan hingga layanan setelahnya.",
+  },
+  {
+    icon: HandshakeIcon,
+    title: "Kemitraan Jangka Panjang",
+    description:
+      "Kami membangun hubungan bisnis yang saling mendukung dan tumbuh bersama.",
   },
 ];
 
