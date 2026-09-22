@@ -31,7 +31,7 @@ export function normalizeImageUrl(raw: string | undefined | null): string {
   const trimmed = raw.trim();
   if (!trimmed) return "";
 
-  // Sudah absolut URL (http/https) - cek apakah endpoint S3 yang salah
+  // 1. Sudah absolut URL
   if (/^https?:\/\//i.test(trimmed)) {
     const publicBase = getPublicImageBase();
     if (!publicBase) return trimmed;
@@ -40,7 +40,6 @@ export function normalizeImageUrl(raw: string | undefined | null): string {
       const parsed = new URL(trimmed);
       const endpoint = process.env.STORAGE_ENDPOINT?.replace(/^https?:\/\//, "");
       if (endpoint && parsed.hostname === endpoint) {
-        // URL lama pakai endpoint S3 → rewrite ke public URL
         const newPath = parsed.pathname.replace(/^\/+/, "");
         return `${publicBase}/${newPath}`;
       }
@@ -50,13 +49,21 @@ export function normalizeImageUrl(raw: string | undefined | null): string {
     return trimmed;
   }
 
-  // Path relatif seperti /uploads/xxx.webp atau uploads/xxx.webp
-  if (trimmed.startsWith("/uploads/") || trimmed.startsWith("uploads/")) {
-    const publicBase = getPublicImageBase();
-    if (!publicBase) return trimmed;
-    const clean = trimmed.replace(/^\/+/, "");
-    return `${publicBase}/${clean}`;
-  }
+  // 2. Path internal (uploads atau seed data) -> prefix ke public URL
+  const publicBase = getPublicImageBase();
+  if (!publicBase) return trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
 
-  return trimmed;
+  const clean = trimmed.replace(/^\/+/, "");
+  return `${publicBase}/${clean}`;
+}
+
+export function getImageUrl(path: string | null | undefined): string {
+  if (!path) return '';
+  const base = getPublicImageBase();
+  if (!base) {
+    // relative to origin
+    return path.startsWith('/') ? path : `/${path}`;
+  }
+  // base already includes protocol and host, no trailing slash
+  return `${base}/${path.startsWith('/') ? path.slice(1) : path}`;
 }

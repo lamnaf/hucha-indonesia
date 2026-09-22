@@ -1,5 +1,6 @@
 import { getSiteConfig } from "@/lib/public/site";
 import { pageMetadata } from "@/lib/seo";
+import { getImageUrl } from "@/lib/utils";
 import {
   HandshakeIcon,
   ShieldCheckIcon,
