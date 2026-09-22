@@ -49,21 +49,24 @@ export function normalizeImageUrl(raw: string | undefined | null): string {
     return trimmed;
   }
 
-  // 2. Path internal (uploads atau seed data) -> prefix ke public URL
-  const publicBase = getPublicImageBase();
-  if (!publicBase) return trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+  // 2. Uploaded media or seed media -> prefix dengan public URL jika diset
+  if (
+    trimmed.startsWith("/uploads/") ||
+    trimmed.startsWith("uploads/") ||
+    trimmed.startsWith("/media/") ||
+    trimmed.startsWith("media/")
+  ) {
+    const publicBase = getPublicImageBase();
+    if (!publicBase) return trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
 
-  const clean = trimmed.replace(/^\/+/, "");
-  return `${publicBase}/${clean}`;
+    const clean = trimmed.replace(/^\/+/, "");
+    return `${publicBase}/${clean}`;
+  }
+
+  // 3. Static public assets (/tentang-hucha/..., /cairan.jpeg, dll) -> return as-is
+  return trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
 }
 
 export function getImageUrl(path: string | null | undefined): string {
-  if (!path) return '';
-  const base = getPublicImageBase();
-  if (!base) {
-    // relative to origin
-    return path.startsWith('/') ? path : `/${path}`;
-  }
-  // base already includes protocol and host, no trailing slash
-  return `${base}/${path.startsWith('/') ? path.slice(1) : path}`;
+  return normalizeImageUrl(path);
 }

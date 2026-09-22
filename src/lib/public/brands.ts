@@ -2,6 +2,7 @@ import { BrandRepository } from "@/domain/brands/brand.repository";
 import type { MockBrand, BrandProductGroup } from "@/lib/mock/brands";
 import type { CategoryType } from "@/lib/mock/products";
 import { getPublicCategories, getPublicProducts } from "./products";
+import { getImageUrl } from "@/lib/utils";
 
 type PublicBrand = Awaited<ReturnType<BrandRepository["listPublished"]>>[number];
 
@@ -16,24 +17,30 @@ function toMockBrand(brand: PublicBrand): MockBrand {
     tagline: brand.tagline ?? "",
     description: brand.description ?? "",
     category: brand.category as CategoryType,
-    icon:
+    icon: getImageUrl(
       brand.logo?.filePath ??
-      (brand.category === "spareparts"
-        ? "/spareparts_icon.jpeg"
-        : brand.category === "fluids"
-          ? "/cairan_icon.jpeg"
-          : brand.category === "lubricants"
-            ? "/lubricants_icon.jpeg"
-            : brand.category === "autocare"
-              ? "/autocare_icon.jpeg"
-              : undefined),
+        (brand.category === "spareparts"
+          ? "/spareparts_icon.jpeg"
+          : brand.category === "fluids"
+            ? "/cairan_icon.jpeg"
+            : brand.category === "lubricants"
+              ? "/lubricants_icon.jpeg"
+              : brand.category === "autocare"
+                ? "/autocare_icon.jpeg"
+                : undefined)
+    ),
     highlights,
   };
 }
 
 export async function getPublicBrands(): Promise<MockBrand[]> {
-  const items = await new BrandRepository().listPublished();
-  return items.map(toMockBrand);
+  try {
+    const items = await new BrandRepository().listPublished();
+    return items.map(toMockBrand);
+  } catch (err) {
+    console.error("[brands] getPublicBrands failed:", err);
+    return [];
+  }
 }
 
 /**

@@ -47,7 +47,10 @@ function toMockArticle(article: PublicArticle): MockArticle {
       ? article.publishedAt.toISOString().slice(0, 10)
       : new Date().toISOString().slice(0, 10),
     readingMinutes: estimateReadingMinutes(article.body ?? ""),
-    imageUrl: article.featuredMedia ? normalizeImageUrl(article.featuredMedia.filePath) : undefined,
+    // Fallback OG image agar tidak ada artikel tanpa gambar
+    imageUrl: article.featuredMedia
+      ? normalizeImageUrl(article.featuredMedia.filePath)
+      : normalizeImageUrl("/og-default.png"),
   };
 }
 
@@ -60,28 +63,43 @@ export async function getBlogCategories(): Promise<PublicBlogCategory[]> {
 }
 
 export async function getArticlesNewestFirst(): Promise<MockArticle[]> {
-  const { items } = await new ArticleRepository().listPublished({
-    pageSize: 100,
-  });
-  const uniqueItems = Array.from(
-    new Map(items.map((article) => [article.slug, article])).values()
-  );
-  return uniqueItems.map(toMockArticle);
+  try {
+    const { items } = await new ArticleRepository().listPublished({
+      pageSize: 100,
+    });
+    const uniqueItems = Array.from(
+      new Map(items.map((article) => [article.slug, article])).values()
+    );
+    return uniqueItems.map(toMockArticle);
+  } catch (err) {
+    console.error("[blog] getArticlesNewestFirst failed:", err);
+    return [];
+  }
 }
 
 export async function getArticleBySlug(
   slug: string
 ): Promise<MockArticle | undefined> {
-  const article = await new ArticleRepository().findBySlug(slug);
-  return article ? toMockArticle(article) : undefined;
+  try {
+    const article = await new ArticleRepository().findBySlug(slug);
+    return article ? toMockArticle(article) : undefined;
+  } catch (err) {
+    console.error(`[blog] getArticleBySlug failed for "${slug}":`, err);
+    return undefined;
+  }
 }
 
 export async function getArticlesByCategory(
   categorySlug: string
 ): Promise<MockArticle[]> {
-  const { items } = await new ArticleRepository().listPublished({
-    category: categorySlug,
-    pageSize: 100,
-  });
-  return items.map(toMockArticle);
+  try {
+    const { items } = await new ArticleRepository().listPublished({
+      category: categorySlug,
+      pageSize: 100,
+    });
+    return items.map(toMockArticle);
+  } catch (err) {
+    console.error(`[blog] getArticlesByCategory failed for "${categorySlug}":`, err);
+    return [];
+  }
 }
