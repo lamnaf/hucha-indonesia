@@ -55,11 +55,16 @@ function toMockArticle(article: PublicArticle): MockArticle {
 }
 
 export async function getBlogCategories(): Promise<PublicBlogCategory[]> {
-  const categories = await new BlogCategoryRepository().list();
-  return categories.map((category) => ({
-    name: category.name,
-    slug: category.slug,
-  }));
+  try {
+    const categories = await new BlogCategoryRepository().list();
+    return categories.map((category) => ({
+      name: category.name,
+      slug: category.slug,
+    }));
+  } catch (err) {
+    console.error("[blog] getBlogCategories failed:", err);
+    return [];
+  }
 }
 
 export async function getArticlesNewestFirst(): Promise<MockArticle[]> {

@@ -33,13 +33,23 @@ function toMockJob(job: PublicJob): MockJob {
 }
 
 export async function getPublicJobs(): Promise<MockJob[]> {
-  const jobs = await new JobRepository().listOpen();
-  return jobs.map(toMockJob);
+  try {
+    const jobs = await new JobRepository().listOpen();
+    return jobs.map(toMockJob);
+  } catch (err) {
+    console.error("[jobs] getPublicJobs failed:", err);
+    return [];
+  }
 }
 
 export async function getJobBySlug(
   slug: string
 ): Promise<MockJob | undefined> {
-  const job = await new JobRepository().findBySlug(slug);
-  return job ? toMockJob(job) : undefined;
+  try {
+    const job = await new JobRepository().findBySlug(slug);
+    return job ? toMockJob(job) : undefined;
+  } catch (err) {
+    console.error(`[jobs] getJobBySlug failed for "${slug}":`, err);
+    return undefined;
+  }
 }

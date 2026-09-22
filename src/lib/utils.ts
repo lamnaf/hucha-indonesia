@@ -12,8 +12,13 @@ function getPublicImageBase(): string {
   const url = process.env.STORAGE_PUBLIC_URL;
   if (!url) return "";
   try {
+    // Keep full URL (origin + path), trim trailing slashes.
+    // Penting karena STORAGE_PUBLIC_URL bisa seperti https://cdn.com/prefix
     const parsed = new URL(url);
-    publicImageBaseCache = `${parsed.protocol}//${parsed.host}`;
+    const withoutTrailingSlash = url.replace(/\/+$/, "");
+    // Validate URL
+    new URL(withoutTrailingSlash);
+    publicImageBaseCache = withoutTrailingSlash;
     return publicImageBaseCache;
   } catch {
     return "";
@@ -49,12 +54,15 @@ export function normalizeImageUrl(raw: string | undefined | null): string {
     return trimmed;
   }
 
-  // 2. Uploaded media or seed media -> prefix dengan public URL jika diset
+  // 2. Seed data under /media/ -> use fallback static image
+  if (trimmed.startsWith("/media/")) {
+    return "/og-default.png";
+  }
+
+  // 3. Uploaded media -> prefix dengan public URL jika diset
   if (
     trimmed.startsWith("/uploads/") ||
-    trimmed.startsWith("uploads/") ||
-    trimmed.startsWith("/media/") ||
-    trimmed.startsWith("media/")
+    trimmed.startsWith("uploads/")
   ) {
     const publicBase = getPublicImageBase();
     if (!publicBase) return trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
@@ -63,7 +71,7 @@ export function normalizeImageUrl(raw: string | undefined | null): string {
     return `${publicBase}/${clean}`;
   }
 
-  // 3. Static public assets (/tentang-hucha/..., /cairan.jpeg, dll) -> return as-is
+  // 4. Static public assets (/tentang-hucha/..., /cairan.jpeg, dll) -> return as-is
   return trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
 }
 

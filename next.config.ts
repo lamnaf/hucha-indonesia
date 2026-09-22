@@ -33,7 +33,7 @@ const contentSecurityPolicy = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${analyticsDomains.join(" ")}`,
   "style-src 'self' 'unsafe-inline'",
-  `img-src 'self' data: blob: https://*.r2.dev ${storageImageOrigins().join(" ")}`,
+  `img-src 'self' data: blob: https: https://*.r2.dev ${storageImageOrigins().join(" ")}`,
   "font-src 'self' data:",
   `connect-src 'self' ${analyticsDomains.join(" ")}`,
   "media-src 'self'",
