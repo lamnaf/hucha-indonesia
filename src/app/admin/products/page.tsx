@@ -17,6 +17,7 @@ import {
   productStatusLabel,
 } from "@/lib/admin";
 import { ProductRowActions } from "./product-actions";
+import { getImageUrl } from "@/lib/utils";
 import type { ProductStatus } from "@/infrastructure/database/generated/client";
 
 export const metadata: Metadata = {
@@ -191,7 +192,7 @@ export default async function ProductsPage({
                         {product.images[0] ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img
-                            src={product.images[0].media.filePath}
+                            src={getImageUrl(product.images[0].media.filePath)}
                             alt={product.images[0].media.altText ?? product.name}
                             className="size-full object-cover"
                           />

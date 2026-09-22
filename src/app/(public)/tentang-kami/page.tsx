@@ -76,19 +76,19 @@ const purposeCards = [
     title: "SOLVING PROBLEMS",
     desc: "Mendengarkan pelanggan, pemilik bengkel, retailer, dan dinamika pasar untuk memahami apa yang benar-benar dibutuhkan.",
     icon: WrenchIcon,
-    image: "/tentang-hucha/49.png",
+    image: getImageUrl("/tentang-hucha/49.png"),
   },
   {
     title: "CREATING VALUE",
     desc: "Setiap produk harus memberikan nilai yang berarti bagi pelanggan dan mitra bisnis — bukan sekadar menjalankan fungsinya.",
     icon: TargetIcon,
-    image: "/tentang-hucha/51.png",
+    image: getImageUrl("/tentang-hucha/51.png"),
   },
   {
     title: "BUILDING RELATIONSHIPS",
     desc: "Kemitraan berbasis saling percaya, saling menguntungkan, dan tumbuh bersama dalam jangka panjang.",
     icon: HandshakeIcon,
-    image: "/tentang-hucha/52.png",
+    image: getImageUrl("/tentang-hucha/52.png"),
   },
 ];
 
@@ -97,25 +97,25 @@ const products = [
     category: "CAIRAN OTOMOTIF",
     desc: "Produk untuk pemeliharaan dan perlindungan sistem pendingin kendaraan.",
     icon: DropletsIcon,
-    image: "/cairan.jpeg",
+    image: getImageUrl("/cairan.jpeg"),
   },
   {
     category: "LUBRICANTS",
     desc: "Solusi pelumasan untuk berbagai komponen dan aplikasi sepeda motor.",
     icon: SettingsIcon,
-    image: "/lubricants.jpeg",
+    image: getImageUrl("/lubricants.jpeg"),
   },
   {
     category: "SPAREPARTS",
     desc: "Komponen dan suku cadang pilihan untuk kebutuhan pasar sehari-hari.",
     icon: PackageIcon,
-    image: "/spareparts.jpeg",
+    image: getImageUrl("/spareparts.jpeg"),
   },
   {
     category: "AUTOCARE",
     desc: "Produk pendukung perawatan dan pemeliharaan aki sepeda motor.",
     icon: BatteryIcon,
-    image: "/autocare.jpeg",
+    image: getImageUrl("/autocare.jpeg"),
   },
 ];
 
@@ -178,11 +178,11 @@ export default async function About() {
                 </div>
               </div>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted shadow-lg">
-                <img
-                  src="/tentang-hucha/48.png"
-                  alt="Produk HUCHA tertata rapi di bengkel modern"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
+<img
+  src={getImageUrl("/tentang-hucha/48.png")}
+  alt="Produk HUCHA tertata rapi di bengkel modern"
+  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+/>
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/60 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 text-white">
                   <p className="text-sm font-medium text-primary-foreground/80 mb-1">HUCHA Product Lineup</p>
@@ -244,21 +244,21 @@ export default async function About() {
         <section id="vision" className="scroll-mt-20 py-16 sm:py-24 bg-white">
           <div className="container">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted order-2 lg:order-1 shadow-lg">
-                <img
-                  src="/tentang-hucha/54.png"
-                  alt="Peta Indonesia dengan titik distribusi HUCHA"
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/60 via-transparent to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center text-white p-8">
-                    <MapPinIcon className="w-16 h-16 mx-auto text-primary mb-4 opacity-90" />
-                    <p className="text-sm font-bold text-white mb-1 tracking-widest uppercase">Jaringan Distribusi</p>
-                    <p className="text-3xl font-heading tracking-widest text-white drop-shadow-lg">Seluruh Indonesia</p>
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted order-2 lg:order-1 shadow-lg">
+                  <img
+                    src={getImageUrl("/tentang-hucha/54.png")}
+                    alt="Peta Indonesia dengan titik distribusi HUCHA"
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/60 via-transparent to-transparent" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-center text-white p-8">
+                      <MapPinIcon className="w-16 h-16 mx-auto text-primary mb-4 opacity-90" />
+                      <p className="text-sm font-bold text-white mb-1 tracking-widest uppercase">Jaringan Distribusi</p>
+                      <p className="text-3xl font-heading tracking-widest text-white drop-shadow-lg">Seluruh Indonesia</p>
+                    </div>
                   </div>
                 </div>
-              </div>
               <div className="text-left lg:pl-8 order-1 lg:order-2">
                 <span className="inline-block px-4 py-1.5 text-sm font-semibold font-heading tracking-widest uppercase text-primary bg-primary/10 rounded-full mb-6">
                   OUR VISION
@@ -441,7 +441,7 @@ export default async function About() {
               </div>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted shadow-lg">
                 <img
-                  src="/tentang-hucha/57.png"
+                  src={getImageUrl("/tentang-hucha/57.png")}
                   alt="Tim HUCHA berdiskusi dengan mitra bengkel"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />
@@ -523,7 +523,7 @@ export default async function About() {
                     <div className="relative z-10 w-full lg:w-1/3 text-left lg:pl-8 order-1 lg:order-3">
                       <div className="aspect-video rounded-xl bg-muted overflow-hidden shadow-lg">
                         <img
-                          src={`/tentang-hucha/${index === 1 ? 65 : index === 3 ? 50 : 58 + index}.png`}
+                          src={getImageUrl(`/tentang-hucha/${index === 1 ? 65 : index === 3 ? 50 : 58 + index}.png`)}
                           alt={`HUCHA Journey - ${item.year}`}
                           className="w-full h-full object-cover"
                         />
@@ -541,11 +541,11 @@ export default async function About() {
           <div className="container">
             <div className="relative rounded-3xl overflow-hidden shadow-xl">
               <div className="relative min-h-[500px] flex items-center justify-center">
-                <img
-                  src="/tentang-hucha/64.png"
-                  alt="Gudang distribusi HUCHA"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+<img
+  src={getImageUrl("/tentang-hucha/64.png")}
+  alt="Gudang distribusi HUCHA"
+  className="absolute inset-0 w-full h-full object-cover"
+/>
                 <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/95 via-navy-dark/80 to-navy/70 lg:from-navy-dark/90" />
                 <div className="relative z-10 w-full py-12 px-6 sm:px-12">
                   <div className="text-center text-white max-w-4xl mx-auto">
@@ -580,7 +580,7 @@ export default async function About() {
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-muted shadow-lg">
                 <img
-                  src="/tentang-hucha/55.png"
+                  src={getImageUrl("/tentang-hucha/55.png")}
                   alt="Kemitraan HUCHA"
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                 />

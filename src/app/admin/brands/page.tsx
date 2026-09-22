@@ -13,6 +13,7 @@ import { PageHeader } from "@/components/admin/page-header";
 import { categoryTypeLabel } from "@/lib/admin";
 import type { CategoryType } from "@/infrastructure/database/generated/client";
 import { BrandRowActions } from "./brand-actions";
+import { getImageUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Merek",
@@ -129,7 +130,7 @@ export default async function BrandsPage({
                         {brand.logo ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img
-                            src={brand.logo.filePath}
+                            src={getImageUrl(brand.logo.filePath)}
                             alt={brand.logo.altText ?? brand.name}
                             className="size-full object-cover"
                           />
