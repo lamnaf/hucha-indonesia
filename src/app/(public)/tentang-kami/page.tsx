@@ -253,8 +253,8 @@ export default async function About() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center text-white p-8">
                     <MapPinIcon className="w-16 h-16 mx-auto text-primary mb-4 opacity-90" />
-                    <p className="text-sm font-medium text-primary-foreground/80 mb-1">Jaringan Distribusi</p>
-                    <p className="text-2xl font-heading tracking-wide">Seluruh Indonesia</p>
+                    <p className="text-sm font-bold text-white mb-1 tracking-widest uppercase">Jaringan Distribusi</p>
+                    <p className="text-3xl font-heading tracking-widest text-white drop-shadow-lg">Seluruh Indonesia</p>
                   </div>
                 </div>
               </div>
