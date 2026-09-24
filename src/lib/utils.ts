@@ -44,7 +44,7 @@ export function normalizeImageUrl(raw: string | undefined | null): string {
     try {
       const parsed = new URL(trimmed);
       const endpoint = process.env.STORAGE_ENDPOINT?.replace(/^https?:\/\//, "");
-      if (endpoint && parsed.hostname === endpoint) {
+      if ((endpoint && parsed.hostname === endpoint) || parsed.hostname.endsWith(".r2.dev")) {
         const newPath = parsed.pathname.replace(/^\/+/, "");
         return `${publicBase}/${newPath}`;
       }
