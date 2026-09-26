@@ -10,7 +10,7 @@ export function siteUrl(): string {
   if (appUrl && !appUrl.includes("localhost")) {
     return appUrl.replace(/\/+$/, "");
   }
-  return "https://hucha.id";
+  return "https://huchaindonesia.com";
 }
 
 export function absoluteUrl(path: string): string {

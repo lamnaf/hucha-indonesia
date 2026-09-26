@@ -20,7 +20,7 @@ function assertHttpUrl(key: string, value: string): void {
     parsed = new URL(value);
   } catch {
     throw new Error(
-      `Invalid ${key}: "${value}" is not a valid absolute URL (e.g. https://hucha.id).`
+      `Invalid ${key}: "${value}" is not a valid absolute URL (e.g. https://huchaindonesia.com).`
     );
   }
   if (parsed.protocol !== "http:" && parsed.protocol !== "https:") {

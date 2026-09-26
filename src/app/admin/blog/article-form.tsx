@@ -405,7 +405,7 @@ export function ArticleForm({
             id="article-canonical"
             name="canonicalUrl"
             defaultValue={initial?.seo?.canonicalUrl ?? ""}
-            placeholder="https://hucha.id/blog/slug"
+            placeholder="https://huchaindonesia.com/blog/slug"
             type="url"
           />
         </Field>
@@ -459,7 +459,7 @@ function LiveSeoPreview({
       </div>
       <div className="space-y-1">
         <p className="text-sm text-blue-600">{title || "Judul meta"}</p>
-        <p className="text-xs">https://hucha.id/blog/slug</p>
+        <p className="text-xs">https://huchaindonesia.com/blog/slug</p>
         <p className="text-muted-foreground text-xs">
           {description || "Deskripsi meta artikel akan tampil di sini."}
         </p>

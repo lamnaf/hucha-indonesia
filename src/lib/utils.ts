@@ -14,7 +14,6 @@ function getPublicImageBase(): string {
   try {
     // Keep full URL (origin + path), trim trailing slashes.
     // Penting karena STORAGE_PUBLIC_URL bisa seperti https://cdn.com/prefix
-    const parsed = new URL(url);
     const withoutTrailingSlash = url.replace(/\/+$/, "");
     // Validate URL
     new URL(withoutTrailingSlash);
@@ -65,9 +64,11 @@ export function normalizeImageUrl(raw: string | undefined | null): string {
     trimmed.startsWith("uploads/")
   ) {
     const publicBase = getPublicImageBase();
-    if (!publicBase) return trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+    // Strip "uploads/" prefix because R2 stores objects at the root.
+    // Also strip any leading slashes that may remain after the prefix.
+    const clean = trimmed.replace(/^(\/)?uploads\//, "").replace(/^\/+/, "");
 
-    const clean = trimmed.replace(/^\/+/, "");
+    if (!publicBase) return `/${clean}`;
     return `${publicBase}/${clean}`;
   }
 
