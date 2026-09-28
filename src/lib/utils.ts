@@ -5,51 +5,20 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-let publicImageBaseCache: string | null = null;
-
-function getPublicImageBase(): string {
-  if (publicImageBaseCache) return publicImageBaseCache;
-  const url = process.env.STORAGE_PUBLIC_URL;
-  if (!url) return "";
-  try {
-    // Keep full URL (origin + path), trim trailing slashes.
-    // Penting karena STORAGE_PUBLIC_URL bisa seperti https://cdn.com/prefix
-    const withoutTrailingSlash = url.replace(/\/+$/, "");
-    // Validate URL
-    new URL(withoutTrailingSlash);
-    publicImageBaseCache = withoutTrailingSlash;
-    return publicImageBaseCache;
-  } catch {
-    return "";
-  }
-}
-
 /**
- * Normalisasi URL gambar:
- * - URL S3 endpoint (endpoint/bucket) → redirect ke public URL
- * - Path relatif /uploads/ → prefix ke public URL
- * - URL sudah absolut dan benar → return as-is
+ * Normalisasi URL gambar — pertahankan lokasi storage sesuai data:
+ * - URL absolut (R2 / CDN / eksternal) → return as-is
+ * - /uploads/* → tetap local path (Vercel serve dari /public)
+ * - /media/* (seed lama) → fallback /og-default.png
+ * - Aset statis lain → return as-is
  */
 export function normalizeImageUrl(raw: string | undefined | null): string {
   if (!raw) return "";
   const trimmed = raw.trim();
   if (!trimmed) return "";
 
-  // 1. Sudah absolut URL
+  // 1. Absolute URL: preserve exactly as stored.
   if (/^https?:\/\//i.test(trimmed)) {
-    const publicBase = getPublicImageBase();
-    if (!publicBase) return trimmed;
-
-    try {
-      const parsed = new URL(trimmed);
-      const endpoint = process.env.STORAGE_ENDPOINT?.replace(/^https?:\/\//, "");
-      if ((endpoint && parsed.hostname === endpoint) || parsed.hostname.endsWith(".r2.dev")) {
-        const newPath = parsed.pathname.replace(/^\/+/, "");
-        return `${publicBase}/${newPath}`;
-      }
-    } catch {
-      // ignore
-    }
     return trimmed;
   }
 
@@ -58,18 +27,9 @@ export function normalizeImageUrl(raw: string | undefined | null): string {
     return "/og-default.png";
   }
 
-  // 3. Uploaded media -> prefix dengan public URL jika diset
-  if (
-    trimmed.startsWith("/uploads/") ||
-    trimmed.startsWith("uploads/")
-  ) {
-    const publicBase = getPublicImageBase();
-    // Strip "uploads/" prefix because R2 stores objects at the root.
-    // Also strip any leading slashes that may remain after the prefix.
-    const clean = trimmed.replace(/^(\/)?uploads\//, "").replace(/^\/+/, "");
-
-    if (!publicBase) return `/${clean}`;
-    return `${publicBase}/${clean}`;
+  // 3. Local uploaded files -> keep local path.
+  if (trimmed.startsWith("/uploads/") || trimmed.startsWith("uploads/")) {
+    return trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
   }
 
   // 4. Static public assets (/tentang-hucha/..., /cairan.jpeg, dll) -> return as-is
