@@ -260,7 +260,18 @@ const settings = [
   },
 ] as const;
 
-const products = [
+const products: {
+  name: string;
+  slug: string;
+  categorySlug: string;
+  subCategorySlug: string;
+  shortDescription: string;
+  description: string;
+  shopeeUrl?: string;
+  tokopediaUrl?: string;
+  tiktokshopUrl?: string;
+  isFeatured: boolean;
+}[] = [
   {
     name: "Kampas Rem Depan HuCha Racing",
     slug: "kampas-rem-depan-hucha-racing",
@@ -332,7 +343,7 @@ const products = [
       "https://tiktok.com/@hucha.indonesia/shop/nano-ceramic-coating",
     isFeatured: false,
   },
-] as const;
+];
 
 const articles = [
   {
@@ -825,6 +836,8 @@ async function seedProducts(
       brandId: brandIds[productBrandByCategory[product.categorySlug]],
       shortDescription: product.shortDescription,
       description: product.description,
+      shopeeUrl: product.shopeeUrl,
+      tokopediaUrl: product.tokopediaUrl,
       tiktokshopUrl: product.tiktokshopUrl,
       isFeatured: product.isFeatured,
       status: "published",

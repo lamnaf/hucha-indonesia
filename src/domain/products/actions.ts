@@ -15,7 +15,6 @@ import {
   toBoolean,
   toNullableString,
   toNumberArray,
-  toOptionalNumber,
   toOptionalString,
 } from "@/domain/action-utils";
 
@@ -46,6 +45,8 @@ function parseProductForm(formData: FormData): ParsedProduct {
     brandId,
     shortDescription: toNullableString(formData.get("shortDescription")),
     description: toNullableString(formData.get("description")),
+    shopeeUrl: toNullableString(formData.get("shopeeUrl")),
+    tokopediaUrl: toNullableString(formData.get("tokopediaUrl")),
     tiktokshopUrl: toNullableString(formData.get("tiktokshopUrl")),
     isFeatured: toBoolean(formData.get("isFeatured")),
     status: String(formData.get("status") ?? "draft") as

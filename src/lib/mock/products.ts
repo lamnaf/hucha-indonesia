@@ -15,6 +15,8 @@ export interface MockProduct {
   subcategory: string;
   shortDescription: string;
   description: string;
+  shopeeUrl?: string;
+  tokopediaUrl?: string;
   tiktokshopUrl?: string;
   isFeatured: boolean;
   /** Primary (first) gallery image URL; undefined = show the placeholder. */
@@ -58,6 +60,8 @@ export const products: MockProduct[] = [
       "Kampas rem depan tipe racing dengan daya cengkeram tinggi.",
     description:
       "Kampas rem depan HuCha Racing dibuat dari material non-asbestos berkualitas tinggi dengan ketahanan panas optimal untuk penggunaan harian maupun balap.",
+    shopeeUrl: undefined,
+    tokopediaUrl: undefined,
     tiktokshopUrl: "https://tiktok.com/@hucha.indonesia/shop/kampas-rem-depan",
     isFeatured: true,
   },
@@ -69,6 +73,8 @@ export const products: MockProduct[] = [
     shortDescription: "Busi iridium dengan pembakaran lebih stabil.",
     description:
       "Busi Iridium HuCha Pro memberikan pembakaran optimal, akselerasi responsif, dan umur pakai lebih lama dibanding busi standar.",
+    shopeeUrl: undefined,
+    tokopediaUrl: undefined,
     tiktokshopUrl: "https://tiktok.com/@hucha.indonesia/shop/busi-iridium-pro",
     isFeatured: false,
   },
@@ -81,6 +87,8 @@ export const products: MockProduct[] = [
       "Oli mesin khusus motor matic dengan perlindungan maksimal.",
     description:
       "Oli Mesin HuCha Matic 10W-30 diformulasikan khusus untuk motor matic, menjaga mesin tetap halus, bersih, dan dingin.",
+    shopeeUrl: undefined,
+    tokopediaUrl: undefined,
     tiktokshopUrl: "https://tiktok.com/@hucha.indonesia/shop/oli-matic-10w-30",
     isFeatured: true,
   },
@@ -92,6 +100,8 @@ export const products: MockProduct[] = [
     shortDescription: "Oli sokbreker dengan redaman stabil dan awet.",
     description:
       "Oli sokbreker HuCha SAE 20 menjaga performa suspensi tetap stabil, mengurangi getaran, dan memperpanjang umur sokbreker.",
+    shopeeUrl: undefined,
+    tokopediaUrl: undefined,
     tiktokshopUrl:
       "https://tiktok.com/@hucha.indonesia/shop/oli-sokbreker-sae-20",
     isFeatured: false,
@@ -104,6 +114,8 @@ export const products: MockProduct[] = [
     shortDescription: "Shampo motor dengan busa tebal dan hasil mengkilap.",
     description:
       "Shampo Motor HuCha Super Gloss membersihkan kotoran dan lumpur tanpa merusak cat, menghasilkan kilap alami.",
+    shopeeUrl: undefined,
+    tokopediaUrl: undefined,
     tiktokshopUrl:
       "https://tiktok.com/@hucha.indonesia/shop/shampo-motor-super-gloss",
     isFeatured: false,
@@ -116,6 +128,8 @@ export const products: MockProduct[] = [
     shortDescription: "Coating nano ceramic untuk melindungi cat motor.",
     description:
       "Pelindung Cat HuCha Nano Ceramic membentuk lapisan pelindung anti gores dan anti air selama berbulan-bulan.",
+    shopeeUrl: undefined,
+    tokopediaUrl: undefined,
     tiktokshopUrl:
       "https://tiktok.com/@hucha.indonesia/shop/nano-ceramic-coating",
     isFeatured: false,

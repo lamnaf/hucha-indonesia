@@ -5,6 +5,8 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 export interface MarketplaceUrls {
+  shopeeUrl?: string;
+  tokopediaUrl?: string;
   tiktokshopUrl?: string;
 }
 
@@ -13,6 +15,16 @@ const marketplaceButtons: {
   label: string;
   className: string;
 }[] = [
+  {
+    key: "shopeeUrl",
+    label: "Beli di Shopee",
+    className: "bg-[#EE4D2D] hover:bg-[#EE4D2D]/90 text-white",
+  },
+  {
+    key: "tokopediaUrl",
+    label: "Beli di Tokopedia",
+    className: "bg-[#03AC0E] hover:bg-[#03AC0E]/90 text-white",
+  },
   {
     key: "tiktokshopUrl",
     label: "Beli di TikTok Shop",
@@ -33,11 +45,13 @@ export interface MarketplaceBadgesProps extends MarketplaceUrls {
 }
 
 function MarketplaceBadges({
+  shopeeUrl,
+  tokopediaUrl,
   tiktokshopUrl,
   className,
   align = "left",
 }: MarketplaceBadgesProps) {
-  const urls = { tiktokshopUrl };
+  const urls = { shopeeUrl, tokopediaUrl, tiktokshopUrl };
   const visible: VisibleButton[] = marketplaceButtons.flatMap((button) => {
     const href = urls[button.key];
     return href ? [{ ...button, href }] : [];

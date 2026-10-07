@@ -42,6 +42,8 @@ export interface ProductFormProps {
     brandId: number | null;
     shortDescription: string | null;
     description: string | null;
+    shopeeUrl: string | null;
+    tokopediaUrl: string | null;
     tiktokshopUrl: string | null;
     isFeatured: boolean;
     status: "draft" | "published";
@@ -286,6 +288,18 @@ export function ProductForm({ categories, brands, initial }: ProductFormProps) {
               hint="Wajib minimal 1 saat terbit."
             >
               <div className="grid gap-2">
+                <Input
+                  name="shopeeUrl"
+                  defaultValue={initial?.shopeeUrl ?? ""}
+                  placeholder="URL Shopee"
+                  aria-label="Tautan Shopee"
+                />
+                <Input
+                  name="tokopediaUrl"
+                  defaultValue={initial?.tokopediaUrl ?? ""}
+                  placeholder="URL Tokopedia"
+                  aria-label="Tautan Tokopedia"
+                />
                 <Input
                   name="tiktokshopUrl"
                   defaultValue={initial?.tiktokshopUrl ?? ""}

@@ -2,6 +2,8 @@ import { z } from "zod";
 import { idSchema, slugSchema, urlSchema } from "@/shared/validation/common";
 
 export const marketplaceLinksSchema = z.object({
+  shopeeUrl: urlSchema.optional().nullable(),
+  tokopediaUrl: urlSchema.optional().nullable(),
   tiktokshopUrl: urlSchema.optional().nullable(),
 });
 
@@ -21,10 +23,12 @@ export const productSchema = z
     categoryId: idSchema,
     subCategoryId: idSchema.nullable().optional(),
     brandId: idSchema.nullable().optional(),
-    shortDescription: z.string().trim().max(300).optional().nullable(),
-    description: z.string().optional().nullable(),
-    tiktokshopUrl: urlSchema.optional().nullable(),
-    isFeatured: z.boolean().optional().default(false),
+  shortDescription: z.string().trim().max(300).optional().nullable(),
+  description: z.string().optional().nullable(),
+  shopeeUrl: urlSchema.optional().nullable(),
+  tokopediaUrl: urlSchema.optional().nullable(),
+  tiktokshopUrl: urlSchema.optional().nullable(),
+  isFeatured: z.boolean().optional().default(false),
     status: z.enum(["draft", "published"]).default("draft"),
     images: z
       .array(idSchema)
@@ -35,14 +39,14 @@ export const productSchema = z
   .superRefine((value, ctx) => {
     if (value.status === "published") {
       const hasMarketplaceLink = Boolean(
-        value.tiktokshopUrl
+        value.shopeeUrl || value.tokopediaUrl || value.tiktokshopUrl
       );
       if (!hasMarketplaceLink) {
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           message:
             "Produk yang dipublikasikan wajib memiliki minimal 1 link marketplace",
-          path: ["tiktokshopUrl"],
+          path: ["shopeeUrl"],
         });
       }
       if (value.images.length === 0) {

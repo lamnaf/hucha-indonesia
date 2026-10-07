@@ -119,6 +119,8 @@ export default async function ProductDetail({ params }: ProductDetailProps) {
                 Beli di marketplace resmi:
               </p>
               <MarketplaceBadges
+                shopeeUrl={product.shopeeUrl}
+                tokopediaUrl={product.tokopediaUrl}
                 tiktokshopUrl={product.tiktokshopUrl}
               />
             </div>
