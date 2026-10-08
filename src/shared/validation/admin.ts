@@ -55,6 +55,12 @@ export const socialSettingsSchema = z.object({
   whatsapp: z.union([z.string().trim().max(2048), z.literal("")]),
 });
 
+export const marketplacesSettingsSchema = z.object({
+  shopee: z.union([z.string().trim().max(2048), z.literal("")]),
+  tokopedia: z.union([z.string().trim().max(2048), z.literal("")]),
+  tiktokShop: z.union([z.string().trim().max(2048), z.literal("")]),
+});
+
 export const seoSettingsSchema = z.object({
   defaultMetaTitle: z
     .string()
@@ -132,6 +138,7 @@ export const homepageSeoSettingsSchema = z.object({
 export const SETTINGS_GROUPS = {
   company: companySettingsSchema,
   social: socialSettingsSchema,
+  marketplaces: marketplacesSettingsSchema,
   seo: seoSettingsSchema,
   smtp: smtpSettingsSchema,
   analytics: analyticsSettingsSchema,

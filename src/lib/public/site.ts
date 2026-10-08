@@ -28,6 +28,12 @@ export interface PublicSiteConfig {
     googleAnalyticsId: string;
     googleTagManagerId: string;
   };
+  /** Official marketplace links for footer display. */
+  marketplaces: {
+    shopee: string;
+    tokopedia: string;
+    tiktokShop: string;
+  };
 }
 
 function unwrapSetting(value: unknown): Record<string, string> | null {
@@ -46,14 +52,16 @@ export async function getSiteConfig(): Promise<PublicSiteConfig> {
   let socialRaw: unknown = null;
   let mediaRaw: unknown = null;
   let analyticsRaw: unknown = null;
+  let marketplacesRaw: unknown = null;
 
   try {
     const settings = new SettingRepository();
-    [companyRaw, socialRaw, mediaRaw, analyticsRaw] = await Promise.all([
+    [companyRaw, socialRaw, mediaRaw, analyticsRaw, marketplacesRaw] = await Promise.all([
       settings.get("company"),
       settings.get("social"),
       settings.get("media"),
       settings.get("analytics"),
+      settings.get("marketplaces"),
     ]);
   } catch {
     // DB unreachable (e.g. during build on Vercel) — use defaults.
@@ -63,6 +71,7 @@ export async function getSiteConfig(): Promise<PublicSiteConfig> {
   const social = unwrapSetting(socialRaw);
   const media = unwrapSetting(mediaRaw);
   const analytics = unwrapSetting(analyticsRaw);
+  const marketplaces = unwrapSetting(marketplacesRaw);
   const whatsapp = company?.whatsapp ?? defaultConfig.whatsapp;
 
   return {
@@ -89,6 +98,11 @@ export async function getSiteConfig(): Promise<PublicSiteConfig> {
     analytics: {
       googleAnalyticsId: analytics?.googleAnalyticsId ?? "",
       googleTagManagerId: analytics?.googleTagManagerId ?? "",
+    },
+    marketplaces: {
+      shopee: marketplaces?.shopee ?? "",
+      tokopedia: marketplaces?.tokopedia ?? "",
+      tiktokShop: marketplaces?.tiktokShop ?? "",
     },
   };
 }

@@ -159,6 +159,24 @@ const RECIPIENT_FIELDS: TextFieldDef[] = [
   { name: "applications", label: "Lamaran Kerja" },
 ];
 
+const MARKETPLACE_FIELDS: TextFieldDef[] = [
+  {
+    name: "shopee",
+    label: "Shopee",
+    placeholder: "https://shopee.co.id/huchaindonesia",
+  },
+  {
+    name: "tokopedia",
+    label: "Tokopedia",
+    placeholder: "https://www.tokopedia.com/huchaindonesia",
+  },
+  {
+    name: "tiktokShop",
+    label: "TikTok Shop",
+    placeholder: "https://www.tiktok.com/@hucha.indonesia/shop",
+  },
+];
+
 const GROUP_FIELDS: Record<
   SettingsGroup,
   { title: string; description: string; fields: FieldDef[] }
@@ -172,6 +190,11 @@ const GROUP_FIELDS: Record<
     title: "Tautan Sosial",
     description: "Instagram, TikTok, dan WhatsApp untuk tombol sosial.",
     fields: SOCIAL_FIELDS,
+  },
+  marketplaces: {
+    title: "Marketplace Resmi",
+    description: "Shopee, Tokopedia, dan TikTok Shop untuk footer marketplace resmi.",
+    fields: MARKETPLACE_FIELDS,
   },
   seo: {
     title: "SEO Default",
@@ -397,6 +420,7 @@ export function SettingsForms({ values }: SettingsFormsProps) {
   const order: SettingsGroup[] = [
     "company",
     "social",
+    "marketplaces",
     "seo",
     "smtp",
     "analytics",
