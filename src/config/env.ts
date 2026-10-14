@@ -48,7 +48,8 @@ if (isProduction) {
   assertBetterAuthSecret(betterAuthSecret);
 }
 
-const betterAuthUrl = env("BETTER_AUTH_URL", "");
+const rawBetterAuthUrl = env("BETTER_AUTH_URL", "");
+const betterAuthUrl = rawBetterAuthUrl === "[SENSITIVE]" ? "" : rawBetterAuthUrl;
 if (betterAuthUrl) {
   assertHttpUrl("BETTER_AUTH_URL", betterAuthUrl);
 }

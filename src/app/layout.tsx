@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -13,10 +12,13 @@ const fontDynamo = localFont({
   display: "swap",
 });
 
-const fontMontserrat = Montserrat({
-  weight: ["400", "700"],
+const fontMontserrat = localFont({
+  src: [
+    { path: "../../public/fonts/montserrat-regular.ttf", weight: "400", style: "normal" },
+    { path: "../../public/fonts/montserrat-bold.ttf", weight: "700", style: "normal" },
+  ],
   variable: "--font-montserrat",
-  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {

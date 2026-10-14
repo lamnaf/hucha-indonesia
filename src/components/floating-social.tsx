@@ -8,10 +8,6 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { socialLinkItems } from "@/components/social-links";
 
-/**
- * Floating action button (bottom-right) that expands to WhatsApp, Instagram
- * and TikTok deep-links. Present on all public pages (blueprint §10).
- */
 function FloatingSocial() {
   const [open, setOpen] = React.useState(false);
 
@@ -35,19 +31,28 @@ function FloatingSocial() {
     >
       {open ? (
         <div className="flex flex-col items-end gap-2">
-          {socialLinkItems.map(({ label, href, icon: Icon }) => (
+          {socialLinkItems.map(({ label, href, icon: imgSrc }) => (
             <Link
               key={label}
               href={href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={label}
               className={cn(
                 "bg-background text-foreground hover:bg-accent flex items-center gap-2 rounded-full border py-2 pr-5 pl-3 text-sm font-medium shadow-md transition-colors",
                 "animate-in fade-in-0 zoom-in-95 duration-200"
               )}
               onClick={() => setOpen(false)}
             >
-              <Icon className="size-4" aria-hidden="true" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={imgSrc}
+                alt={label}
+                width={16}
+                height={16}
+                className="size-4 object-contain"
+                aria-hidden="true"
+              />
               {label}
             </Link>
           ))}
