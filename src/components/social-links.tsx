@@ -43,8 +43,8 @@ function SocialLinks({ className, showLabel = false }: SocialLinksProps) {
           rel="noopener noreferrer"
           aria-label={label}
           className={cn(
-            "text-muted-foreground hover:text-foreground inline-flex items-center gap-2 rounded-md text-sm transition-colors",
-            showLabel ? "px-2 py-1.5 hover:bg-accent" : "size-9 justify-center"
+            "text-muted-foreground inline-flex items-center gap-2 rounded-md text-sm",
+            showLabel ? "px-2 py-1.5" : "size-9 justify-center"
           )}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
