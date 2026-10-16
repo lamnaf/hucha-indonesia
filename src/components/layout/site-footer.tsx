@@ -79,14 +79,27 @@ async function SiteFooter() {
                     aria-label={marketplace.name}
                     className={`inline-flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-semibold shadow-xs transition-colors ${marketplace.className}`}
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={marketplace.icon}
-                      alt={marketplace.name}
-                      width={16}
-                      height={16}
-                      className="size-4 object-contain"
-                    />
+                    {marketplace.name === "Shopee" ? (
+                      <span className="flex size-4 items-center justify-center rounded-[4px] bg-white p-px">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={marketplace.icon}
+                          alt={marketplace.name}
+                          width={16}
+                          height={16}
+                          className="size-full object-contain"
+                        />
+                      </span>
+                    ) : (
+                      /* eslint-disable-next-line @next/next/no-img-element */
+                      <img
+                        src={marketplace.icon}
+                        alt={marketplace.name}
+                        width={16}
+                        height={16}
+                        className="size-4 object-contain"
+                      />
+                    )}
                     <span>{marketplace.name}</span>
                     <ExternalLinkIcon className="size-3" aria-hidden="true" />
                   </Link>
