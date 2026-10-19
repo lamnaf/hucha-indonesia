@@ -82,8 +82,8 @@ export default function Oem() {
     <>
       <Hero
         badge="OEM & Maklon"
-        title="Wujudkan Produk Private Label Anda"
-        description="HuCha Indonesia membuka kerja sama OEM/maklon untuk produk cairan otomotif dan perawatan kendaraan — dari formulasi hingga kemasan, sesuai kebutuhan bisnis Anda."
+        title="Wujudkan Brand Anda Bersama HUCHA"
+        description="Ceritakan kebutuhan produk dan konsep brand Anda. Tim HUCHA siap membantu menjajaki peluang OEM dan maklon yang sesuai."
         actions={
           <>
             <Button asChild size="lg">

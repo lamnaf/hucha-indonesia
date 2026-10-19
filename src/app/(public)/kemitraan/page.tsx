@@ -4,7 +4,6 @@ import {
   HandshakeIcon,
   HeadphonesIcon,
   PercentIcon,
-  QuoteIcon,
   RocketIcon,
 } from "lucide-react";
 
@@ -81,24 +80,13 @@ export default async function Distributor() {
     <>
       <Hero
         badge="Sukses Bersama HuCha"
-        title="Membangun Bisnis. Membangun Kepercayaan. Bertumbuh Bersama."
-        titleClassName="font-dynamo text-3xl sm:text-4xl lg:text-5xl"
+        title="Jajaki Peluang Bersama HUCHA"
+        titleClassName="font-dynamo text-3xl sm:text-4xl lg:text-5xl uppercase"
         description={
           <div className="space-y-4">
             <p>
-              HUCHA percaya bahwa keberhasilan sebuah brand tidak dapat dicapai sendirian. 
-              Distributor adalah bagian penting dari perjalanan kami untuk membawa HUCHA lebih dekat 
-              kepada konsumen di seluruh Indonesia.
+              Ceritakan kebutuhan dan peluang kerja sama Anda. Tim kami akan menghubungi Anda untuk mendiskusikan langkah selanjutnya.
             </p>
-            <p>
-              Karena itu, kami membangun kerja sama berdasarkan <strong>kepercayaan, dukungan, dan komitmen jangka panjang</strong>.
-            </p>
-            <p>
-              Kami tidak hanya ingin produk HUCHA tersedia di lebih banyak tempat. Kami ingin 
-              <strong> membangun bisnis yang sama-sama memberikan manfaat dan menciptakan kesuksesan 
-              bagi HUCHA dan para mitra kami.</strong>
-            </p>
-            <p className="font-semibold italic">Your success is part of our success.</p>
           </div>
         }
         actions={
@@ -210,8 +198,9 @@ export default async function Distributor() {
         </div>
       </section>
 
-<section className="py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <div className="container">
+          <SectionHeading title="Tumbuh Bersama HUCHA" align="center" />
           <PartnerSlider />
         </div>
       </section>

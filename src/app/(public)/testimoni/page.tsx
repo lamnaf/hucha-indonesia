@@ -6,9 +6,9 @@ import { whatsappChatLink } from "@/lib/whatsapp-link";
 import { PartnerSlider } from "@/components/partner-slider";
 
 export const metadata = pageMetadata({
-  title: "Testimoni",
+  title: "Partner Kami",
   description:
-    "Cerita sukses para mitra bengkel, toko onderdil, dan distributor yang mempercayakan pertumbuhan usahanya pada HuCha Indonesia.",
+    "Tumbuh bersama HUCHA Indonesia. Jaringan mitra bengkel, toko onderdil, dan distributor di seluruh Indonesia.",
   path: "/testimoni",
 });
 
@@ -17,9 +17,9 @@ export default async function Testimonials() {
     <>
       <Hero
         align="center"
-        badge="Testimoni"
-        title="Cerita Keberhasilan Mitra Kami"
-        description="Kepercayaan dari bengkel dan toko onderdil di seluruh Indonesia adalah bukti terbaik kualitas produk dan layanan HuCha Indonesia."
+        badge="Partner Kami"
+        title="Tumbuh Bersama HUCHA"
+        description="Kepercayaan dari mitra bengkel dan toko di seluruh Indonesia adalah bagian penting dari perjalanan kami."
         actions={
           <Button asChild size="lg">
             <a

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CheckCircle2Icon, HeadphonesIcon, PercentIcon, RocketIcon, TruckIcon } from "lucide-react";
+import { CheckCircle2Icon, HeadphonesIcon, PercentIcon, RocketIcon, UsersIcon } from "lucide-react";
 
 import { pageMetadata } from "@/lib/seo";
 import { whatsappChatLink } from "@/lib/whatsapp-link";
@@ -21,27 +21,27 @@ export const metadata = pageMetadata({
 const benefits = [
   {
     icon: PercentIcon,
-    title: "Harga Kompetitif",
+    title: "Peluang Bisnis yang Berkembang",
     description:
-      "Sistem harga yang adil dan transparan untuk jangka panjang.",
-  },
-  {
-    icon: TruckIcon,
-    title: "Volume Pesanan Stabil",
-    description:
-      "Kebutuhan produksi yang teratur memberikan kepastian bisnis.",
+      "Kesempatan untuk tumbuh bersama seiring perkembangan HUCHA dan pasar yang kami layani.",
   },
   {
     icon: RocketIcon,
     title: "Kolaborasi Pengembangan",
     description:
-      "Bersama mengembangkan formulasi dan standar kualitas baru.",
+      "Terbuka untuk mengembangkan material, kemasan, dan solusi baru bersama supplier.",
   },
   {
     icon: HeadphonesIcon,
-    title: "Pendampingan Tim Procurement",
+    title: "Procurement yang Terstruktur",
     description:
-      "Tim procurement mendampingi dari negosiasi hingga pengiriman.",
+      "Proses pengadaan didukung komunikasi yang jelas dan tim procurement yang responsif.",
+  },
+  {
+    icon: UsersIcon,
+    title: "Kemitraan Jangka Panjang",
+    description:
+      "Membangun hubungan bisnis yang konsisten, saling mendukung, dan berkelanjutan.",
   },
 ];
 
@@ -74,8 +74,8 @@ export default async function Supplier() {
     <>
       <Hero
         badge="Kerjasama Supplier"
-        title="Jajaki Peluang Kerja Sama Bersama HUCHA"
-        description="Kami terbuka untuk bekerja sama dengan supplier yang dapat mendukung kebutuhan bahan baku, kemasan, dan kebutuhan produksi HUCHA."
+        title="Menjadi Bagian dari Perjalanan HUCHA"
+        description="Berkolaborasi, Bukan Sekadar Memasok."
         actions={
           <>
             <Button asChild size="lg">
@@ -100,7 +100,7 @@ export default async function Supplier() {
       <section className="border-t bg-muted/40 py-16 sm:py-20">
         <div className="container">
           <SectionHeading
-            title="Mengapa Menjadi Supplier Kami?"
+            title="Apa yang Kami Tawarkan"
             align="center"
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

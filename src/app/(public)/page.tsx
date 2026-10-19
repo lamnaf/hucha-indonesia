@@ -203,7 +203,7 @@ export default async function Home() {
         <div className="container">
           <SectionHeading
             title="Tumbuh Bersama HUCHA"
-            description="Cerita dan pengalaman mitra bengkel, toko, dan distributor di seluruh Indonesia."
+            description="Jaringan mitra bengkel, toko, dan distributor kami di seluruh Indonesia."
             align="center"
           />
           <PartnerSlider />
