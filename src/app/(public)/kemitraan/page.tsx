@@ -81,7 +81,7 @@ export default async function Distributor() {
       <Hero
         badge="Sukses Bersama HuCha"
         title="Jajaki Peluang Bersama HUCHA"
-        titleClassName="font-dynamo text-3xl sm:text-4xl lg:text-5xl uppercase"
+        titleClassName="font-montserrat text-3xl sm:text-4xl lg:text-5xl uppercase"
         description={
           <div className="space-y-4">
             <p>

@@ -5,7 +5,6 @@ import {
   FactoryIcon,
   LayersIcon,
   ShieldCheckIcon,
-  WrenchIcon,
 } from "lucide-react";
 
 import { pageMetadata } from "@/lib/seo";
@@ -128,74 +127,7 @@ export default function Oem() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <div className="container grid items-center gap-10 lg:grid-cols-2">
-          <div className="space-y-4">
-            <SectionHeading
-              title="Mitra Produksi yang Andal"
-            />
-            <ul className="space-y-3">
-              {[
-                "Berpengalaman di industri cairan otomotif dan perawatan kendaraan.",
-                "Fleksibel untuk kebutuhan volume kecil hingga besar.",
-                "Harga kompetitif dengan kualitas konsisten.",
-                "Legalitas jelas — produksi di bawah badan usaha resmi.",
-              ].map((item) => (
-                <li
-                  key={item}
-                  className="text-muted-foreground flex items-start gap-2 text-sm"
-                >
-                  <CheckCircle2Icon
-                    className="text-primary mt-0.5 size-4 shrink-0"
-                    aria-hidden="true"
-                  />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <Button asChild variant="outline">
-              <Link href="/kontak">Hubungi Tim Kami</Link>
-            </Button>
-          </div>
-          <Card className="gap-0">
-            <CardContent className="flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <div className="bg-primary/10 text-primary flex size-11 items-center justify-center rounded-lg">
-                  <WrenchIcon className="size-5" aria-hidden="true" />
-                </div>
-                <div>
-                  <CardTitle className="text-base">
-                    Produk yang Bisa Dikerjakan
-                  </CardTitle>
-                  <p className="text-muted-foreground text-sm">
-                    Cairan otomotif & perawatan kendaraan
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {[
-                  "Oli Mesin",
-                  "Oli Sokbreker",
-                  "Coolant",
-                  "Shampo Motor",
-                  "Coating / Pelindung",
-                  "Perawatan Rantai",
-                ].map((item) => (
-                  <span
-                    key={item}
-                    className="bg-muted text-muted-foreground rounded-md px-3 py-1.5 text-xs font-medium"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
-              <p className="text-muted-foreground text-xs">
-                * Produk di luar daftar dapat didiskusikan dengan tim kami.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
+
 
       <section className="border-t bg-muted/40 py-16 sm:py-20">
         <div className="container">

@@ -158,27 +158,23 @@ export function JobForm({ initial }: JobFormProps) {
           <Field
             label="Deskripsi Pekerjaan"
             htmlFor="job-description"
-            hint="Minimal 20 karakter."
           >
             <Textarea
               id="job-description"
               name="description"
               defaultValue={initial?.description ?? ""}
               rows={10}
-              required
             />
           </Field>
           <Field
             label="Persyaratan"
             htmlFor="job-requirements"
-            hint="Minimal 20 karakter."
           >
             <Textarea
               id="job-requirements"
               name="requirements"
               defaultValue={initial?.requirements ?? ""}
               rows={8}
-              required
             />
           </Field>
         </div>

@@ -18,11 +18,9 @@ export const jobSchema = z.object({
   employmentType: employmentTypeSchema.default("full_time"),
   description: z
     .string()
-    .min(20, "Deskripsi lowongan minimal 20 karakter")
     .max(10000),
   requirements: z
     .string()
-    .min(20, "Persyaratan minimal 20 karakter")
     .max(10000),
   status: z.enum(["open", "closed"]).default("open"),
 });
