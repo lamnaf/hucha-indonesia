@@ -16,7 +16,6 @@ import {
   HeartIcon,
   ArrowRightIcon,
   ChevronRightIcon,
-  MapPinIcon,
   FactoryIcon,
   GlobeIcon,
   HelpCircleIcon,
@@ -250,14 +249,6 @@ export default async function About() {
                     alt="Peta Indonesia dengan titik distribusi HUCHA"
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/60 via-transparent to-transparent" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="text-center text-white p-8">
-                      <MapPinIcon className="w-16 h-16 mx-auto text-primary mb-4 opacity-90" />
-                      <p className="text-sm font-bold text-white mb-1 tracking-widest uppercase">Jaringan Distribusi</p>
-                      <p className="text-3xl font-heading tracking-widest text-white drop-shadow-lg">Seluruh Indonesia</p>
-                    </div>
-                  </div>
                 </div>
               <div className="text-left lg:pl-8 order-1 lg:order-2">
                 <span className="inline-block px-4 py-1.5 text-sm font-semibold font-heading tracking-widest uppercase text-primary bg-primary/10 rounded-full mb-6">
